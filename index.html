@@ -11,7 +11,8 @@
     <header>
         <nav class="nav-bar">
             <a href="#home" class="align-left">HOME</a>
-            <div class="align-right">
+            <button class="menu-toggle">☰ Menu</button>
+            <div class="menu">
                 <a href="#portfolio">PORTFOLIO</a>
                 <a href="#about">ABOUT</a>
                 <a href="#resume">RESUME</a>
@@ -62,6 +63,25 @@
                 });
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
     </script>
 
 
