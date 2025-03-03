@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +9,22 @@
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">HOME</a>
+            <div class="align-right">
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#about">ABOUT</a>
+                <a href="#resume">RESUME</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </nav>
     </header>
-    <section>
-        <h2>About Me</h2>
+    <section id="home" class="section-white">
+        <h1 class="vertical-space section-header">ABOUT ME</h1>
         <p>Hi, I'm a web developer passionate about creating beautiful and functional websites.</p>
     </section>
-    <section class="projects">
-        <h2>Projects</h2>
+    <section id="portfolio" class="section-gray">
+        <h1 class="section-header">PROJECTS</h1>
         <div class="project">
             <h3>Project 1</h3>
             <p>Description of project 1.</p>
@@ -25,9 +34,36 @@
             <p>Description of project 2.</p>
         </div>
     </section>
-    <section>
-        <h2>Contact</h2>
+    <section id="about" class="section-white">
+        <h1 class="section-header">ABOUT</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="resume" class="section-gray">
+        <h1 class="section-header">RESUME</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="contact" class="section-white">
+        <h1 class="section-header">CONTACT</h1>
         <p>Email: example@example.com</p>
     </section>
+
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
 </body>
 </html>
