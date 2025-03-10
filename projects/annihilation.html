@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">HOME</a>
+            <button class="menu-toggle">☰ Menu</button>
+            <div class="menu">
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#about">ABOUT</a>
+                <a href="#resume">RESUME</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="section-white">
+        <h1 class="vertical-space section-header">ABOUT ME</h1>
+        <p>What happens if I write an hypervincule <a href="#resume">here</a>.</p>
+    </section>
+    <section id="portfolio" class="section-gray">
+        <h1 class="section-header">PROJECTS</h1>
+        <div class="project">
+            <h3>Project 1</h3>
+            <a href="project2.html">
+                <img src="project2.jpg" alt="Project 2" class="project-image">
+            </a>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of project 2.</p>
+        </div>
+        <div class="project">
+            <!-- This is where the image would go. -->
+        </div>
+    </section>
+    <section id="about" class="section-white">
+        <h1 class="section-header">RESUME</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="resume" class="section-gray">
+        <h1 class="section-header">ABOUT</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="contact" class="section-white">
+        <h1 class="section-header">CONTACT</h1>
+        <p>Email: example@example.com</p>
+    </section>
+
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

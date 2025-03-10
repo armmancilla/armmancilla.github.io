@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Armando Mancilla | Portfolio</title>
+    <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,36 +18,170 @@
                 <a href="#resume">RESUME</a>
                 <a href="#contact">CONTACT</a>
             </div>
+            <button onclick="location.href='indexES.html'" class="language">
+                English
+            </button>
         </nav>
     </header>
     <section id="home" class="section-white">
         <h1 class="vertical-space section-header">ABOUT ME</h1>
-        <p>Hi, I'm a web developer passionate about creating beautiful and functional websites.</p>
+        <p>What happens if I write an hypervincule <a href="#resume">here</a>.</p>
     </section>
     <section id="portfolio" class="section-gray">
         <h1 class="section-header">PROJECTS</h1>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of project 2.</p>
+        <div class="projects-recipient">
+            <div class="project">
+                <a href="projects/epidemic_models.html" class="project-container">
+                    <img src="projects/images/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h2>Epidemic Models applied to COVID-19</h2>
+                        <br>
+                        <p>We use the SIR model with some modifications bla bla bla</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/random_walks.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>Statistics of Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/annihilation.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>Annihilation Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </section>
     <section id="about" class="section-white">
         <h1 class="section-header">ABOUT</h1>
-        <p>More details about me and my work.</p>
     </section>
 
     <section id="resume" class="section-gray">
         <h1 class="section-header">RESUME</h1>
-        <p>More details about me and my work.</p>
+        <div class="row">
+            <div class="column resume-bar">
+                <img src="images/Selfie.JPG" class="resume-image">
+                <h2 class="resume-name">Armando Imanol<br>Mancilla Bustos</h2>
+                <h3 class="resume-title">PHYSICS STUDENT</h3>
+                <div class="resume-bar-disappear">
+                    <hr class="resume-hbar">
+                    <h3 class="resume-headline" style="font-size:16px">CONTACT</h3>
+                </div>
+                <button class="resume-bar-button">INFO</button>
+                <div class="resume-bar-toggle">
+                    <button class="button-location">Zapopan, Jalisco</button>
+                    <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" 
+                    class="button-mail">armando.mancilla.b@gmail.com</button>
+                    <button onclick="location.href='https://www.linkedin.com/in/armando-imanol-mancilla/'" 
+                    class="button-linkedin">LinkedIn</button>
+                    <button onclick="location.href='https://github.com/armmancilla'" 
+                    class="button-github">GitHub</button>
+                    <button onclick="location.href='https://armmancilla.github.io'" class="button-page">
+                        https://armmancilla.github.io</button>
+                    <br>
+                </div>
+            </div>
+            <div class="column resume-content">
+                <h3 class="resume-headline" style="font-size:24px; font-weight: bold;">EXPERIENCE</h3>
+                <hr class="resume-content-bar">
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
     </section>
 
     <section id="contact" class="section-white">
         <h1 class="section-header">CONTACT</h1>
-        <p>Email: example@example.com</p>
+        <p>Feel free to contact me. Follow my work on LinkedIn or send me an email to armando.mancilla.b@gmail.com</p>
     </section>
 
     <script>
@@ -81,6 +215,23 @@
                 }
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const infoButton = document.querySelector(".resume-bar-button");
+            const toggleMenu = document.querySelector(".resume-bar-toggle");
+
+            infoButton.addEventListener("click", function (event) {
+                toggleMenu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!toggleMenu.contains(event.target) && event.target !== infoButton) {
+                    toggleMenu.classList.remove("show");
+                }
+            });
+        });
+
 
     </script>
 

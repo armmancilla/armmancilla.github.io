@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portafolio</title>
+    <link rel="icon" href="icon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">INICIO</a>
+            <button class="menu-toggle">☰ Menú</button>
+            <div class="menu">
+                <a href="#portfolio">PORTAFOLIO</a>
+                <a href="#about">SOBRE MÍ</a>
+                <a href="#resume">CURRÍCULUM</a>
+                <a href="#contact">CONTACTO</a>
+            </div>
+            <button onclick="location.href='index.html'" class="language">
+                Español
+            </button>
+        </nav>
+    </header>
+    <section id="home" class="section-white">
+        <h1 class="vertical-space section-header">SOBRE MÍ</h1>
+        <p>What happens if I write an hypervincule <a href="#resume">here</a>.</p>
+    </section>
+    <section id="portfolio" class="section-gray">
+        <h1 class="section-header">PROYECTOS</h1>
+        <div class="projects-recipient">
+            <div class="project">
+                <a href="projects/epidemic_models.html" class="project-container">
+                    <img src="projects/images/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h2>Epidemic Models applied to COVID-19</h2>
+                        <br>
+                        <p>We use the SIR model with some modifications bla bla bla</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/random_walks.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>Statistics of Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/annihilation.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>Annihilation Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <section id="about" class="section-white">
+        <h1 class="section-header">CURRÍCULUM</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="resume" class="section-gray">
+        <h1 class="section-header">SOBRE MÍ</h1>
+        <p>More details about me and my work.</p>
+    </section>
+
+    <section id="contact" class="section-white">
+        <h1 class="section-header">CONTACTO</h1>
+        <p>Feel free to contact me. Follow my work on LinkedIn or send me an email.</p>
+    </section>
+
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>
