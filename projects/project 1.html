@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portfolio</title>
+    <link rel="icon" href="../images/icon.ico">
+    <link rel="stylesheet" href="styleProjects.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">HOME</a>
+            <button onclick="location.href='indexES.html'" class="language">
+                English
+            </button>
+        </nav>
+    </header>
+
+
+
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight + 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const infoButton = document.querySelector(".resume-bar-button");
+            const toggleMenu = document.querySelector(".resume-bar-toggle");
+
+            infoButton.addEventListener("click", function (event) {
+                toggleMenu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!toggleMenu.contains(event.target) && event.target !== infoButton) {
+                    toggleMenu.classList.remove("show");
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portfolio</title>
+    <link rel="icon" href="../images/icon.ico">
+    <link rel="stylesheet" href="styleProjects.css">
+</head>
+<body>
+    <!--  HEADER  -->
+    <header>
+        <nav class="nav-bar">
+            <button onclick="location.href='../index.html'" class="home-button">
+                ARMANDO MANCILLA
+            </button>
+            <button onclick="location.href='../indexES.html'" class="language">
+                English
+            </button>
+        </nav>
+    </header>
+
+    <!--  CONTENT  -->
+    <section id="resume" class="section-white" style="padding-bottom: 0px;">
+        <div class="row row-style" style="background: #f4f6f6; margin-bottom: -20px;">
+            <div class="column bar">
+                <div class="bar-disappear">
+                    <div class="bar-toggle">
+                        <h2 class="bar-title">Content</h2>
+                        <hr class="bar-hbar">
+                        <h3 class="bar-subtitle"><a href="#introduction">
+                            Introduction
+                        </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="column content">
+                <div class="content-menu-container">
+                    <button class="content-button">☰</button>
+                    <div class="content-toggle">
+                        <h2 class="bar-title">Content</h2>
+                        <hr class="bar-hbar">
+                        <h3 class="bar-subtitle"><a href="#introduction">
+                            Introduction
+                        </a></h3>
+                    </div>
+                </div>
+                <h3 class="content-title">Statistics of Random Walks</h3>
+                <hr class="content-hbar">
+                <div class="content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+
+    <!--  BODY  -->
+    <section class="copyright">
+        <p>
+            © Armando Mancilla, 2025
+        </p>
+    </section>
+
+
+    <!--  SCRIPT SECTION  -->
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const infoButton = document.querySelector(".content-button");
+            const toggleMenu = document.querySelector(".content-toggle");
+
+            infoButton.addEventListener("click", function (event) {
+                toggleMenu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!toggleMenu.contains(event.target) && event.target !== infoButton) {
+                    toggleMenu.classList.remove("show");
+                }
+            });
+
+        });
+
+        // Add this to your existing script
+        window.addEventListener('scroll', function() {
+            const contentButton = document.querySelector('.content-button');
+            const toggleMenu = document.querySelector('.content-toggle');
+            const scrollThreshold = 50; // Adjust this value (in pixels) for when the border should appear
+            
+            // Close menu on scroll (your existing functionality)
+            toggleMenu.classList.remove('show');
+            
+            // Add/remove border based on scroll position
+            if (window.scrollY > scrollThreshold) {
+                contentButton.classList.add('scrolled');
+            } else {
+                contentButton.classList.remove('scrolled');
+            }
+        });
+
+
+    </script>
+
+
+</body>
+</html>
