@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portfolio</title>
+    <link rel="icon" href="images/icon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">HOME</a>
+            <button class="menu-toggle">☰ Menu</button>
+            <div class="menu">
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#resume">RESUME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+            <button onclick="location.href='indexES.html'" class="language">
+                English
+            </button>
+        </nav>
+    </header>
+
+
+    <!--  HOME  --> 
+    <section id="home" class="section-white section-background">
+        <canvas></canvas>
+        <div class="home-elements">
+            <p style="font-size: 18px; letter-spacing: 1px; font-weight: lighter;">Hello! &nbsp; I am</p>
+            <h1 class="section-header" style="font-size: 35px; letter-spacing: 1px; margin-top: -5px;">
+                ARMANDO MANCILLA</h1>
+            <img class="home-image" src="images/icon.ico">
+            <div class="home-presentation">
+                <p style="padding-top: 0px; font-size: 16px; letter-spacing: 1px; font-weight: lighter;">
+                    I am a physics student with an interest in complex systems
+                    and data science. Here are some of the projects
+                    I've worked on. Welcome to
+                </p>
+            </div>
+            <h2 style="font-weight: lighter; letter-spacing: 1px; font-size: 28px; margin-top: 0;
+            margin-bottom: 5px;">My Portfolio</h2>
+            <hr style="width: 100px; background: #333; height: 0.2px; margin-bottom: 0;">
+            <div class="home-links">
+                <a href="https://www.linkedin.com/in/armando-imanol-mancilla/">
+                    <img class="home-links-image" style="margin-left: 49px;
+                    width: 40px; height: 40px;" src="images/LinkedIn.png">
+                </a>
+                <a href="https://github.com/armmancilla">
+                    <img class="home-links-image" style="margin-top: 4px;
+                    margin-left: 104px; width: 30px; height: 30px;" src="images/GitHub.png">
+                </a>
+                <a href="mailto:armando.mancilla.b@gmail.com">
+                    <img class="home-links-image" style="margin-top: 5.5px;
+                    margin-left: 154px; width: 37px; height: 30px;" src="images/mail.png">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  PORTFOLIO  --> 
+    <section id="portfolio" class="section-gray" style="min-height: 100vh;">
+        <h1 class="section-header">PROJECTS</h1>
+        <div class="projects-recipient">
+            <div class="project" data-template="project1-template">
+                <a href="projects/project 1.html" class="project-container">
+                    <img src="projects/images/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Epidemic Models applied to COVID-19</h3>
+                        <br>
+                        <p>We use the SIR model with some modifications bla bla bla</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project" data-template="project2-template">
+                <a class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Statistics of Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project" data-template="project3-template">
+                <a href="projects/project 3.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Annihilation Random Walks</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!--  PROJECT DETAILS TEMPLATE PLACEHOLDER  -->
+        <div id="project-details" class="project-details"></div>
+
+        <!--  PROJECT 1 TEMPLATE  -->
+        <template id="project1-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div class="details-menu-container">
+                <button class="details-button">☰</button>
+                <div class="details-toggle">
+                    <h2>Contents</h2>
+                    <hr class="bar-hbar">
+                    <a href="#introduction">
+                        Description
+                    </a>
+                </div>
+            </div>
+            <h3>Epidemic Models for Heard Immunity and Social Distancing</h3>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+            <p><i>PRO-SNI Scholarship. May 2021 to September 2021</i></p>
+            <p>Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with exponential growth and
+                variable infection rate to infected waves during the COVID-19 pandemic.</p>
+            <ul>
+                <li>Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in Jupyter Notebook.</li>
+                <li>Identified distinct infection waves and fitted an exponential-growth model to COVID-19 case data in Mexico.</li>
+                <li>Derived analytical solutions where possible and linked findings to the Susceptible-Infected-Removed (SIR) model.</li>
+                <li>Calculated key parameters to model infection rate dynamics at the start and end of each wave.</li>
+            </ul>
+        </template>
+
+        <!--  PROJECT 2 TEMPLATE  -->
+        <template id="project2-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div class="details-menu-container">
+                <button class="details-button">☰</button>
+                <div class="details-toggle">
+                    <h2>Contents</h2>
+                    <hr>
+                    <a href="#introduction">
+                        Description
+                    </a>
+                </div>
+            </div>
+            <h3>Statistics of the Random Walk with Resetting and Self-Memory</h3>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+            <p><i>Exploring the behavior of particles in random motion.</i></p>
+            <p>This project visualizes how particles move in a random walk pattern using Python and Matplotlib.</p>
+            <p>By analyzing different step probabilities, we can understand diffusion processes, market fluctuations, and more.</p>
+        </template>
+
+        <!--  PROJECT 3 TEMPLATE  -->
+        <template id="project3-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div class="details-menu-container">
+                <button class="details-button">☰</button>
+                <div class="details-toggle">
+                    <h2>Contents</h2>
+                    <hr>
+                    <a href="#introduction">
+                        Description
+                    </a>
+                </div>
+            </div>
+            <h3>Random Walks with Resetting in Annihilation</h3>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+            <p><i>Using AI techniques to predict and analyze epidemic trends.</i></p>
+            <p>We implemented a machine learning model to predict infection waves using past data and epidemiological parameters.</p>
+            <a href="https://github.com/yourprojectlink" target="_blank">View Project on GitHub</a>
+        </template>
+
+    </section>
+
+
+    <!--  RESUME  --> 
+    <section id="resume" class="section-white" style="padding-bottom: 0px;">
+        <h1 class="section-header" style="background: #fff">RESUME</h1>
+        <div class="row row-style" style="background: #f4f6f6; margin-bottom: -20px;">
+            <div class="column resume-bar">
+                <!-- <img src="images/Selfie.JPG" class="resume-image"> -->
+                <img src="images/image.png" class="resume-image">
+                <h2 class="resume-name">Armando Imanol<br>Mancilla Bustos</h2>
+                <h3 class="resume-title">PHYSICS STUDENT</h3>
+                <div class="resume-bar-disappear">
+                    <hr class="resume-hbar">
+                    <h3 class="resume-headline" style="font-size:16px">CONTACT</h3>
+                </div>
+                <button class="resume-bar-button">INFO</button>
+                <div class="resume-bar-toggle">
+                    <button class="button-location">Zapopan, Jalisco</button>
+                    <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" 
+                    class="button-mail">armando.mancilla.b@gmail.com</button>
+                    <button onclick="location.href='https://www.linkedin.com/in/armando-imanol-mancilla/'" 
+                    class="button-linkedin">LinkedIn</button>
+                    <button onclick="location.href='https://github.com/armmancilla'" 
+                    class="button-github">GitHub</button>
+                    <button onclick="location.href='https://armmancilla.github.io'" class="button-page">
+                        https://armmancilla.github.io</button>
+                    <br>
+                </div>
+            </div>
+            <div class="column resume-content">
+                
+                <!--  RESEARCH PROJECTS  -->
+                <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 10px">
+                    RESEARCH PROJECTS
+                </h3>
+                <hr class="resume-content-bar">
+
+                <!--  PROJECT 1: ANNIHILATION  -->
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Random Walks in Annihilation Dynamics
+                </div>
+                <div class="resume-content-text resume-content-info">
+                    August 2024 to the present
+                </div>
+                <div class="resume-content-text">
+                    <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
+                    <ul>
+                        <li>
+                            Built a high-performance parallelized Fortran program, using OpenMP reducing runtime by up to 
+                            15% via multi-threading, for large-scale stochastic systems for 2,000 interacting particles, 
+                            automating data storage.
+                        </li>
+                        <li>
+                            Designed a data reduction strategy in Python/Jupyter, compressing output files by 99% 
+                            (~180MB to 2MB) while preserving key dynamics for analysis.
+                        </li>
+                        <li>
+                            Analyzed asymptotic behavior, proposing an empirical fit and qualitative model for particle 
+                            diffusion and its impact on long-term concentration decay.
+                        </li>
+                    </ul>
+                </div>
+
+                <!--  PROJECT 2: SCILAB PROGRAM  -->
+                <div class="resume-content-text resume-content-title">
+                    Computational Simulation of Thermodynamic Systems
+                </div>
+                <div class="resume-content-text resume-content-info">
+                    Professional Practices. February 2024 to June 2024
+                </div>
+                <div class="resume-content-text">
+                    <i>Educational tool development under Dr. Gorin</i>
+                    <ul>
+                        <li>
+                            Developed a SciLab (MATLAB open-source alternative) simulator modeling complex systems of gas
+                            particles using stochastic sampling methods (Metropolis-Hastings, Monte Carlo) to analyze 
+                            emergent properties (e.g., pressure, temperature).
+                        </li>
+                        <li>
+                            Optimized algorithmic efficiency to handle 100+ particle systems, balancing real-time 
+                            performance with accuracy.
+                        </li>
+                        <li>
+                            Designed for classroom demonstration, automating data generation and visualization, enabling
+                            instructors to visualize how potential choice affects system behavior. Allowing intuitive
+                            interpretation of non-ideal dynamics.
+                        </li>
+                        <li>
+                            Created teacher-focused documentation, including use-case examples and theoretical background.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!--  PROJECT 3: RANDOM WALKS DISTRIBUTIONS  -->
+                <div class="resume-content-text resume-content-title">
+                    Random Walk with Resetting and Self-Memory Effects
+                </div>
+                <div class="resume-content-text resume-content-info">
+                    PRO-SNI Scholarship. December 2022 to June 2023
+                </div>
+                <div class="resume-content-text">
+                    <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
+                    <ul>
+                        <li>
+                            Built high-performance numerical simulations in Fortran to model stochastic systems with
+                            resetting or memory-dependent probabilities, automating data generation for 100,000+ walker
+                            trajectories.
+                        </li>
+                        <li>
+                            Identified critical thresholds where dynamics shift from diffusive to subdiffusive and
+                            developed analytical differential models to predict system behavior,
+                            finding solutions for each case, if possible.
+                        </li>
+                        <li>
+                            Led end-to-end data analysis using Python/Jupyter, creating visualizations (distributions, 
+                            variance) that uncovered a critical difference in the system dynamics for memory and resetting.
+                        </li>
+                    </ul>
+                </div>
+
+                <!--  PROJECT 4: COVID-19  -->
+                <div class="resume-content-text resume-content-title">
+                    Epidemic Models for Heard Immunity & Social Distancing
+                </div>
+                <div class="resume-content-text resume-content-info">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    <i>Collaborative research under Dr. Thomas Gorin.</i>
+                    <ul>
+                        <li>
+                            Implemented and extended a dynamic epidemic model (Python/Pandas) to analyze COVID-19 waves in
+                            Mexico, processing CONACYT-provided data (2 years of records).
+                        </li>
+                        <li>
+                            Led data cleaning and wave detection, developing Jupyter Notebooks to document methodology 
+                            and visualize trends.
+                        </li>
+                        <li>
+                            Estimated parameters for infection rate dynamics, comparing results against SIR model benchmarks.
+                            Working closely with Dr. Gorin to refine model assumptions.
+                        </li>
+                        <li>
+                            Analyzed model outputs to explain real-world phases (e.g., lockdown timing and herd immunity
+                            effects on wave decay).
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!--  EDUCATION  -->
+
+                <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 40px">
+                    EDUCATION
+                </h3>
+                <hr class="resume-content-bar">
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    B.S. in Physics, Universidad de Guadalajara
+                </div>
+                
+                <div class="resume-content-text resume-content-info">
+                    Guadalajara, Mexico. Expected graduation: 2025.
+                </div>
+                <div class="resume-content-text resume-content-info" style="margin-top: -20px; margin-bottom:0;">
+                    Current Average: 89/100.
+                </div>
+
+
+                <!--  SKILLS  -->
+                <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 40px">
+                    SKILLS
+                </h3>
+                <hr class="resume-content-bar">
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Programming:
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    • Python
+                </div>
+                <div class="resume-content-text resume-content-info" style="margin-left:38px; margin-bottom: 0;">
+                    NumPy, Pandas
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    • Fortran
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    • MATLAB/SciLab
+                </div>
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Data Tools:
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    Jupyter Notebook, Matplotlib, LaTeX
+                </div>
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Concepts:
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    Stochastic Modeling, MonteCarlo Methods, Time-Series Analysis
+                </div>
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Languages:
+                </div>
+                <div class="resume-content-text" style="margin-left: 25px;">
+                    Spanish (Native), English (Fluent)
+                </div>
+
+
+                <!--  PRESENTATION  -->
+
+                <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 40px">
+                    ACADEMIC PRESENTATIONS
+                </h3>
+                <hr class="resume-content-bar">
+
+                <div class="resume-content-text resume-content-title" style="padding-top:10px">
+                    Random Walks with Relocation and Memory Dynamics
+                </div>
+                <div class="resume-content-text resume-content-info">
+                    Guadalajara, Mexico. July 2024.
+                </div>
+                <div class="resume-content-text" style="margin-top: -10px;">
+                    Poster presented at the <i><b>Meeting on Complex Systems & Stochastic Processes</b></i> congress.
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+    </section>
+
+    <!--  A SECTION LEFT FOR LATER  --> 
+    <section id="about" class="section-gray" style="min-height: 100vh;">
+        <h1 class="section-header">ABOUT</h1>
+    </section>
+
+    <!--  CONTACT  --> 
+    <section id="contact" class="section-white">
+        <h1 class="section-header">CONTACT</h1>
+        <p>Feel free to contact me. Follow my work on LinkedIn or send me an <br> email to <b>armando.mancilla.b@gmail.com</b></p>
+        <div class="contact-buttons">
+            <button onclick="location.href='https://www.linkedin.com/in/armando-imanol-mancilla/'" class="contact-linkedin">
+                LinkedIn
+            </button>
+            <button onclick="location.href='https://github.com/armmancilla'" class="contact-github">
+                GitHub
+            </button>
+            <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" class="contact-mail">
+                Mail
+            </button>
+        </div>
+    </section>
+    <section class="section-white copyright">
+        <p>
+            © Armando Mancilla, 2025
+        </p>
+    </section>
+    <script src='script.js'></script>
+
+
+</body>
+</html>

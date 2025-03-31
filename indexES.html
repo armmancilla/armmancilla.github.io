@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Mancilla | Portafolio</title>
+    <link rel="icon" href="images/icon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <a href="#home" class="align-left">INICIO</a>
+            <button class="menu-toggle">☰ Menú</button>
+            <div class="menu">
+                <a href="#portfolio">PORTAFOLIO</a>
+                <a href="#resume">CURRÍCULUM</a>
+                <a href="#about">SOBRE MÍ</a>
+                <a href="#contact">CONTACTO</a>
+            </div>
+            <button onclick="location.href='index.html'" class="language">
+                Español
+            </button>
+        </nav>
+    </header>
+
+
+    <!--  HOME  --> 
+    <section id="home" class="section-white" style="padding-top: 30px;">
+        <p style="margin-top:60px; font-size: 18px; letter-spacing: 1px; font-weight: lighter;">¡Hola! &nbsp; Soy</p>
+        <h1 class="vertical-space section-header" style="font-size: 40px; letter-spacing: 1px; margin-top: -10px; margin-bottom: 12px;">
+            ARMANDO MANCILLA</h1>
+        <img class="home-image" src="images/icon.ico">
+        <p style="padding-top: 0px; font-size: 16px; letter-spacing: 1px; font-weight: lighter;">
+            Soy un estudiante de física interesado en sistemas complejos <br>
+            y ciencia de datos. Aquí están algunas de las cosas <br>
+            en las que he trabajado. Bienvenido a
+        </p>
+        <h2 style="font-weight: lighter; letter-spacing: 1px; font-size: 28px; margin-top: 0;">Mi Portafolio</h2>
+        <hr style="width: 100px; background: #333; height: 0.2px">
+        <div class="home-links">
+            <a href="https://www.linkedin.com/in/armando-imanol-mancilla/">
+                <img class="home-links-image" style="margin-left: 49px;
+                width: 40px; height: 40px;" src="images/LinkedIn.png">
+            </a>
+            <a href="https://github.com/armmancilla">
+                <img class="home-links-image" style="margin-top: 4px;
+                margin-left: 104px; width: 30px; height: 30px;" src="images/GitHub.png">
+            </a>
+            <a href="mailto:armando.mancilla.b@gmail.com">
+                <img class="home-links-image" style="margin-top: 5.5px;
+                margin-left: 154px; width: 37px; height: 30px;" src="images/mail.png">
+            </a>
+        </div>
+    </section>
+
+
+    <!--  PORTFOLIO  --> 
+    <section id="portfolio" class="section-gray" style="padding-bottom: 40px">
+        <h1 class="section-header">PROYECTOS</h1>
+        <div class="projects-recipient">
+            <div class="project">
+                <a href="projects/epidemic_models.html" class="project-container">
+                    <img src="projects/images/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Modelos epidemiológicos aplicados al COVID-19</h3>
+                        <br>
+                        <p>Partimos del modelo SIR y bla bla bla</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/random_walks.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Estadísticas de las caminatas aleatorias con Resetting y Memoria</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="projects/annihilation.html" class="project-container">
+                    <img src="projects/images/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3 style="font-size: 21px;">Aniquilación en caminatas aleatorias con Resetting</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--  RESUME  --> 
+    <section id="resume" class="section-white" style="padding-bottom: 0px;">
+        <h1 class="section-header" style="background: #fff">CURRÍCULUM</h1>
+        <div class="row row-style" style="background: #f4f6f6; margin-bottom: -20px;">
+            <div class="column resume-bar">
+                <img src="images/Selfie.JPG" class="resume-image">
+                <h2 class="resume-name">Armando Imanol<br>Mancilla Bustos</h2>
+                <h3 class="resume-title">ESTUDIANTE DE FÍSICA</h3>
+                <div class="resume-bar-disappear">
+                    <hr class="resume-hbar">
+                    <h3 class="resume-headline" style="font-size:16px">CONTACTO</h3>
+                </div>
+                <button class="resume-bar-button">INFO</button>
+                <div class="resume-bar-toggle">
+                    <button class="button-location">Zapopan, Jalisco</button>
+                    <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" 
+                    class="button-mail">armando.mancilla.b@gmail.com</button>
+                    <button onclick="location.href='https://www.linkedin.com/in/armando-imanol-mancilla/'" 
+                    class="button-linkedin">LinkedIn</button>
+                    <button onclick="location.href='https://github.com/armmancilla'" 
+                    class="button-github">GitHub</button>
+                    <button onclick="location.href='https://armmancilla.github.io'" class="button-page">
+                        https://armmancilla.github.io</button>
+                    <br>
+                </div>
+            </div>
+            <div class="column resume-content">
+                <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 10px">EXPERIENCIA</h3>
+                <hr class="resume-content-bar">
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume-content-text" style="font-weight: bold;">
+                    Parsimonious Epidemic Models for Heard Immunity and Social Distancing
+                </div>
+                <div class="resume-content-text" style="font-style: italic; margin-top: 2px;">
+                    PRO-SNI Scholarship. May 2021 to September 2021
+                </div>
+                <div class="resume-content-text">
+                    Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with
+                    exponential growth and variable infection rate to infected waves during the COVID-19 pandemic.
+                    <ul>
+                        <li>
+                            Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in 
+                            Jupyter Notebook.
+                        </li>
+                        <li>
+                            Identified distinct infection waves and fitted an exponential-growth model to COVID-19 
+                            case data in Mexico.
+                        </li>
+                        <li>
+                            Derived analytical solutions where possible and linked findings to the 
+                            Susceptible-Infected-Removed (SIR) model.
+                        </li>
+                        <li>
+                            Calculated key parameters to model infection rate dynamics at the start and end of each wave.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+
+    <!--  A SECTION LEFT FOR LATER  --> 
+    <section id="about" class="section-gray">
+        <h1 class="section-header">SOBRE MÍ</h1>
+    </section>
+
+    <!--  CONTACT  --> 
+    <section id="contact" class="section-white">
+        <h1 class="section-header">CONTACTO</h1>
+        <p>No dudes en contactarme. Sigue mi trabajo en LinkedIn o mándame un <br> correo a <b>armando.mancilla.b@gmail.com</b></p>
+        <div class="contact-buttons">
+            <button onclick="location.href='https://www.linkedin.com/in/armando-imanol-mancilla/'" class="contact-linkedin">
+                LinkedIn
+            </button>
+            <button onclick="location.href='https://github.com/armmancilla'" class="contact-github">
+                GitHub
+            </button>
+            <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" class="contact-mail">
+                Correo
+            </button>
+        </div>
+    </section>
+    <section class="section-white copyright">
+        <p>
+            © Armando Mancilla, 2025
+        </p>
+    </section>
+    <script>
+        // Offset scroll position
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight + 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.querySelector(".menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+
+            // Toggle menu when clicking the button
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                menu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!menu.contains(event.target) && event.target !== menuToggle) {
+                    menu.classList.remove("show");
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const infoButton = document.querySelector(".resume-bar-button");
+            const toggleMenu = document.querySelector(".resume-bar-toggle");
+
+            infoButton.addEventListener("click", function (event) {
+                toggleMenu.classList.toggle("show");
+            });
+
+            // Close menu when clicking anywhere outside of it
+            document.addEventListener("click", function (event) {
+                if (!toggleMenu.contains(event.target) && event.target !== infoButton) {
+                    toggleMenu.classList.remove("show");
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>
