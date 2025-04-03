@@ -54,7 +54,7 @@ canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
 
 function resizeCanvas() {
-    // homeSection.clientHeight = windows.innerHeight;
+
     canvas.width = homeSection.clientWidth;
     canvas.height = homeSection.clientHeight;
 
