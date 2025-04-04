@@ -10,15 +10,15 @@
 <body>
     <header>
         <nav class="nav-bar">
-            <a href="#home" class="align-left">HOME</a>
-            <button class="menu-toggle">☰ Menu</button>
+            <a href="#home" class="align-left">INICIO</a>
+            <button class="menu-toggle">☰ Menú</button>
             <div class="menu">
-                <a href="#portfolio">PORTFOLIO</a>
-                <a href="#resume">RESUME</a>
+                <a href="#portfolio">PORTAFOLIO</a>
+                <a href="#resume">CURRÍCULUM</a>
                 <a href="#about">ABOUT</a>
-                <a href="#contact">CONTACT</a>
+                <a href="#contact">CONTACTO</a>
             </div>
-            <button onclick="location.href='../index.html'" class="language">
+            <button data-href='/' class="language preserve-scroll-link">
                 Español
             </button>
         </nav>
@@ -29,19 +29,19 @@
     <section id="home" class="section-white section-background">
         <canvas></canvas>
         <div class="home-elements">
-            <p style="font-size: 18px; letter-spacing: 1px; font-weight: lighter;">Hello! &nbsp; I am</p>
+            <p style="font-size: 18px; letter-spacing: 1px; font-weight: lighter;">¡Hola! &nbsp; Soy</p>
             <h1 class="section-header" style="font-size: 35px; letter-spacing: 1px; margin-top: -5px;">
                 ARMANDO MANCILLA</h1>
             <img class="home-image" src="../images/icon.ico">
             <div class="home-presentation">
                 <p style="padding-top: 0px; font-size: 16px; letter-spacing: 1px; font-weight: lighter;">
-                    I am a physics student with an interest in complex systems
-                    and data science. Here are some of the projects
-                    I've worked on. Welcome to
+                    Soy un estudiante de física interesado en sistemas complejos
+                    y ciencia de datos. Aquí hay algunos de los proyectos
+                    en los que he trabajado. Bienvenido a
                 </p>
             </div>
             <h2 style="font-weight: lighter; letter-spacing: 1px; font-size: 28px; margin-top: 0;
-            margin-bottom: 5px;">My Portfolio</h2>
+            margin-bottom: 5px;">Mi Portafolio</h2>
             <hr style="width: 100px; background: #333; height: 0.2px; margin-bottom: 0;">
             <div class="home-links">
                 <a href="https://www.linkedin.com/in/armando-imanol-mancilla/">
@@ -63,7 +63,7 @@
 
     <!--  PORTFOLIO  --> 
     <section id="portfolio" class="section-gray" style="min-height: 100vh;">
-        <h1 class="section-header">PROJECTS</h1>
+        <h1 class="section-header">PROYECTOS</h1>
         <div class="projects-recipient">
 
             <!--  PROJECT 1: EPIDEMIC MODELS  -->
@@ -211,25 +211,25 @@
 
     <!--  RESUME  --> 
     <section id="resume" class="section-white" style="padding-bottom: 0px;">
-        <h1 class="section-header" style="background: #fff">RESUME</h1>
+        <h1 class="section-header" style="background: #fff">CURRÍCULUM</h1>
         <div class="row row-style" style="background: #f4f6f6; margin-bottom: -20px;">
             <div class="column resume-bar">
                 <img src="../images/image.png" class="resume-image">
                 <h3>Armando Imanol<br>Mancilla Bustos</h2>
-                <h2>PHYSICS STUDENT*</h2>
+                <h2>ESTUDIANTE DE FÍSICA*</h2>
                 <h1>
-                    COMPUTATIONAL MODELING <br> & DATA ANALYSIS
+                    MODELADO COMPUTACIONAL <br> Y ANÁLISIS DE DATOS
                 </h1>
                 <div class="resume-bar-info">
-                    *Expected graduation: 2025
+                    *Graduación prevista: 2025
                 </div>
                 <div class="resume-bar-disappear">
                     <hr class="resume-hbar">
-                    <div class="resume-headline" style="margin-top:-5px">CONTACT</div>
+                    <div class="resume-headline" style="margin-top:-5px">CONTACTO</div>
                 </div>
                 <button class="resume-bar-button">INFO</button>
                 <div class="resume-bar-toggle">
-                    <button class="button-location">Zapopan, Jalisco</button>
+                    <button class="button-location">Zapopan, Jalisco, México.</button>
                     <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" 
                     class="button-mail">armando.mancilla.b@gmail.com</button>
                     <button onclick="window.open('https://www.linkedin.com/in/armando-imanol-mancilla/','_blank')" 
@@ -239,7 +239,7 @@
                     <button onclick="location.href='https://armmancilla.github.io'" class="button-page">
                         https://armmancilla.github.io</button>
                     <button onclick="window.open('../files/CV_2025_EN.pdf', '_blank')" 
-                    class="button-cv">Get my CV!</button>
+                    class="button-cv">Descarga mi CV</button>
                     <br>
                 </div>
             </div>
@@ -247,16 +247,16 @@
                 
                 <!--  RESEARCH PROJECTS  -->
                 <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 10px">
-                    RESEARCH PROJECTS
+                    PROYECTOS DE INVESTIGACIÓN
                 </h3>
                 <hr class="resume-content-bar">
 
                 <!--  PROJECT 1: ANNIHILATION  -->
                 <div class="resume-content-text resume-content-title" style="padding-top:0px">
-                    Random Walks in Annihilation Dynamics
+                    Caminatas Aleatorias en Dinámicas de Aniquilación
                 </div>
                 <div class="resume-content-text resume-content-info">
-                    August 2024 to the present
+                    Agosto 2024 a la actualidad
                 </div>
                 <div class="resume-content-text">
                     <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
@@ -278,10 +278,10 @@
 
                 <!--  PROJECT 2: SCILAB PROGRAM  -->
                 <div class="resume-content-text resume-content-title">
-                    Computational Simulation of Thermodynamic Systems
+                    Simulación Computacional de Sistemas Termodinámicos
                 </div>
                 <div class="resume-content-text resume-content-info">
-                    Professional Practices. February 2024 to June 2024
+                    Prácticas Profesionales. Febrero 2024 a Junio 2024
                 </div>
                 <div class="resume-content-text">
                     <i>Educational tool development under Dr. Gorin</i>
@@ -309,10 +309,10 @@
 
                 <!--  PROJECT 3: RANDOM WALKS DISTRIBUTIONS  -->
                 <div class="resume-content-text resume-content-title">
-                    Random Walk with Resetting and Self-Memory Effects
+                    Caminatas Aleatorias con Efectos de Reseteo y Memoria Interna
                 </div>
                 <div class="resume-content-text resume-content-info">
-                    PRO-SNI Scholarship. December 2022 to June 2023
+                    Beca PRO-SNI. Diciembre 2022 a Junio 2023
                 </div>
                 <div class="resume-content-text">
                     <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
@@ -334,10 +334,10 @@
 
                 <!--  PROJECT 4: COVID-19  -->
                 <div class="resume-content-text resume-content-title">
-                    Epidemic Models for Heard Immunity & Social Distancing
+                    Modelos Epidemiológicos para Inmunidad de Rebaño y Distanciamiento Social
                 </div>
                 <div class="resume-content-text resume-content-info">
-                    PRO-SNI Scholarship. May 2021 to September 2021
+                    Beca PRO-SNI. Mayo 2021 a Septiembre 2021
                 </div>
                 <div class="resume-content-text">
                     <i>Collaborative research under Dr. Thomas Gorin.</i>
@@ -365,53 +365,53 @@
                 <!--  EDUCATION  -->
 
                 <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 25px">
-                    EDUCATION
+                    EDUCACIÓN
                 </h3>
                 <hr class="resume-content-bar">
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px">
-                    B.S. in Physics, Universidad de Guadalajara
+                    Lic. en Física, Universidad de Guadalajara
                 </div>
                 
                 <div class="resume-content-text resume-content-info">
-                    Guadalajara, Mexico. Expected graduation: 2025.
+                    Guadalajara, Mexico. Graduación prevista: 2025.
                 </div>
                 <div class="resume-content-text resume-content-info" style="margin-top: -5px; margin-bottom:0;">
-                    Current Average: 89/100.
+                    Promedio Actual: 89/100.
                 </div>
 
 
                 <!--  SKILLS  -->
                 <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 30px">
-                    SKILLS
+                    HABILIDADES
                 </h3>
                 <hr class="resume-content-bar">
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px; font-weight: normal;
                 font-size: 18px;">
-                    <b>Programming: </b>Python (NumPy, Pandas), Fortran, MATLAB/SciLab
+                    <b>Programación: </b>Python (NumPy, Pandas), Fortran, MATLAB/SciLab
                 </div>
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px; font-weight: normal;
                 font-size: 18px;">
-                    <b>Data Tools: </b>Jupyter Notebook, Matplotlib, LaTeX
+                    <b>Herramientas de Datos: </b>Jupyter Notebook, Matplotlib, LaTeX
                 </div>
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px; font-weight: normal;
                 font-size: 18px;">
-                    <b>Concepts: </b>Stochastic Modeling, MonteCarlo Methods, Time-Series Analysis
+                    <b>Conceptos: </b>Stochastic Modeling, MonteCarlo Methods, Time-Series Analysis
                 </div>
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px; font-weight: normal;
                 font-size: 18px;">
-                    <b>Languages: </b>Spanish (Native), English (Fluent)
+                    <b>Idiomas: </b>Español (Nativo), Inglés (Fluído)
                 </div>
 
 
                 <!--  PRESENTATION  -->
 
                 <h3 class="resume-headline" style="font-size:21px; font-weight: bold; padding-top: 30px">
-                    ACADEMIC PRESENTATIONS
+                    PRESENTACIONES ACADÉMICAS
                 </h3>
                 <hr class="resume-content-bar">
 
@@ -419,10 +419,10 @@
                     Random Walks with Relocation and Memory Dynamics
                 </div>
                 <div class="resume-content-text" style="margin-top: 5px; font-size:18px">
-                    Poster &nbsp | &nbsp <i><b>Meeting on Complex Systems & Stochastic Processes</b></i>
+                    Póster &nbsp | &nbsp <i><b>Meeting on Complex Systems & Stochastic Processes</b></i>
                 </div>
                 <div class="resume-content-text resume-content-info">
-                    Guadalajara, Mexico. July 2024.
+                    Guadalajara, México. Julio 2024.
                 </div>
                 
             </div>
@@ -437,8 +437,8 @@
 
     <!--  CONTACT  --> 
     <section id="contact" class="section-white">
-        <h1 class="section-header">CONTACT</h1>
-        <p>Feel free to contact me. Follow my work on LinkedIn or send me an <br> email to <b>armando.mancilla.b@gmail.com</b></p>
+        <h1 class="section-header">CONTACTO</h1>
+        <p>No dudes en contactarme. Sigue mi trabajo en LinkedIn o envíame un <br> correo a <b>armando.mancilla.b@gmail.com</b></p>
         <div class="contact-buttons">
             <button onclick="window.open('https://www.linkedin.com/in/armando-imanol-mancilla/','_blank')" class="contact-linkedin">
                 LinkedIn
@@ -447,7 +447,7 @@
                 GitHub
             </button>
             <button onclick="location.href='mailto:armando.mancilla.b@gmail.com'" class="contact-mail">
-                Mail
+                Correo
             </button>
         </div>
     </section>

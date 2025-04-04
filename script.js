@@ -46,6 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Restore scroll position
+    const savedScroll = sessionStorage.getItem('scrollPosition');
+    if (savedScroll) {
+      window.scrollTo(0, parseInt(savedScroll));
+      sessionStorage.removeItem('scrollPosition');
+    }
+  
+    // Handle scroll-preserving navigation
+    document.querySelectorAll('.preserve-scroll-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+        window.location.href = this.dataset.href;
+      });
+    });
+  });
+
 var canvas = document.querySelector('canvas');
 var homeSection = document.getElementById('home');
 canvas.width = window.innerWidth;
@@ -62,7 +80,6 @@ function resizeCanvas() {
 };
 
 resizeCanvas(); // Call it initially
-
 window.addEventListener('resize',resizeCanvas());
 
 var nPoints = 40;
