@@ -15,7 +15,7 @@
             <div class="menu">
                 <a href="#portfolio">PORTAFOLIO</a>
                 <a href="#resume">CURRÍCULUM</a>
-                <a href="#about">ABOUT</a>
+                <a href="#oddsends">POPURRÍ</a>
                 <a href="#contact">CONTACTO</a>
             </div>
             <button data-href='/' class="language preserve-scroll-link">
@@ -66,51 +66,93 @@
         <h1 class="section-header">PROYECTOS</h1>
         <div class="projects-recipient">
 
-            <!--  PROJECT 1: EPIDEMIC MODELS  -->
+            <!-- Projects are listed backwards, since it would be problem to start from the latest -->
 
-            <div class="project" data-template="project1-template">
+            <!--  PROJECT 4: ANNIHILATION  -->
+
+            <div class="project" data-template="project4-template">
                 <a class="project-container">
-                    <img src="../images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <img src="../images/projects/annihilation.png" alt="Project 4" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Epidemic Models applied to COVID-19</h3>
-                        <br>
-                        <p>We use the SIR model with some modifications bla bla bla</p>
-                    </div>
-                </a>
-            </div>
-
-
-            <!--  PROJECT 2: RANDOM WALKS  -->
-
-            <div class="project" data-template="project2-template">
-                <a class="project-container">
-                    <img src="../images/projects/rw_presentation.jpg" alt="Project 2" class="project-image">
-                    <div class="overlay">
-                        <h3 style="font-size: 21px;">Statistics of Random Walks</h3>
+                        <h3>
+                            Caminatas Aleatorias en Dinámicas de Aniquilación
+                        </h3>
+                        <div class="project-image-text">
+                            La aniquilación es el proceso donde dos partículas desaparecen al encontrarse.
+                            Estudiamos el decrecimiento en la concentración bajo estas dinámicas.
+                            <h1>
+                                La concentración decrece, ¿pero la certeza de nuestro modelo? Se vuelve 
+                                asintóticamente innegable.
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
 
 
             <!--  PROJECT 3: THERMODYNAMICS  -->
-
             <div class="project" data-template="project3-template">
                 <a class="project-container">
-                    <img src="../images/projects/Metropolis.gif" alt="Project 2" class="project-image">
+                    <img src="../images/projects/Metropolis.gif" alt="Project 3" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Computational Simulation of Thermodynamic Systems</h3>
+                        <h3>
+                            Simulación Computacional de Sistemas Termodinámicos
+                        </h3>
+                        <div class="project-image-text">
+                            Simulamos partículas de un gas utilizando Monte-Carlo y Metropolis-Hastings.
+                            Diseñado como una herramienta educativa para entender propiedades como presión
+                            y temperatura en sistemas no ideales.
+
+                            <h1>
+                                Metropolis-Hastings? Más bien Metropolis-FAST-ings con esta velocidad de convergencia
+                                (sí, funciona mejor en inglés, pero confíen en los datos)
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
 
 
-            <!--  PROJECT 4: ANNIHILATION  -->
-
-            <div class="project" data-template="project4-template">
+            <!--  PROJECT 2: RANDOM WALKS  -->
+            <div class="project" data-template="project2-template">
                 <a class="project-container">
-                    <img src="../images/projects/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <img src="../images/projects/simple_walk.gif" alt="Project 2" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Annihilation Random Walks</h3>
+                        <h3>
+                            Caminatas Aleatorias con Efectos de Reseteo y Memoria Interna
+                        </h3>
+                        <div class="project-image-text">
+                            Las caminatas aleatorias son sobre tomar pasos aleatorios, mientras que el reseteo
+                            puede regresar al caminante al origen, y la memoria interna a una posición anterior. 
+                            Este estudio presenta un análisis estadístico de los efectos de ambos casos.
+                            <h1>
+                                El reseteo manda al caminante al inicio, no como estos resultados, 
+                                que van a la cima
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!--  PROJECT 1: EPIDEMIC MODELS  -->
+
+            <div class="project" data-template="project1-template">
+                <a class="project-container">
+                    <img src="../images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Modelos Epidemiológicos para Inmunidad de Rebaño y Distanciamiento
+                        </h3>
+                        <div class="project-image-text">
+                            Implementamos modelos epidemiológicos para analizar las olas de COVID-19 en México.
+                            Deducimos soluciones analíticas de ser posible y vinculamos los resultados al modelo de
+                            Suceptibles-Infectados-Retirados (SIR).
+                            <h1>
+                                Al parecer, el 'distanciamiento social' es el único consejo de relación que los 
+                                epidemiólogos aprueban
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -238,7 +280,7 @@
                     class="button-github">GitHub</button>
                     <button onclick="location.href='https://armmancilla.github.io'" class="button-page">
                         https://armmancilla.github.io</button>
-                    <button onclick="window.open('../files/CV_2025_EN.pdf', '_blank')" 
+                    <button onclick="window.open('../files/CV_2025_ES.pdf', '_blank')"
                     class="button-cv">Descarga mi CV</button>
                     <br>
                 </div>
@@ -259,19 +301,20 @@
                     Agosto 2024 a la actualidad
                 </div>
                 <div class="resume-content-text">
-                    <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
+                    <i>Asesorado por el Dr. Thomas Gorin y el Dr. Soham Biswas.</i>
                     <ul>
                         <li>
-                            Built a parallelized Fortran program (OpenMP), for large-scale stochastic systems for 
-                            2,000 interacting particles, automating data storage.
+                            Creé un programa paralelizado de Fortran(OpenMP) para sistemas de gran escala con 2,000 
+                            partículas con interacción.
                         </li>
                         <li>
-                            Designed a data reduction strategy in Python/Jupyter, compressing output files while 
-                            preserving key dynamics for analysis.
+                            Diseñé una estrategia para reducir la cantidad de los datos resultantes en Python/Jupyter, 
+                            manteniendo los rasgos claves para su análisis.
                         </li>
                         <li>
-                            Analyzed asymptotic behavior, proposing an empirical fit and qualitative model for 
-                            particle diffusion and its impact on long-term concentration decay.
+                            Analicé el comportamiento asintótico, proponiendo un ajuste empírico y un modelo 
+                            cualitativo para la difusión de las partículas y su impacto en el decrecimiento de la 
+                            concentración.
                         </li>
                     </ul>
                 </div>
@@ -284,24 +327,24 @@
                     Prácticas Profesionales. Febrero 2024 a Junio 2024
                 </div>
                 <div class="resume-content-text">
-                    <i>Educational tool development under Dr. Gorin</i>
+                    <i>Herramienta educativa bajo la supervisión del Dr. Gorin | SciLab (alternativa a MATLAB)</i>
                     <ul>
                         <li>
-                            Developed a simulator modeling systems of gas particles using stochastic sampling 
-                            methods (Metropolis-Hastings, Monte Carlo) to analyze emergent properties 
-                            (e.g., pressure, temperature).
+                            Utilizando métodos de muestreo estocástico (Metropolis-Hastings, Monte Carlo), desarrollé 
+                            un simulador de sistemas con partículas de gas para analizar las propiedades emergentes 
+                            (presión, temperatura).
                         </li>
                         <li>
-                            Optimized algorithmic efficiency to handle 50+ particle systems, balancing real-time 
-                            performance with accuracy.
+                            Optimicé la eficiencia del algoritmo para manejar sistemas de 50+ partículas, balanceando 
+                            el rendimiento en tiempo real con la precisión.
                         </li>
                         <li>
-                            Designed for classroom demonstration, automating data visualization, enabling instructors 
-                            to visualize system behavior. Allowing intuitive interpretation of non-ideal dynamics.
+                            Diseñé el programa pensando en demostraciones en clase, con visualización automática de 
+                            resultados. Permitiendo ver el comportamiento del sistema y ayudando a la interpretación 
+                            intuitiva de dinámicas no-ideales.
                         </li>
                         <li>
-                            Created teacher-focused documentation, including use-case examples and theoretical 
-                            background.
+                            Creé documentación para el profesor, incluyendo casos de ejemplo y bases teóricas.
                         </li>
                     </ul>
 
@@ -315,19 +358,19 @@
                     Beca PRO-SNI. Diciembre 2022 a Junio 2023
                 </div>
                 <div class="resume-content-text">
-                    <i>Advised by Dr. Thomas Gorin and Dr. Soham Biswas.</i>
+                    <i>Asesorado por el Dr. Thomas Gorin y el Dr. Soham Biswas.</i>
                     <ul>
                         <li>
-                            Modeled 100K+ random walkers stochastic systems with resetting/memory, automating data 
-                            generation, using high-performance Fortran.
+                            Modelé sistemas estocásticos con 100K+ caminantes aleatorios con reseteo/memoria 
+                            utilizando programas de alto rendimiento en Fortran.
                         </li>
                         <li>
-                            Identified critical thresholds between diffusive/subdiffusive dynamics and developed 
-                            differential models with solutions to predict system behavior.
+                            Identifiqué cambios críticos entre dinámicas difusivas/subdifusivas y desarrollé 
+                            modelos diferenciales con soluciones para predecir el comportamiento del sistema.
                         </li>
                         <li>
-                            Analyzed data using Python/Jupyter, creating visualizations (distributions, variance) 
-                            revealing key dynamical differences for memory and resetting cases.
+                            Analicé los datos y creé gráficos (distribución, varianza) en Python/Jupyer 
+                            revelando diferencias claves entre las mecánicas de reseteo y memoria.
                         </li>
                     </ul>
                 </div>
@@ -340,23 +383,25 @@
                     Beca PRO-SNI. Mayo 2021 a Septiembre 2021
                 </div>
                 <div class="resume-content-text">
-                    <i>Collaborative research under Dr. Thomas Gorin.</i>
+                    <i>Investigación colaborativa a cargo del Dr. Thomas Gorin.</i>
                     <ul>
                         <li>
-                            Implemented and extended a dynamic epidemic model (Python/Pandas) to analyze COVID-19 
-                            waves in Mexico, processing CONACYT-provided data (2 years of records).
+                            Implementé y extendí modelos epidemiológicos dinámicos (Python/Pandas) para analizar 
+                            las olas de COVID-19 en México, procesando Datos proporcionados por el CONACYT 
+                            (registros de 2 años).
                         </li>
                         <li>
-                            Led data cleaning and wave detection, developing Jupyter Notebooks to document methodology 
-                            and visualize trends.
+                            Me encargué de la limpieza de datos y detección de olas, utilizado Jupyer Notebook 
+                            para documentar la metodología y visualizar tendencias.
                         </li>
                         <li>
-                            Estimated parameters for infection rate dynamics, comparing results against SIR model 
-                            benchmarks. Working closely with Dr. Gorin to refine model assumptions.
+                            Estimé los parámetros de la dinámica en tazas de infección, comparando los resultados 
+                            con patrones del modelo SIR. Trabajando en conjunto con el Dr. Gorin para refinar 
+                            nuestras suposiciones del modelo.
                         </li>
                         <li>
-                            Analyzed model outputs to explain real-world phases (e.g., lockdown timing and herd immunity 
-                            effects on wave decay).
+                            Analicé los resultados de ajustes para explicar fases de casos reales (cuarentena e 
+                            inmunidad de rebaño en el decrecimiento de olas).
                         </li>
                     </ul>
                 </div>
@@ -404,7 +449,7 @@
 
                 <div class="resume-content-text resume-content-title" style="padding-top:0px; font-weight: normal;
                 font-size: 18px;">
-                    <b>Idiomas: </b>Español (Nativo), Inglés (Fluído)
+                    <b>Idiomas: </b>Español (Nativo), Inglés (Fluido)
                 </div>
 
 
@@ -431,14 +476,19 @@
     </section>
 
     <!--  A SECTION LEFT FOR LATER  --> 
-    <section id="about" class="section-gray" style="min-height: 100vh;">
-        <h1 class="section-header">ABOUT</h1>
+    <section id="oddsends" class="section-gray" style="min-height: 100vh;">
+        <h1 class="section-header">POPURRÍ</h1>
     </section>
 
     <!--  CONTACT  --> 
-    <section id="contact" class="section-white">
+    <section id="contact" class="section-white" style="min-height: 100vh;">
         <h1 class="section-header">CONTACTO</h1>
-        <p>No dudes en contactarme. Sigue mi trabajo en LinkedIn o envíame un <br> correo a <b>armando.mancilla.b@gmail.com</b></p>
+        <div class="contact-text">
+            <p>
+                No dudes en contactarme. Sigue mi trabajo en LinkedIn o envíame un 
+                correo a <b>armando.mancilla.b@gmail.com</b>
+            </p>
+        </div>
         <div class="contact-buttons">
             <button onclick="window.open('https://www.linkedin.com/in/armando-imanol-mancilla/','_blank')" class="contact-linkedin">
                 LinkedIn

@@ -15,7 +15,7 @@
             <div class="menu">
                 <a href="#portfolio">PORTFOLIO</a>
                 <a href="#resume">RESUME</a>
-                <a href="#about">ABOUT</a>
+                <a href="#oddsends">ODDS & ENDS</a>
                 <a href="#contact">CONTACT</a>
             </div>
             <button data-href='ES/' class="language preserve-scroll-link">
@@ -67,51 +67,92 @@
         <h1 class="section-header">PROJECTS</h1>
         <div class="projects-recipient">
 
-            <!--  PROJECT 1: EPIDEMIC MODELS  -->
+            <!-- Projects are listed backwards, since it would be problem to start from the latest -->
 
-            <div class="project" data-template="project1-template">
+            <!--  PROJECT 4: ANNIHILATION  -->
+
+            <div class="project" data-template="project4-template">
                 <a class="project-container">
-                    <img src="images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <img src="images/projects/annihilation.png" alt="Project 4" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Epidemic Models applied to COVID-19</h3>
-                        <br>
-                        <p>We use the SIR model with some modifications bla bla bla</p>
-                    </div>
-                </a>
-            </div>
-
-
-            <!--  PROJECT 2: RANDOM WALKS  -->
-
-            <div class="project" data-template="project2-template">
-                <a class="project-container">
-                    <img src="images/projects/rw_presentation.jpg" alt="Project 2" class="project-image">
-                    <div class="overlay">
-                        <h3 style="font-size: 21px;">Statistics of Random Walks</h3>
+                        <h3>
+                            Random Walks in Annihilation Dynamics
+                        </h3>
+                        <div class="project-image-text">
+                            The annihilation is the process of two particles colliding and disappearing.
+                            We study the concentration decay of particles undegoing this dynamic.
+                            <h1>
+                                The concentration decay might or might not approach zero, but the certainty 
+                                of our model? Asymptotically undeniable.
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
 
 
             <!--  PROJECT 3: THERMODYNAMICS  -->
-
             <div class="project" data-template="project3-template">
                 <a class="project-container">
-                    <img src="images/projects/Metropolis.gif" alt="Project 2" class="project-image">
+                    <img src="images/projects/Metropolis.gif" alt="Project 3" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Computational Simulation of Thermodynamic Systems</h3>
+                        <h3>
+                            Computational Simulation of Thermodynamic Systems
+                        </h3>
+                        <div class="project-image-text">
+                            We simulate gas particles using Monte-Carlo and Metropolis-Hastings. 
+                            Designed as an educational tool for understanding properties like pressure 
+                            and temperature in non-ideal systems.
+
+                            <h1>
+                                Metropolis-Hastings? More like Metropolis-FAST-ings with these convergence rates.
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
 
 
-            <!--  PROJECT 4: ANNIHILATION  -->
-
-            <div class="project" data-template="project4-template">
+            <!--  PROJECT 2: RANDOM WALKS  -->
+            <div class="project" data-template="project2-template">
                 <a class="project-container">
-                    <img src="images/projects/rw_presentation.jpg" alt="Project 2" class="project-image">
+                    <img src="images/projects/simple_walk.gif" alt="Project 2" class="project-image">
                     <div class="overlay">
-                        <h3 style="font-size: 21px;">Annihilation Random Walks</h3>
+                        <h3>
+                            Random Walks with Resetting and Self-Memory Effects
+                        </h3>
+                        <div class="project-image-text">
+                            Random walks involve taking random steps, where resetting can return the walker 
+                            to the origin, and self-memory allows returning to a previous position. This 
+                            study presents a statistical analysis of the effects of these dynamics.
+
+                            <h1>
+                                Resetting sends walkers home—unlike these results, which are going places
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!--  PROJECT 1: EPIDEMIC MODELS  -->
+
+            <div class="project" data-template="project1-template">
+                <a class="project-container">
+                    <img src="images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Epidemic Models for Heard Immunity & Social Distancing
+                        </h3>
+                        <div class="project-image-text">
+                            We implemented epidemic models to infected waves in Mexico during the COVID-19 
+                            pandemic. We derived analytical solutions where possible and linked findings 
+                            to the Susceptible-Infected-Removed (SIR) model.
+
+                            <h1>
+                                Turns out, 'stay apart' is the only relationship advice epidemiologists agree on
+                            </h1>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -311,7 +352,7 @@
 
                 <!--  PROJECT 3: RANDOM WALKS DISTRIBUTIONS  -->
                 <div class="resume-content-text resume-content-title">
-                    Random Walk with Resetting and Self-Memory Effects
+                    Random Walks with Resetting and Self-Memory Effects
                 </div>
                 <div class="resume-content-text resume-content-info">
                     PRO-SNI Scholarship. December 2022 to June 2023
@@ -433,14 +474,19 @@
     </section>
 
     <!--  A SECTION LEFT FOR LATER  --> 
-    <section id="about" class="section-gray" style="min-height: 100vh;">
-        <h1 class="section-header">ABOUT</h1>
+    <section id="oddsends" class="section-gray" style="min-height: 100vh;">
+        <h1 class="section-header">ODDS & ENDS</h1>
     </section>
 
     <!--  CONTACT  --> 
-    <section id="contact" class="section-white">
+    <section id="contact" class="section-white" style="min-height: 100vh;">
         <h1 class="section-header">CONTACT</h1>
-        <p>Feel free to contact me. Follow my work on LinkedIn or send me an <br> email to <b>armando.mancilla.b@gmail.com</b></p>
+        <div class="contact-text">
+            <p>
+                Feel free to contact me. Follow my work on LinkedIn or send me an 
+                email to <b>armando.mancilla.b@gmail.com</b>
+            </p>
+        </div>
         <div class="contact-buttons">
             <button onclick="window.open('https://www.linkedin.com/in/armando-imanol-mancilla/','_blank')" class="contact-linkedin">
                 LinkedIn
@@ -453,7 +499,7 @@
             </button>
         </div>
     </section>
-    <section class="section-white copyright" style="min-height: 100vh;">
+    <section class="section-white copyright">
         <p>
             © Armando Mancilla, 2025
         </p>

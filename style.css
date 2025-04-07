@@ -281,6 +281,29 @@ canvas {
     border-radius: 5px;
 }
 
+.project-image-text {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.project-container h3 {
+    font-size: 21px;
+    margin-left: 10px;
+    margin-right:10px;
+}
+
+.project-container h1 {
+    font-size: 11px;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right:15px;
+}
+
 .project-container:hover .overlay {
     opacity: 1; /* Show overlay on hover */
 }
@@ -907,6 +930,11 @@ canvas {
         margin-top: 0; */
     }
 
+}
+
+.contact-text {
+    display: inline-block;
+    max-width: 400px;
 }
 
 .contact-buttons {
