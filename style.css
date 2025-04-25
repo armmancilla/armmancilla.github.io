@@ -155,6 +155,7 @@ html {
     height: 100dvh;
     background-color: rgb(255, 255, 255,0.0);
     background-blend-mode: normal;
+    border: 2px solid #b66f6f;
     z-index: 0;
 }
 
@@ -164,6 +165,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 110%;
+    border: 1px solid #617cbd;
     z-index: -1; /* Keeps it in the background */
 }
 
