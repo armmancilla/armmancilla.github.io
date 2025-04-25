@@ -146,6 +146,7 @@ html {
 }
 
 .section-background {
+    padding-top: 80px;
     display: flex;
     margin-top: -50px;
     justify-content: center; /* Centers horizontally */
@@ -413,7 +414,7 @@ canvas {
     border-radius: 1px;
     border: 1px solid #f4f6f6;
     box-shadow: 2px 2px 6px #f4f6f6;
-    font-family: 'Calibri';
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
     z-index: 101;
 }
 
@@ -545,7 +546,7 @@ canvas {
     display: none;
     background: #f4f6f6;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
     color: #333;
     flex-direction: row;
     text-align: left;
@@ -651,7 +652,7 @@ canvas {
     background: #f4f6f6 url(images/location.png) 4px 1px no-repeat;
     background-size: 12px 18px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -667,7 +668,7 @@ canvas {
     background: #f4f6f6 url(images/mail.png) 4px 4px no-repeat;
     background-size: 16px 12px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -690,7 +691,7 @@ canvas {
     background: #f4f6f6 url(images/LinkedIn.png) 3px 2px no-repeat;
     background-size: 18px 18px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -713,7 +714,7 @@ canvas {
     background: #f4f6f6 url(images/GitHub.png) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -736,7 +737,7 @@ canvas {
     background: #f4f6f6 url(images/icon.ico) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -759,7 +760,7 @@ canvas {
     background: #f4f6f6 url(images/download.png) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -840,7 +841,7 @@ canvas {
         position: absolute;
         float: left;
         margin-top: 35px;
-        margin-left: 260px;
+        margin-left: 300px;
         padding: 5px 10px;
         font-size: 14px;
         letter-spacing: 2px;
@@ -948,7 +949,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;
@@ -976,7 +977,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;
@@ -1004,7 +1005,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: Calibri;
+    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;

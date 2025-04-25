@@ -81,6 +81,7 @@ function resizeCanvas() {
 
 resizeCanvas(); // Call it initially
 window.addEventListener('resize',resizeCanvas());
+window.addEventListener("orientationchange",resizeCanvas());
 
 var nPoints = 40;
 var d = canvas.width/(nPoints-1);
