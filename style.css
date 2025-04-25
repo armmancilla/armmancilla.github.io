@@ -152,6 +152,7 @@ html {
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     height: 100vh; /* Full viewport height */
+    height: 100dvh;
     background-color: rgb(255, 255, 255,0.0);
     background-blend-mode: normal;
     z-index: 0;
@@ -859,7 +860,7 @@ canvas {
         flex-direction: column;
         position: absolute;
         background: #f4f6f6;
-        margin-left: 170px;
+        margin-left: 210px;
         margin-top: 64px;
         padding: 30px 20px 0px 5px;
         border-radius: 5px;
