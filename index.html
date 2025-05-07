@@ -68,7 +68,7 @@
         <h1 class="section-header">PROJECTS</h1>
         <div class="projects-recipient">
 
-            <!-- Projects are listed backwards, since it would be problem to start from the latest -->
+            <!-- Projects are listed backwards, since it would be a problem to start from the latest -->
 
             <!--  PROJECT 4: ANNIHILATION  -->
 
@@ -201,7 +201,7 @@
                 <br><br>
                 This project was developed completely in Jupyter Notebook (Python), reading and processing the data
                 using <i>Pandas</i> and <i>Numpy</i> libraries. The analysis and model implementation was done using the
-                <i>Scipy</i> library, and the visualization was done using <i>matplotlib</i>.
+                <i>Scipy</i> library, and the visualization was done using <i>Matplotlib</i>.
             </p>
 
             <h2 id="p1:national">National Waves</h2>
@@ -211,9 +211,10 @@
                 We can study the COVID-19 Pandemic in Mexico from the perspective of individual infection waves.
                 The data was obtained from a CONACYT CSV database, including national and state data. This raw data
                 includes details that difficult its read and process, given that it was provided by multiple medical
-                facilities. One of the main problems we found is on weekends, where the values tend to be lower due to
-                these places working with reduced capacities. I proposed a plan for the cleaning and created a function
-                that helps us automate the process for this particular database.
+                institutions. One of the main problems we found is on weekends, where the values tend to be lower due to
+                these places working with reduced capacities. For this, I proposed a plan for the cleaning, understanding
+                the causes for the anomalies, and created a function that helps us automate this process for this
+                particular database.
 
                 <ol type="I" style="font-size:17px;">
                     <li style="padding-bottom:10px">
@@ -224,12 +225,12 @@
                     </li>
                     <li style="padding-bottom:10px">
                         <b>FINAL SMOOTHING:</b> Once the data is cleaned, we can average the values two more times to
-                        reduce the fluctuations and smooth even more the data, while keeping the reliability.
+                        reduce the fluctuations and smooth them even more, while keeping the reliability.
                     </li>
                     <li style="padding-bottom:10px">
                         <b>DERIVATIVE FOR COMPARISON:</b> Showing a curve that appears to be clean does not offer much
                         information about the advantages of using raw quantities. Since many of the models we will be
-                        working with rely on the derivative of the data, we can see both the fluctuations of each data
+                        working with rely on the derivative, we can see both the fluctuations of each data
                         set and if we can use it to apply our models. Instead of applying the derivative to consecutive
                         days, we set a window of 3 days, equivalent to half-week to reduce the noise of the raw data.
                     </li>
@@ -252,11 +253,11 @@
             <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
 
             <p>
-                The same process can be applied to the state data, but in this case, we have to consider that the
+                The same method can be applied to the state data, but by doing so, we have to consider that the
                 number of cases is much lower than the national data. This means that the fluctuations are more
                 pronounced and the anomalies are harder to detect. We can use the same criteria as before, but we have
                 to be careful with the tolerance factor, since it can lead to difficulties in the model application.
-                In this case, we will focus exclusively on the state data of the most populous region in Mexico.
+                In this case, we will focus exclusively on the state data of the most populous regions in Mexico.
             </p>
 
             <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexicoStates.png">
@@ -291,7 +292,7 @@
                         Moments
                     </a>
                     <a href="#p2:individual">
-                        1. Individual
+                        1. Individual Random Walks
                     </a>
                     <a href="#p2:simple">
                         2. Simple Random Walk
@@ -349,7 +350,7 @@
                 </ul>
             </p>
             <p>
-                For this, I designed all the simulation for the different cases of random walks in <b>Fortran</b>, using
+                For a better performance, I designed all the simulation for the different cases of random walks in <b>Fortran</b>, using
                 the <i>OMP Library</i>, measuring the distribution of various walker realizations and the statistical
                 properties we will later analyze. The results are then processed and displayed in a <i>Jupyter Notebook</i>.
                 Here, I plan to show the results of the simulations, as well as some of the theoretical background (a lot
@@ -361,11 +362,11 @@
 
             <p>
                 The <b>Random Walk</b> is a widespread concept, pilar in many topics related to stochastic processes.
-                It consists basically of a succession of random steps, and based on it, there are multiple ways in
+                It consists of a series of random steps or decisions, and based on it, there are multiple ways in
                 which we can create diversified dynamics.
                 <br> <br>
                 This project was thought to serve as the fundaments to understand Random Walk theory and codding, to
-                ease the later development of models based on random walkers. This Notebook assembles the results
+                ease the later development of models based on random walkers. This section assembles the results
                 provided by the Fortran codes simulations, as well as giving some analytical background.
             </p>
 
@@ -436,8 +437,8 @@
 
             <p>
                 Before diving into the theory behind random walks, I want to briefly discuss the most general details
-                about these processes. Starting from the <i>simple</i> case of the <b>random walk</b>, we can define it
-                just as a succession of random steps, and visualize it by the sum of all the steps, let us name it
+                about these processes. Starting from the <i>simple</i> case of the <b>random walk</b>. We can define it
+                just as a sequence of random steps, and visualize it by the sum of all the steps, let us name it
                 <span class="inline-eq"><i>X</i></span>:
             </p>
             <img class="equation" src="images/projects/equations/eq4.svg">
@@ -446,7 +447,7 @@
                 <span class="inline-eq"><i>n</i></span>.
                 <br><br>
                 To make it easier to understand and study, these random steps can only be either <span class="inline-eq">
-                +1</span> or <span class="inline-eq">-1</span>, both of them can be chosen with a
+                +1</span> or <span class="inline-eq">-1</span>, both of them chosen with a
                 probability of <span class="inline-eq">1/2</span>. This can be thought of as a walker that can go
                 up or down.
             </p>
@@ -485,7 +486,7 @@
             </p>
             <img class="equation" src="images/projects/equations/eq5.svg">
             <p>
-                We aim to study the random walk behavior in the continuous regime, for this, we need to consider the
+                However, we aim to study the random walk behavior in the continuous regime, for this, we need to consider the
                 finite differences approximations to obtain a Partial Differential Equation:
             </p>
             <img class="equation" src="images/projects/equations/eq6.svg">
@@ -495,7 +496,8 @@
             </p>
             <img class="equation" src="images/projects/equations/eq7.svg">
             <p>
-                with <span class="inline-eq"><i>D = </i>1/2</span>. This is the <i>Diffusion Equation</i>, unsurprisingly for diffusive particles as one can think random walkers to be.
+                with <span class="inline-eq"><i>D = </i>1/2</span>. This is the <i>Diffusion Equation</i>,
+                unsurprisingly for diffusive particles as one can think random walkers to be.
             </p>
 
             <h3 id="p2:simple:pos">2.1. Final Positions</h3>
@@ -516,7 +518,7 @@
             </p>
             <img class="images" style="max-width: 300px;" src="images/projects/project2/distribution.png">
             <div class="images caption" style="max-width: 300px;">Exemplification of how we measure the distribution of
-            final positions at a certain time t=n.</div>
+            final positions at a certain time <i>t=n</i>.</div>
             <p>
                 The rest of the statistical properties can be calculated from this function. Not surprisingly, for a
                 symmetrical distribution, the skewness results in <span class="inline-eq">&Mu;<sub>3</sub><i> = </i>0</span>,
@@ -525,9 +527,10 @@
             <img class="images" style="max-width: 600px;" src="images/projects/project2/simple_distribution_position.png">
             <div class="images caption">Distribution of final positions in the Simple Random Walk.</div>
             <p>
-                All the simulation results follow a similar behavior to a Gaussian, only differing in the variance which
-                increases linearly with time. Nevertheless, the statistical moments measured at equal times are the same.
-                As we mentioned before, the kurtosis clearly indicates a distribution close to a Gaussian.
+                All the simulation results follow a similar behavior to a Gaussian, only differing from each other
+                in the variance which increases linearly with time. Nevertheless, the statistical moments measured at
+                equal times are the same. As we mentioned before, the kurtosis clearly indicates a distribution close to
+                a Gaussian.
             </p>
 
             <h3 id="p2:simple:vis">2.2. Visits</h3>
@@ -548,7 +551,7 @@
             <p>
                 Here, <span class="inline-eq">erfc<i>()</i></span> is the complementary error function. In this case,
                 the values of the statistical moments are not so intuitive, but they can be calculated with the PDF.
-                For this case, the variance is just half of what we expect for the final positions,
+                The variance is just half of what we expect for the final positions,
                 <span class="inline-eq">&Mu;<sub>2</sub><i> = Dt</i></span>. The kurtosis now has a value of
                 <span class="inline-eq">&Mu;<sub>4</sub><i> = </i>4</span>, meaning more values are concentrated around
                 the mean, naturally for the measurement of visits.
@@ -623,8 +626,8 @@
             <p>
                 Something interesting happens when we try to find the PDF for the visits. If we use our stationary
                 solution we get the same result, as its independence of time yields <span class="inline-eq"><i>t</i></span>
-                as both the result of the integral and the normalization constant. And the simulations suggest there is not
-                a big change in the dynamics.
+                as both the result of the integral and the normalization constant, thus nullifying. And the simulations
+                suggest there is not a big change in the dynamics.
             </p>
             <img class="images" style="max-width: 600px;" src="images/projects/project2/resetting_distribution_visits.png">
             <div class="images caption">Distribution of visits in the Random Walk with Resetting.</div>
@@ -643,7 +646,7 @@
             <p>
                 This case also allows walkers' relocation besides the normal step, but instead of placing the walker in a
                 defined position, this is chosen according to a probability distribution of all the visited sites up to
-                that point.
+                that point. Meaning that the walker has memory of the places it has been to.
             </p>
             <img class="images" src="images/projects/project2/memory_diagram.png">
             <div class="images caption">Random walker movement schematics undergoing memory dynamics.</div>
@@ -667,7 +670,7 @@
             </p>
             <img class="equation" src="images/projects/equations/eq15.svg">
             <p>
-                Due to the symmetrical nature of the phenomena, one can anticipate the average to be zero, thus we can
+                Due to the symmetrical nature of the phenomenon, one can anticipate the average to be zero, thus we can
                 assume the solution to apply to the variance <span class="inline-eq">&Mu;<sub>2</sub></span>:
             </p>
             <img class="equation" src="images/projects/equations/eq16.svg">
@@ -675,7 +678,7 @@
                 Here, <span class="inline-eq">E<sub>1</sub></span> is an Exponential Integral function and
                 <span class="inline-eq"><i>&gamma;<sub>e</sub></i></span> is the Euler's constant. We can try to make an
                 approximation to the simulated PDF by using the Gaussian equation, changing the variance for the value
-                of <span class="inline-eq">&Mu;<sub>2</sub><i>(t)</i></span>.
+                of <span class="inline-eq">&Mu;<sub>2</sub><i>(t)</i></span> in the last step, only for comparison reasons.
             </p>
             <img class="images" style="max-width: 600px;" src="images/projects/project2/memory_distribution_position.png">
             <div class="images caption">Distribution of final positions in the Random Walk with Memory.</div>
@@ -683,7 +686,7 @@
                 We see that, although the walkers positions are constrained around the <span class="inline-eq">0</span>,
                 the variance is not as slow as in the resetting case. Even though we could think the distribution
                 coincides with a Gaussian, the kurtosis clearly indicates something different, and the approximation
-                we proposed ends up backing this argument, as the tails grow larger.
+                we proposed ends up backing this argument, as the tails grow larger than those from a Gaussian.
             </p>
 
             <h3 id="p2:memory:vis">4.2. Visits</h3>
@@ -693,7 +696,7 @@
                 This is an extension of what we have seen about the visits distributions. However, given that we do
                 not know the PDF for the final positions of a random walk with memory, we also have no information
                 about the PDF for the visits. Unlike the relation between the PDF in the visits and in the final
-                positions, there is no connection between the variance among cases.
+                positions, there is no connection between the variances of these cases.
             </p>
             <img class="images" style="max-width: 600px;" src="images/projects/project2/memory_distribution_visits.png">
             <div class="images caption">Distribution of visits in the Random Walk with Memory.</div>
@@ -831,7 +834,7 @@
                 being the number of nodes. We can look at other variables as the distribution of the nearest neighbor
                 distance, which is defined as the number of nodes that separates two contiguous walkers.
                 <br><br>
-                The simulation is done in a 1D ring, with periodic boundary conditions. The walkers are placed randomly
+                The simulation is done in a 1D ring, as a lattice with periodic boundary conditions. The walkers are placed randomly
                 on the nodes, and the annihilation is done when two walkers are on the same node. The simulations are
                 developed in <b>Fortran</b>, using the <i>OMP Library</i>, and the results are shown in a <i>Jupyter
                 Notebook</i>.
@@ -845,7 +848,7 @@
                 behavior of the concentration. To understand this, let's discuss the two cases separately. For starters,
                 in the Asynchronous update, we select a node randomly, and if there is a walker on it, we update its
                 position, and if there is another walker on the new position, we remove both of them. This means that the
-                annihilation only depends on one walker movement. We repeat this process a number of
+                annihilation only depends on one walker's movement. We repeat this process a number of
                 <span class="inline-eq"><i>n</i></span> (number of nodes) times to complete one MonteCarlo Step (MCS).
                 Now, the Synchronous update is a little bit more complex, and it is worth showing a diagram to explain it:
             </p>

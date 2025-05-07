@@ -170,24 +170,115 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
-                    <hr class="bar-hbar">
-                    <a href="#introduction">
-                        Description
+                    <h4>Contenidos</h4>
+                    <hr>
+                    <a href="#p1:description">
+                        Descripción
+                    </a>
+                    <a href="#p1:national">
+                        Olas Nacionales
+                    </a>
+                    <a href="#p1:states">
+                        Casos Estatales
+                    </a>
+                    <a href="#p1:github">
+                        Programas y Archivos
                     </a>
                 </div>
             </div>
-            <h3>Epidemic Models for Heard Immunity and Social Distancing</h3>
+
+            <h1>Modelos Epidemiológicos para Inmunidad de Rebaño y Distanciamiento</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>PRO-SNI Scholarship. May 2021 to September 2021</i></p>
-            <p>Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with exponential growth and
-                variable infection rate to infected waves during the COVID-19 pandemic.</p>
-            <ul>
-                <li>Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in Jupyter Notebook.</li>
-                <li>Identified distinct infection waves and fitted an exponential-growth model to COVID-19 case data in Mexico.</li>
-                <li>Derived analytical solutions where possible and linked findings to the Susceptible-Infected-Removed (SIR) model.</li>
-                <li>Calculated key parameters to model infection rate dynamics at the start and end of each wave.</li>
-            </ul>
+            <h3 style="margin-top:-20px; font-size: 18px;"><i>Pandemia de COVID-19 en México (2020-2022)</i></h3>
+
+            <h2 id="p1:description">Descripción</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Durante la pandemia de COVID-19, los cases de infecciones diarias fueron procesados y reportados a
+                través de bases de datos públicas por CONACYT. Por razones de privacidad, no puedo revelar todos los
+                detalles sobre los Modelos Epidemiológicos que implementamos. Sin embargo, puedo proporcionar un
+                panorama general de algunas de las preparaciones requeridas para el análisis posterior, incluyendo
+                la limpieza de datos y la identificación de olas de infecciones.
+                <br><br>
+                Este proyecto fue elaborado completamente en Jupyter Notebook (Python), leyendo y procesando los datos
+                usando las librerías <i>Pandas</i> y <i>Numpy</i>. El análisis y la implementación del modelo se realizó
+                utilizando la librería <i>Scipy</i>, y la visualización se realizó utilizando <i>Matplotlib</i>.
+            </p>
+
+            <h2 id="p1:national">Olas Nacionales</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Estudiamos la pandemia de COVID-19 en México desde la perspectiva de las olas de infección.
+                Los datos fueron obtenidos de una base de datos CSV de CONACYT, incluyendo datos nacionales y estatales.
+                Los datos sin procesar incluyen detalles que dificultan su lectura y procesamiento, dado que fueron
+                proporcionados por múltiples instituciones médicas. Uno de los principales problemas que encontramos está
+                en los fines de semana, donde los valores tienden a ser más bajos debido a que muchos de estos lugares
+                trabajan con capacidades reducidas. Para ello, propuse un plan para la limpieza entendiendo las causas de
+                las anomalías y creé una función que nos ayuda a automatizar este proceso para esta base de datos en
+                particular.
+
+                <ol type="I" style="font-size:17px;">
+                    <li style="padding-bottom:10px">
+                        <b>CRITERIO DE ANOMALÍA:</b> Iniciando con un promedio inicial de los datos, debemos seleccionar
+                        un factor de tolerancia que, una vez multiplicado por este promedio, pueda separar las anomalías
+                        de los valores deseados, este debe ajustarse manualmente. Después de encontrar una anomalía,
+                        reemplazamos su valor con el promedio de los 6 vecinos circundantes, escogí hacerlo de esta
+                        forma para hacer un promedio semanal.
+                    </li>
+                    <li style="padding-bottom:10px">
+                        <b>SUAVIZADO FINAL:</b> Una vez que los datos han sido limpiados, podemos promediar los valores
+                        dos veces más para reducir las fluctuaciones y suavizarlos aún más, a la par que mantenemos su
+                        fiabilidad.
+                    </li>
+                    <li style="padding-bottom:10px">
+                        <b>DERIVADA PARA COMPARACIÓN:</b> El mostrar una curva que parece estar limpia no ofrece mucha
+                        información sobre las ventajas por sobre usar datos sin procesar. Dado que muchos de los
+                        modelos con los que trabajaremos se basan en la derivada, podemos ver tanto las
+                        fluctuaciones de cada conjunto de datos como si podemos usarlo para aplicar nuestros modelos.
+                        En lugar de aplicar la derivada a días consecutivos, establecemos una ventana de 3 días,
+                        equivalente a media semana, esto para reducir el ruido de los datos sin procesar.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                Con los datos limpios, podemos comenzar la identificación de las olas específicas en la pandemia. Este
+                proceso debe hacerse manualmente, pero gracias a la derivada, podemos facilitarlo al identificar los
+                lugares donde la derivada es cero, algunos de los cuales corresponderán a los picos de las olas. Y después
+                de delimitar los tiempos donde medimos cada ola, y mostrar las defunciones, podemos obtener una imagen más
+                completa de nuestro fenómeno.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="../images/projects/project1/PandemicMexico.png">
+            <div class="images caption">Pandemia de COVID-19 en Mexico (2020-2022). En las regiones gris claras
+                el número de casos incrementa y en las regiones gris obscuras este número se reduce.</div>
+            </div>
+
+            <h2 id="p1:states">Casos Estatales</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                El mismo método puede aplicarse a los datos estatales, pero al hacerlo, debemos considerar que el
+                número de casos es mucho menor que el nacional. Esto significa que las fluctuaciones son más
+                pronunciadas y las anomalías son más difíciles de detectar. Podemos usar los mismos criterios que antes,
+                pero debemos tener cuidado con el factor de tolerancia, ya que puede llevar a dificultades en la
+                aplicación del modelo. En este caso, nos centraremos exclusivamente en los datos estatales de
+                la región más pobladas de México.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="../images/projects/project1/PandemicMexicoStates.png">
+            <div class="images caption">Casos diarios de infectados para los cinco estados más poblados de México.</div>
+            </div>
+
+            <h3 id="p1:github">Programas y Archivos</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                Puedes consultar los programas en mi
+                <a href="https://github.com/armmancilla/epidemic-models" target="_blank">repositorio de GitHub</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 2 TEMPLATE  -->
@@ -196,18 +287,459 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contenidos</h4>
                     <hr>
-                    <a href="#introduction">
-                        Description
+                    <a href="#p2:description">
+                        Descripción
+                    </a>
+                    <a href="#p2:introduction">
+                        Introducción
+                    </a>
+                    <a class="sub" href="#p2:introduction:moments">
+                        Momentos
+                    </a>
+                    <a href="#p2:individual">
+                        1. Caminatas Aleatorias Individuales
+                    </a>
+                    <a href="#p2:simple">
+                        2. Caminata Aleatoria Simple
+                    </a>
+                    <a class="sub" href="#p2:simple:pos">
+                        2.1. Posición Final
+                    </a>
+                    <a class="sub" href="#p2:simple:vis">
+                        2.2. Visitas
+                    </a>
+                    <a href="#p2:resetting">
+                        3. Caminata Aleatoria con Reseteo
+                    </a>
+                    </a>
+                    <a class="sub" href="#p2:resetting:pos">
+                        3.1. Posición Final
+                    </a>
+                    <a class="sub" href="#p2:resetting:vis">
+                        3.2. Visitas
+                    </a>
+                    <a href="#p2:memory">
+                        4. Caminata Aleatoria con Memoria
+                    </a>
+                    </a>
+                    <a class="sub" href="#p2:memory:pos">
+                        4.1. Posición Final
+                    </a>
+                    <a class="sub" href="#p2:memory:vis">
+                        4.2. Visitas
+                    </a>
+                    <a href="#p2:github">
+                        Programas y Archivos
                     </a>
                 </div>
             </div>
-            <h3>Statistics of the Random Walk with Resetting and Self-Memory</h3>
+
+            <h1>Caminatas Aleatorias con Efectos de Reseteo y Memoria Interna</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Exploring the behavior of particles in random motion.</i></p>
-            <p>This project visualizes how particles move in a random walk pattern using Python and Matplotlib.</p>
-            <p>By analyzing different step probabilities, we can understand diffusion processes, market fluctuations, and more.</p>
+
+            <h2 id="p2:description">Descripción</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            <p>
+                En este proyecto, estudiamos la Caminata Aleatoria (definida simplemente como una sucesión de pasos
+                aleatorios) en una red discreta, a través de la distribución de <b>posiciones finales</b> (su
+                <span class="inline-eq"><i>x</i></span> posición en un tiempo <span class="inline-eq"><i>t</i></span>),
+                o la distribución de las <b>visitas</b> (todas las posiciones en su camino), así como las propiedades
+                estadísticas de estas distribuciones: varianza, asimetría, curtosis. Consideramos, además de la caminata
+                aleatoria simple, dos modelos:
+
+                <ul style="font-size: 16px;">
+                    <li>
+                        <b>Reseteo:</b> El caminante puede regresar a su posición inicial con cierta probabilidad.
+                    </li>
+                    <li>
+                        <b>Memoria:</b> El caminante puede regresar a una de las posiciones que ha visitado anteriormente.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Para un mejor rendimiento, diseñé toda la simulación de los diferentes cases de caminatas aleatorias en
+                <b>Fortran</b>, usando la <i>OMP Library</i>, midiendo la distribución de varias realizaciones de
+                caminantes y las propiedades estadísticas que analizaremos más adelante. Los resultados son luego
+                procesados y mostrados en un <i>Jupyter Notebook</i>. Aquí, planeo mostrar los resultados de las
+                simulaciones, así como algo del contexto teórico (¡mucho texto!).
+            </p>
+
+            <h2 id="p2:introduction">Introducción</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                La <b>Caminata Aleatoria</b> es un concepto ampliamente conocido, pilar en muchos temas relacionados con
+                procesos estocásticos. Consiste básicamente en una sucesión de pasos aleatorios, y a partir de ella, hay
+                múltiples formas en las que podemos crear dinámicas diversificadas.
+                <br><br>
+                Este proyecto fue pensado para servir
+                como fundamento para entender la teoría y codificación de Caminatas Aleatorias, para facilitar el
+                desarrollo de futuros modelos basados en caminantes aleatorios. Este apartado reúne los resultados
+                producidos por las simulaciones de códigos Fortran, así como también proporciona un poco de
+                contexto teórico.
+            </p>
+
+            <h3 id="p2:introduction:moments">Momentos</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Los resultados de este proyecto se basan principalmente en Funciones de Densidad de Probabilidad (PDFs),
+                y en el análisis de los momentos estadísticos, propiedades únicas de cada distribución. Hay algunos
+                conceptos que necesitamos definir para tener una mejor comprensión de las siguientes secciones. Podemos
+                definir los <i>momentos en bruto</i> de cualquier variable <span class="inline-eq"><i>z</i></span> como
+            </p>
+            <img class="equation" src="../images/projects/equations/eq1.svg">
+            <p>
+                Propiedades como la varianza, asimetría y curtosis son momentos estadísticos calculados a partir de los
+                momentos en bruto.
+            </p>
+            <img class="equation" src="../images/projects/equations/eq2.svg">
+            <p>
+                Y lo mismo aplica para los siguientes momentos. En combinación con estos dos, siempre que tengamos una
+                PDF analítica, podemos intentar calcular los momentos estadísticos también.
+                <br><br>
+                Dentro de la simulación, tenemos que considerar cantidades discretas, y el cálculo numérico de los
+                momentos en bruto obedece a la siguiente fórmula:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq3.svg">
+            <p>
+                Es obvio notar que esto es solo un promedio sobre el número de realizaciones
+                <span class="inline-eq">m</span>. En nuestras simulaciones, <span class="inline-eq">z</span>
+                corresponde a las posiciones finales.
+                <br><br>
+                Debemos discutir un poco más sobre el significado de los momentos estadísticos. Estas son cantidades que
+                muestran ciertos aspectos de una Distribución de Probabilidad, incluso podemos pensar en ellos como
+                identificadores personalizados. El primero, el valor medio, <span class="inline-eq">&Mu;<sub>1</sub></span>,
+                representa un punto que indica la tendencia central de los datos, para distribuciones simétricas, este
+                se ubica sobre su eje de simetría. En el contexto de Caminatas Aleatorias, este suele ser
+                <span class="inline-eq">0</span>. El siguiente es la varianza,
+                <span class="inline-eq">&Mu;<sub>2</sub></span>, que indica qué tan dispersos están los datos
+                alrededor de la media. En este tema, puede darnos información sobre las posiciones finales que los
+                caminantes pueden alcanzar, y qué tipo de dinámica seguirán sus caminos. El tercer momento es bastante
+                directo, se llama asimetría, <span class="inline-eq">&Mu;<sub>3</sub></span>, y su valor mide la
+                simetría de la distribución, si es <span class="inline-eq">0</span>, la distribución es simétrica, si es
+                negativo, está sesgada a la izquierda, y si es positivo, está sesgada a la derecha. Finalmente, el
+                cuarto momento, la curtosis, <span class="inline-eq">&Mu;<sub>4</sub></span>, se refiere a la forma de
+                de la distribución, específicamente la forma de sus colas. Cuanto mayor sea la curtosis, más anchas
+                serán las colas, y para valores más bajos la mayoría de los datos se concentran alrededor de la media,
+                con colas más chicas. Para referencia, la curtosis de la distribución normal es de
+                <span class="inline-eq">3</span>.
+            </p>
+            <img class="images" src="../images/projects/project2/moments_diagram.png">
+            <div class="images caption">Diagrama ilustrativo sobre los efectos de los momentos estadísticos en una distribución.</div>
+
+            <p>
+                Hay un aspecto técnico que tenemos que considerar para medir una distribución de posiciones de caminantes
+                aleatorios, esta es la posible posición final. Para tener una mejor idea, pensemos en una
+                caminata aleatoria con <span class="inline-eq">3</span> pasos comenzando desde
+                <span class="inline-eq">0</span>: en el primer paso, el caminante solo puede estar en
+                <span class="inline-eq">-1</span> o <span class="inline-eq">+1</span>, el cero no es parte de estas
+                opciones. En el segundo paso, el caminante puede estar en <span class="inline-eq">-2,0,+2</span>, aquí ya
+                comenzamos a notar un patrón. En el paso final, la tendencia es más visible, ya que las posiciones
+                finales posibles del caminante son <span class="inline-eq">-3,-1,+1,+3</span>. Por lo tanto, vemos que la
+                posición final del caminante, en una malla discreta, depende de si el número de pasos es impar o par,
+                y una medida de la distribución bajo estas circunstancias tendría huecos, dependiendo del número de pasos.
+                Para contrarrestar este efecto, al final del tiempo, donde pretendemos medir las posiciones finales,
+                solo actualizamos la mitad de los caminantes, de modo que la mitad de las posiciones finales sean números
+                pares y la otra mitad sean números impares.
+            </p>
+
+            <h2 id="p2:individual">1. Caminatas Aleatorias Individuales</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Antes de adentrarnos en la teoría detrás de las caminatas aleatorias, quiero hablar brevemente
+                de los detalles más generales sobre estos procesos. Comenzando por el caso <i>simple</i> de la
+                <b>Caminata Aleatoria</b>. Podemos definirla como una secuencia de pasos aleatorios, y visualizarla
+                como la suma de todos ellos. Llamemos a esta suma <span class="inline-eq"><i>X</i></span>:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq4.svg">
+            <p>
+                Y, por supuesto, el valor final de <span class="inline-eq"><i>X</i></span> depende de la cantidad de pasos
+                <span class="inline-eq"><i>n</i></span>.
+                <br><br>
+                Para facilitar la comprensión y el estudio, estos pasos aleatorios solo pueden ser
+                <span class="inline-eq">+1</span> o <span class="inline-eq">-1</span>, ambos elegidos con una
+                probabilidad de <span class="inline-eq">1/2</span>. Esto se puede pensar como un caminante que puede ir
+                hacia arriba o hacia abajo.
+            </p>
+            <img class="images" style="max-width: 500px;" src="../images/projects/project2/individual_simple.png">
+            <div class="images caption">Caminata Aleatoria Individual.</div>
+            <p>
+                Si en lugar de dos opciones (<span class="inline-eq">+1,-1</span>), pudiéramos hacer que el caminante
+                regrese a su posición inicial, <span class="inline-eq"><i>X<sub>0</sub></i></span>, con una probabilidad
+                <span class="inline-eq"><i>&gamma; =</i> 1/10</span>, es decir, resetearlo aproximadamente cada
+                <span class="inline-eq">10</span> pasos, entonces tendríamos lo que llamamos la caminata aleatoria con
+                <b>reseteo</b>. Más adelante, veremos cómo esto afecta la dinámica de la caminata simple, pero
+                por ahora puedo decir que lo mantendrá más cerca de esta posición
+                <span class="inline-eq"><i>X<sub>0</sub></i></span>.
+            </p>
+            <img class="images" style="max-width: 500px;" src="../images/projects/project2/individual_resetting.png">
+            <div class="images caption">Caminata Aleatoria Individual con Reseteo.</div>
+            <p>
+                Ahora bien, si la reubicación del caminante no se hace a su posición inicial, sino a una de las
+                posiciones que ha visitado anteriormente, estamos permitiendo que nuestro caminante tenga <b>memoria</b>.
+                Con esto, los lugares que visita más tienen más posibilidades de ser elegidos cuando salta.
+                Esta dinámica se implementa con una probabilidad <span class="inline-eq"><i>&gamma;</i></span>.
+                <br><br>
+                Para visualizar esto, hacemos una simulación de caminata aleatoria con memoria antes de mostrarla, así que
+                el caminante que mostramos tiene de antemano una distribución de visitas existente.
+            </p>
+            <img class="images" style="max-width: 500px;" src="../images/projects/project2/individual_memory.png">
+            <div class="images caption">Caminata Aleatoria Individual con Memoria.</div>
+
+            <h2 id="p2:simple">2. Caminata Aleatoria Simplek</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Con ambos tiempo y espacio discretos, como vimos en la sección de
+                <a href="#p2:individual">Caminatas Aleatorias Individuales</a>, la probabilidad de encontrar al
+                caminante en la posición <span class="inline-eq"><i>x</i></span> en un paso dado
+                <span class="inline-eq"><i>n</i></span> está definida por la ecuación de evolución
+            </p>
+            <img class="equation" src="../images/projects/equations/eq5.svg">
+            <p>
+                Sin embargo, queremos estudiar el comportamiento de la caminata aleatoria en el régimen continuo, 
+                para esto, debemos considerar las aproximaciones de diferencias finitas para obtener una Ecuación
+                Diferencial Parcial:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq6.svg">
+            <p>
+                Con esta aproximación, podemos cambiar a las variables continuas
+                <span class="inline-eq"><i>x,t</i></span>, y con un poco de álgebra, la ecuación que describe la
+                evolución de la probabilidad se convierte en
+            </p>
+            <img class="equation" src="../images/projects/equations/eq7.svg">
+            <p>
+                con <span class="inline-eq"><i>D = </i>1/2</span>. Esta es la <i>Ecuación de Difusión</i>, como podría
+                esperarse para partículas difusivas, ya que se puede pensar en los caminantes aleatorios como tales.
+            </p>
+
+            <h3 id="p2:simple:pos">2.1. Posiciones Finales</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                La solución a la Ecuación de Difusión se puede obtener haciendo un cambio de variable, usando la
+                transformada de Fourier:
+                <span class="inline-eq" style="text-decoration: overline;"><i>P</i></span>
+                <span class="inline-eq"><i>(k,t) = &int; P(x,t)</i> exp<i>(-ikx)</i> d<i>x</i></span>. El resultado es una
+                función Gaussiana:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq8.svg">
+            <p>
+                Aquí, también conseguimos algunos resultados prematuros al comparar esto con la distribución normal, por
+                ejemplo, el valor medio es <span class="inline-eq">&Mu;<sub>1</sub><i> = x<sub>0</sub></i></span>
+                (<span class="inline-eq">0</span> en nuestro caso), y la varianza es
+                <span class="inline-eq">&Mu;<sub>2</sub><i> = 2Dt</i></span>. Esta función es una distribución de
+                <b>Posiciones Finales</b>, es decir, la posición donde se puede encontrar a un caminante después de un
+                tiempo <span class="inline-eq"><i>t</i></span>.
+            </p>
+            <img class="images" style="max-width: 300px;" src="../images/projects/project2/distribution.png">
+            <div class="images caption" style="max-width: 300px;">Ejemplificación de cómo medimos la distribución de
+            posiciones finales en un tiempo determinado.</div>
+
+            <p>
+                El resto de las propiedades estadísticas se pueden calcular a partir de esta función. No es sorprendente
+                que para una distribución simétrica, la asimetría resulte en
+                <span class="inline-eq">&Mu;<sub>3</sub><i> = </i>0</span>, y la curtosis es la misma que la de la
+                distribución Gaussiana, <span class="inline-eq">&Mu;<sub>4</sub><i> = </i>3</span>.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/simple_distribution_position.png">
+            <div class="images caption">Distribución de las posiciones finales en la Caminata Aleatoria Simple.</div>
+            <p>
+                Todos los resultados de la simulación siguen un comportamiento similar al de una Gaussiana, solo
+                difiriendo entre sí en la varianza que aumenta linealmente con el tiempo. Sin embargo, los momentos
+                estadísticos medidos en tiempos iguales son los mismos. Como mencionamos antes, la curtosis indica
+                claramente una distribución cercana a una Gaussiana.
+            </p>
+
+            <h3 id="p2:simple:vis">2.2. Visitas</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Existe también otro tipo de distribución que recopila toda la información sobre el camino que siguen los
+                caminantes. En lugar de observar únicamente las posiciones finales, podemos llevar un registro de las
+                visitas que los caminantes hacen a las posiciones. En un sentido matemático, esto es similar a apilar
+                todas las distribuciones de posiciones finales para diferentes tiempos, hasta el tiempo
+                <span class="inline-eq"><i>t</i></span>.
+            </p>
+            <img class="equation" src="../images/projects/equations/eq9.svg">
+            <p>
+                con <span class="inline-eq">&Nscr;</span> siendo la constante de normalización. Para la caminata simple,
+                esto resulta en
+            </p>
+            <img class="equation" src="../images/projects/equations/eq10.svg">
+            <p>
+                Aquí, <span class="inline-eq">erfc<i>()</i></span> es la función error complementaria. En este caso,
+                los valores de los momentos estadísticos no son tan intuitivos, pero se pueden calcular con la PDF.
+                La varianza es solo la mitad de lo que esperamos para las posiciones finales,
+                <span class="inline-eq">&Mu;<sub>2</sub><i> = Dt</i></span>. La curtosis ahora tiene un valor de
+                <span class="inline-eq">&Mu;<sub>4</sub><i> = </i>4</span>, lo que significa que más valores están
+                concentrados alrededor de la media, naturalmente para la medición de visitas.
+                <br><br>
+                Hay un cambio en cómo medimos los momentos estadísticos, relacionado con la normalización. Cuando solo
+                contamos las posiciones finales de los caminantes, para promediar los momentos solo dividimos por el
+                número de realizaciones <span class="inline-eq"><i>m</i></span> 
+                (<a href="#p2:introduction">Introducción</a>). Sin embargo, al tener en cuenta todas las
+                visitas, también debemos promediar en el tiempo:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq11.svg">
+            <p>
+                Por esta condición, en las simulaciones, todas las realizaciones deben hacerse al mismo tiempo,
+                en lugar de comenzar la siguiente una vez que la actual ha terminado.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/simple_distribution_visits.png">
+            <div class="images caption">Distribución de visitas en la Caminata Aleatoria Simple.</div>
+
+            <h2 id="p2:resetting">3. Caminata Aleatoria con Reseteo</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                En el caso del reseteo, un caminante aleatorio no solo puede moverse a posiciones vecinas, sino que
+                también tiene una probabilidad <span class="inline-eq"><i>&gamma;</i></span> de regresar a su posición
+                inicial <span class="inline-eq"><i>x<sub>0</sub></i></span>. Esto limita la difusión del caminante,
+                es decir, qué tan amplio es el rango de posiciones finales posibles.
+            </p>
+            <img class="images" src="../images/projects/project2/resetting_diagram.png">
+            <div class="images caption">Esquema del movimiento de un caminante aleatorio bajo las dinámicas de reseteo.</div>
+            <p>
+                Podemos encontrar una ecuación diferencial parcial (PDE) que describe la evolución de la PDF para el caso de
+                reseteo. Comenzando desde la Ecuación de Difusión, que define la dinámica de la caminata aleatoria simple,
+                usamos dos nuevos términos que implementan el reseteo. Cuando un caminante es reubicado, con
+                probabilidad <span class="inline-eq"><i>&gamma;</i></span>, la PDF pierde un flujo de probabilidad en la
+                posición <span class="inline-eq"><i>x</i></span> que se suma a la posición inicial del caminante
+                <span class="inline-eq"><i>x<sub>0</sub></i></span>, representada como una función
+                <span class="inline-eq"><i>&delta;</i></span> (Evans M. & Majumdar S., 2011).
+            </p>
+            <img class="equation" src="../images/projects/equations/eq12.svg">
+            <p>
+                En este caso, la constante de difusión <span class="inline-eq"><i>D</i></span> no es la misma que para la
+                caminata simple. Empíricamente, encontramos que <span class="inline-eq"><i>D = (1 - &gamma;)/2</i></span>.
+            </p>
+
+            <h3 id="p2:resetting:pos">3.1. Posiciones Finales</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Esta PDE puede reducirse a una ecuación estacionaria, que se convierte en una Ecuación Diferencial
+                Ordinaria no homogénea. Después de resolver esta nueva ecuación, obtenemos una solución independiente del
+                tiempo.
+            </p>
+            <img class="equation" src="../images/projects/equations/eq13.svg">
+            <p>
+                con <span class="inline-eq"><i>&alpha;<sub>0</sub> = &radic;</i></span><span class="inline-eq" 
+                style="text-decoration: overline;"><i>2&gamma;/(1 - &gamma;)</i></span>. En la misma línea, usando la
+                solución estacionaria podemos obtener algunos resultados para los momentos. Por ejemplo, la varianza,
+                también independiente del tiempo, tiene un valor de
+                <span class="inline-eq">&Mu;<sub>2</sub><i> = (1 - &gamma;)/&gamma;</i></span>. La curtosis muestra un
+                alto valor de <span class="inline-eq">&Mu;<sub>4</sub><i> = 6</i></span>, independientemente de la
+                probabilidad de reseteo, indicando colas más grandes para estas distribuciones.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/resetting_distribution_position.png">
+            <div class="images caption">Distribución de las posiciones finales en la Caminata Aleatoria con Reseteo.</div>
+            <p>
+                El reseteo es uno de los modelos más notables de la caminata aleatoria. La varianza indica la
+                la dificultad existente para alcanzar nuevas posiciones, haciendo parecer que los caminantes están
+                atrapados dentro de un rango específico.
+            </p>
+
+            <h3 id="p2:resetting:vis">3.2. Visitas</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Algo interesante sucede cuando intentamos encontrar la PDF para las visitas. Si usamos nuestra
+                solución estacionaria, obtenemos el mismo resultado, ya que su independencia del tiempo da
+                <span class="inline-eq"><i>t</i></span> como resultado de la integral y la constante de normalización
+                al mismo tiempo, por lo que se anula. Y las simulaciones sugieren que no hay un gran cambio en las
+                dinámicas.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/resetting_distribution_visits.png">
+            <div class="images caption">Distribución de las visitas en la Caminata Aleatoria con Reseteo.</div>
+            <p>
+                Al mirar la distribución y las propiedades estadísticas, podemos ver que este caso es cercano a
+                ser independiente del tiempo. ¿Por qué "cercano"? La pequeña cantidad de datos en las posiciones finales,
+                en comparación con las visitas, nos da un resultado de varianza que puede no mostrar el panorama
+                completo. Aquí, la curtosis y la PDF son las mismas que antes, pero hay una diferencia en la varianza
+                producida por una mejor resolución de datos. Esta nueva perspectiva indica un comportamiento asintótico
+                que tiende al valor que calculamos teóricamente usando la solución estacionaria, pero los efectos
+                estocásticos en la dinámica de reseteo, es decir, la probabilidad de reseteo, permiten que los caminantes
+                lleguen a nuevas posiciones con el suficiente tiempo.
+            </p>
+
+            <h2 id="p2:memory">4. Caminata Aleatoria con Memoria</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Este caso permite una reubicación de los camiantes además del paso normal, pero en lugar de
+                colocar al caminante en una posición definida, esta se elige de acuerdo con una distribución de
+                probabilidad de todos los sitios visitados hasta ese momento. Esto significa que el caminante tiene
+                una memoria de los lugares que ha visitado.
+            </p>
+            <img class="images" src="../images/projects/project2/memory_diagram.png">
+            <div class="images caption">Esquema del movimiento de un caminante aleatorio bajo las dinámicas de memoria.</div>
+            <p>
+                Podemos escribir una ecuación diferencial parcial, similar al reseteo. En este mismo sentido, tenemos un
+                flujo negativo de probabilidad que sale de la posición <span class="inline-eq"><i>x</i></span>, sin embargo,
+                esto se suma a un término que representa la distribución de visitas en lugar de una sola posición
+                (Boyer D. & Solis-Salas C., 2014).
+            </p>
+            <img class="equation" src="../images/projects/equations/eq14.svg">
+
+            <h3 id="p2:memory:pos">4.1. Posiciones Finales</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                No podemos encontrar una expresión analítica para la PDF, sin embargo, podemos convertir la incógnita
+                de la última ecuación en el segundo momento, dependiente solo del tiempo. Esto se hace aplicando la
+                definición de los momentos estadísticos que discutimos al principio de este documento en la
+                <a href="#p2:introduction">Introducción</a>; después de lo cual aplicamos una derivada temporal
+                para remover la integral.
+            </p>
+            <img class="equation" src="../images/projects/equations/eq15.svg">
+            <p>
+                Debido a la naturaleza simétrica del fenómeno, podemos anticipar que el promedio sea cero, por lo que
+                podemos asumir que la solución se aplica a la varianza <span class="inline-eq">&Mu;<sub>2</sub></span>:
+            </p>
+            <img class="equation" src="../images/projects/equations/eq16.svg">
+            <p>
+                Aquí, <span class="inline-eq">E<sub>1</sub></span> es una función de la Integral de una Exponencial, y
+                <span class="inline-eq"><i>&gamma;<sub>e</sub></i></span> es la constante de Euler. Podemos intentar
+                hacer una aproximación a la PDF simulada usando la ecuación Gaussiana, cambiando la varianza por el
+                valor de <span class="inline-eq">&Mu;<sub>2</sub><i>(t)</i></span> en el último paso, solo por razones de
+                comparar.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/memory_distribution_position.png">
+            <div class="images caption">Distribución de las posiciones finales de una Caminata Aleatoria con Memoria.</div>
+            <p>
+                Vemos que, a pesar de que las posiciones de los caminantes están restringidas alrededor del
+                <span class="inline-eq">0</span>, la varianza no es tan lenta como en el caso de reseteo.
+                Aunque podríamos pensar que la distribución coincide con una Gaussiana, la curtosis indica claramente
+                algo diferente, y la aproximación que propusimos termina respaldando este argumento, ya que las colas
+                crecen más que las de una Gaussiana.
+            </p>
+
+            <h3 id="p2:memory:vis">4.2. Visitas</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Esta es una extensión de lo que hemos visto sobre las distribuciones de visitas. Sin embargo, dado que no
+                no conocemos la PDF para las posiciones finales de una caminata aleatoria con memoria, tampoco tenemos
+                alguna información sobre la PDF para las visitas. A diferencia de la relación entre la PDF en las visitas
+                y en las posiciones finales, no hay conexión entre las varianzas entre de estos casos.
+            </p>
+            <img class="images" style="max-width: 600px;" src="../images/projects/project2/memory_distribution_visits.png">
+            <div class="images caption">Distribución de las visitas de una Caminata Aleatoria con Memoria.</div>
+
+            <h3 id="p2:github">Programas y Archivos</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                Puedes consultar los programas en mi
+                <a href="https://github.com/armmancilla/random-walks" target="_blank">repositorio de GitHub</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 3 TEMPLATE  -->
@@ -216,18 +748,77 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contenidos</h4>
                     <hr>
-                    <a href="#introduction">
-                        Description
+                    <a href="#p3:description">
+                        Descripción
+                    </a>
+                    <a href="#p3:about">
+                        Sobre Metropolis
+                    </a>
+                    <a href="#p3:github">
+                        Programas y Archivos
                     </a>
                 </div>
             </div>
-            <h3>Random Walks with Resetting in Annihilation</h3>
+
+            <h1>Simulación Computacional de Sistemas Termodinámicos</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Using AI techniques to predict and analyze epidemic trends.</i></p>
-            <p>We implemented a machine learning model to predict infection waves using past data and epidemiological parameters.</p>
-            <a href="https://github.com/yourprojectlink" target="_blank">View Project on GitHub</a>
+
+            <h2 id="p3:description">Descripción</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Este es un proyecto que realicé en mis Prácticas Profesionales, diseñado para ser una simulación
+                ilustrativa de un gas de Esferas Duras para cursos de Mecánica Estadística, bajo la supervisión y
+                dirección del Dr. Thomas Gorin. El programa está inspirado en el artículo de 1953:
+                <a style="color: #777" href="https://doi.org/10.1063/1.1699114"><i>Equation of State Calculations
+                by Fast Computing Machines</i></a>, de Metropolis N. et al. El programa presentado aquí es un demo
+                por razones de privacidad. El programa es una <i>Interfaz de Usuario basada en consola</i> creada en
+                <b>SciLab</b> (una alternativa de software libre a MATLAB), donde el usuario puede modificar los
+                parámetros de la simulación.
+            </p>
+
+            <h2 id="p3:about">Sobre Metropolis</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                El algoritmo de Metropolis es un método de Monte Carlo utilizado para muestrear a partir de una
+                distribución de probabilidad. A diferencia del método de Monte Carlo, el cambio en el estado del sistema
+                nos permite tener más resolución debido a las muestras de la distribución. El algoritmo se basa en la
+                idea de aceptar o rechazar un nuevo estado en función de la diferencia de energía entre el estado
+                actual y el nuevo estado. Como resultado, para sistemas con un gran número de partículas, el algoritmo de
+                Metropolis es una herramienta poderosa para simular sistemas termodinámicos con más flexibilidad al
+                escoger el tamaño de las partículas.
+            </p>
+
+            <div style="text-align: center;">
+                <img class="images" style="width: 45%; max-width: 400px; display: inline-block;" src="../images/projects/project3/Metropolis.gif">
+                <img class="images" style="width: 45%; max-width: 400px; display: inline-block;" src="../images/projects/project3/Monte Carlo.gif">          
+            </div>
+            <div class="images caption">
+                Comparación illustrativa entre la generación de muestras en los métodos de Metropolis y Monte Carlo.
+            </div>
+            
+            <p>
+                Esta simulación tiene como objetivo calcular una variable relacionada con la ecuación de estado del
+                sistema, <span class="inline-eq"><i>PV/NkT - </i>1</span>, como función de 
+                <span class="inline-eq"><i>A/A<sub>0</sub> - </i>1</span>, un parámetro de control que relaciona el
+                espacio ocupado por las partículas y el área de la caja. A continuación, se presenta una comparación
+                entre los resultados obtenidos por ambos métodos.
+            </p>
+
+            <img class="images" style="max-width: 400px;" src="../images/projects/project3/PVNkT.png">
+            <div class="images caption">Comparación entre los resultados de Metropolis y Monte Carlo.</div>
+
+            <h3 id="p3:github">Programas y Archivos</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                Puedes consultar los programas en mi
+                <a href="https://github.com/armmancilla/scilab-thermo-demo" target="_blank">repositorio de GitHub</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 4 TEMPLATE  -->
@@ -236,18 +827,123 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contenidos</h4>
                     <hr>
-                    <a href="#introduction">
-                        Description
+                    <a href="#p4:description">
+                        Descripción
+                    </a>
+                    <a href="#p4:information">
+                        Más Información
+                    </a>
+                    <a href="#p4:github">
+                        Programas y Archivos
                     </a>
                 </div>
             </div>
-            <h3>Random Walks with Resetting in Annihilation</h3>
+
+            <h1>Caminatas Aleatorias en Dinámicas de Aniquilación</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Using AI techniques to predict and analyze epidemic trends.</i></p>
-            <p>We implemented a machine learning model to predict infection waves using past data and epidemiological parameters.</p>
-            <a href="https://github.com/yourprojectlink" target="_blank">View Project on GitHub</a>
+
+            <h2 id="p4:description">Descripción</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Este proyecto aún está en progreso, pero algunas características están lo suficientemente pulidas. La
+                aniquilación es un proceso que ocurre cuando dos caminantes aleatorios son eliminados del sistema al
+                encontrarse entre sí. Usamos una configuración de anillo de nodos discretos para medir fácilmente la
+                concentración de los caminantes en cualquier momento
+                (<span class="inline-eq"><i>#caminantes/#nodos</i></span>). Hay dos formas en las que podemos actualizar
+                la posición de los caminantes, y estas darán forma al comportamiento de los resultados:
+            </p>
+            <ul style="font-size:17px;">
+                <li>
+                    <b>Asincrónico:</b> También conocido como el método de MonteCarlo. Seleccionamos aleatoriamente uno
+                    de los nodos, y si hay un caminante en él, actualizamos su posición; la aniquilación ocurre si
+                    encontramos otro caminante en la nueva posición.
+                </li>
+                <li>
+                    <b>Síncrono:</b> Todos los caminantes actualizan sus posiciones simultáneamente, y la aniquilación
+                    depende de la configuración final de las partículas, que se realiza solo después de que todos los
+                    caminantes se han movido.
+                </li>
+            </ul>
+            
+            <p>
+                Estudiamos la evolución de la variable de concentración, medida cada paso de MonteCarlo (MCS), que es,
+                después de <span class="inline-eq"><i>n</i></span> iteraciones, siendo <span class="inline-eq"><i>n</i></span>
+                el número de nodos. Podemos observar otras variables como la distribución de la distancia al vecino más
+                cercano, que se define como el número de nodos que separa a dos caminantes contiguos.
+                <br><br>
+                La simulación se realiza en un anillo 1D, como una malla con condiciones de frontera periódicas.
+                Los caminantes se colocan aleatoriamente en los nodos, y la aniquilación se lleva a cabo cuando dos
+                caminantes están en el mismo nodo. Las simulaciones se desarrollan en <b>Fortran</b>, utilizando la
+                <i>Biblioteca OMP</i>, y los resultados se muestran en <i>Jupyter Notebook</i>.
+            </p>
+
+            <h2 id="p4:information">Más Información</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                El tipo de actualización que elegimos para cambiar las posiciones de los caminantes es importante, ya que
+                afectará el comportamiento de la concentración. Para entender esto, discutamos los dos casos por separado.
+                Para empezar, en la actualización Asincrónica, seleccionamos un nodo al azar, y si hay un caminante en él,
+                actualizamos su posición, y si hay otro caminante en la nueva posición, eliminamos ambos. Esto significa
+                que la aniquilación solo depende del movimiento de un caminante. Repetimos este proceso un número
+                <span class="inline-eq"><i>n</i></span> (número de nodos) de veces para completar un Paso de MonteCarlo
+                (MCS). Ahora bien, la actualización Síncrona es un poco más compleja, y vale la pena mostrar un diagrama
+                para explicarlo:
+            </p>
+
+            <img class="images" style="max-width: 150px;" src="../images/projects/project4/synchronous.svg">
+            <div class="images caption">Posibles escenarios con la actualización Sincrónica.</div>
+
+            <p>
+                En la actualización Síncrona, vamos nodo por nodo, y si hay un caminante en alguno, tenemos diferentes
+                situaciones. En el primer escenario, no hay caminante en la nueva posición, así que simplemente lo
+                movemos. En el segundo caso, hay un caminante en la nueva posición, y tenemos que verificar las siguientes
+                condiciones (3-5). Como tenemos un anillo 1D, los caminantes no pueden intercambiar posiciones, y si se
+                mueven en direcciones opuestas, se aniquilarán. Si ambos se mueven en la misma dirección y no
+                encuentran un tercer caminante, sobrevivirán. Y, finalmente, si sí existe un tercer caminante, el primero
+                sobrevive y tenemos que verificar las condiciones nuevamente para el último par.
+            </p>
+
+            <p>
+                Los resultados de las simulaciones para sistemas grandes, con 4,000 nodos y 2,000 caminantes (50% de
+                ocupación inicial), se muestran a continuación.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="../images/projects/project4/Concentration.png">
+            <div class="images caption">Decaemiento en la concentración para partículas con actualizaciones Asincrónicas
+            y Sincrónicas.</div>
+
+            <p>
+                Al principio, el decaimiento de la concentración difiere para ambos casos, probablemente debido a la
+                difusión extra proporcionada por la selección aleatoria de los nodos en la actualización Asincrónica.
+                Podemos obtener una mejor perspectiva del comportamiento de la concentración observando la distribución de
+                la distancia al vecino más cercano. Esta se define como el número de nodos que separa a dos caminantes
+                contiguos. La distribución se muestra a continuación:
+            </p>
+
+            <img class="images" style="max-width: 700px;" src="../images/projects/project4/NearestNeighbor.png">
+            <div class="images caption">Distribuciones del Vecino más Cercano para actualizaciones Asincrónicas y
+            Sincrónicas.</div>
+
+            <p>
+                En un tiempo como <span class="inline-eq"><i>t = </i>10 MCS</span>, podemos ver que la actualización
+                Síncrona tiene una mayor probabilidad de tener caminantes más cercas de otros, ya que la distribución se
+                inclina hacia la izquierda. Esto indicaría tasas de aniquilación más bajas, en contraste con la
+                actualización Asincrónica, sin embargo, después de unos cuantos MCS más, ambas distribuciones siguen la
+                misma tendencia.
+            </p>
+
+            <h3 id="p4:github">Programas y Archivos</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                Puedes consultar los programas en mi
+                <a href="https://github.com/armmancilla/annihilation" target="_blank">repositorio de GitHub</a>.
+            </p>
+
         </template>
 
     </section>
