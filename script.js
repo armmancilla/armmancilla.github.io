@@ -218,8 +218,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Add event listener to the close button inside the loaded content
                 const closeButton = detailsSection.querySelector(".close-btn");
+                const portfolioClick = document.getElementById("portfolio-click");
                 if (closeButton) {
                     closeButton.addEventListener("click", function () {
+                        detailsSection.classList.remove("fade-in");  // Remove fade-in effect
+                        detailsSection.classList.add("fade-out");    // Start fade-out effect
+
+                        // Wait for the animation to complete before hiding
+                        setTimeout(() => {
+                            detailsSection.style.display = "none";
+                            detailsSection.classList.remove("fade-out"); // Reset for next time
+                        }, 500); // This should match the animation duration
+
+                        portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                }
+
+                if (portfolioClick) {
+                    portfolioClick.addEventListener("click", function () {
                         detailsSection.classList.remove("fade-in");  // Remove fade-in effect
                         detailsSection.classList.add("fade-out");    // Start fade-out effect
 

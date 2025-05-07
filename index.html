@@ -13,7 +13,7 @@
             <a href="#home" class="align-left">HOME</a>
             <button class="menu-toggle">☰ Menu</button>
             <div class="menu">
-                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#portfolio" id="portfolio-click">PORTFOLIO</a>
                 <a href="#resume">RESUME</a>
                 <a href="#oddsends">CURIOUS BITS</a>
                 <a href="#contact">CONTACT</a>
@@ -45,11 +45,11 @@
             margin-bottom: 5px;">My Portfolio</h2>
             <hr style="width: 100px; background: #333; height: 0.2px; margin-bottom: 0;">
             <div class="home-links">
-                <a href="https://www.linkedin.com/in/armando-imanol-mancilla/">
+                <a href="https://www.linkedin.com/in/armando-imanol-mancilla/" target="_blank">
                     <img class="home-links-image" style="margin-left: 49px;
                     width: 40px; height: 40px;" src="images/LinkedIn.png">
                 </a>
-                <a href="https://github.com/armmancilla">
+                <a href="https://github.com/armmancilla" target="_blank">
                     <img class="home-links-image" style="margin-top: 4px;
                     margin-left: 104px; width: 30px; height: 30px;" src="images/GitHub.png">
                 </a>
@@ -74,7 +74,8 @@
 
             <div class="project" data-template="project4-template">
                 <a class="project-container">
-                    <img src="images/projects/annihilation.png" alt="Project 4" class="project-image">
+                    <img src="images/projects/annihilation.gif" alt="Project 4" class="project-image"
+                    style="width: 80%; height: 80%; margin:auto;">
                     <div class="overlay">
                         <h3>
                             Random Walks in Annihilation Dynamics
@@ -120,7 +121,7 @@
                     <img src="images/projects/simple_walk.gif" alt="Project 2" class="project-image">
                     <div class="overlay">
                         <h3>
-                            Random Walks with Resetting and Self-Memory Effects
+                            Statistics of the Random Walk with Resetting and Self-Memory
                         </h3>
                         <div class="project-image-text">
                             Random walks involve taking random steps, where resetting can return the walker 
@@ -169,24 +170,107 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
-                    <hr class="bar-hbar">
-                    <a href="#introduction">
+                    <h4>Contents</h4>
+                    <hr>
+                    <a href="#p1:description">
                         Description
+                    </a>
+                    <a href="#p1:national">
+                        National Waves
+                    </a>
+                    <a href="#p1:states">
+                        State Cases
+                    </a>
+                    <a href="#p1:github">
+                        Programs and Files
                     </a>
                 </div>
             </div>
-            <h3>Epidemic Models for Heard Immunity and Social Distancing</h3>
+            <h1>Epidemic Models for Heard Immunity and Social Distancing</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>PRO-SNI Scholarship. May 2021 to September 2021</i></p>
-            <p>Working under the supervision of Dr. Thomas Gorin, we implemented an epidemic model with exponential growth and
-                variable infection rate to infected waves during the COVID-19 pandemic.</p>
-            <ul>
-                <li>Processed and cleaned CONACYT-provided data using Pandas, documenting methodology in Jupyter Notebook.</li>
-                <li>Identified distinct infection waves and fitted an exponential-growth model to COVID-19 case data in Mexico.</li>
-                <li>Derived analytical solutions where possible and linked findings to the Susceptible-Infected-Removed (SIR) model.</li>
-                <li>Calculated key parameters to model infection rate dynamics at the start and end of each wave.</li>
-            </ul>
+            <h3 style="margin-top:-20px; font-size: 18px;"><i>COVID-19 Pandemic in Mexico (2020-2022)</i></h3>
+
+            <h2 id="p1:description">Description</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                During the COVID-19 pandemic, daily infection cases were processed and reported through public
+                databases by CONACYT. For privacy reasons, I cannot disclose all the details about the Epidemic
+                Models we implemented. However, I can provide an overview of some of the preparations required for
+                the later analysis, including the data cleaning process and infected waves identification.
+                <br><br>
+                This project was developed completely in Jupyter Notebook (Python), reading and processing the data
+                using <i>Pandas</i> and <i>Numpy</i> libraries. The analysis and model implementation was done using the
+                <i>Scipy</i> library, and the visualization was done using <i>matplotlib</i>.
+            </p>
+
+            <h2 id="p1:national">National Waves</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                We can study the COVID-19 Pandemic in Mexico from the perspective of individual infection waves.
+                The data was obtained from a CONACYT CSV database, including national and state data. This raw data
+                includes details that difficult its read and process, given that it was provided by multiple medical
+                facilities. One of the main problems we found is on weekends, where the values tend to be lower due to
+                these places working with reduced capacities. I proposed a plan for the cleaning and created a function
+                that helps us automate the process for this particular database.
+
+                <ol type="I" style="font-size:17px;">
+                    <li style="padding-bottom:10px">
+                        <b>ANOMALY CRITERIA:</b> Starting from an initial average of the data, we must give a tolerance
+                        factor that once multiplied by this average can be able to segregate anomalies from desired values,
+                        this has to be manually tweaked. After finding an anomaly, we replace its value with the average of
+                        the 6 surrounding neighbors, we choose this number to make it weekly averaged.
+                    </li>
+                    <li style="padding-bottom:10px">
+                        <b>FINAL SMOOTHING:</b> Once the data is cleaned, we can average the values two more times to
+                        reduce the fluctuations and smooth even more the data, while keeping the reliability.
+                    </li>
+                    <li style="padding-bottom:10px">
+                        <b>DERIVATIVE FOR COMPARISON:</b> Showing a curve that appears to be clean does not offer much
+                        information about the advantages of using raw quantities. Since many of the models we will be
+                        working with rely on the derivative of the data, we can see both the fluctuations of each data
+                        set and if we can use it to apply our models. Instead of applying the derivative to consecutive
+                        days, we set a window of 3 days, equivalent to half-week to reduce the noise of the raw data.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                With the cleaned data, we can start the identification of the specific waves in the pandemic. This
+                process has to be done manually but, thanks to the derivative, we can make it easier by identifying the
+                places where the derivative is zero, some of which will correspond to the peaks of the waves. And after
+                delimiting the times where we measure each wave, and displaying the defunctions, we can get a more
+                complete picture of our phenomenon.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexico.png">
+            <div class="images caption">Mexico COVID-19 Pandemic (2020-2022). Light gray are regions where the number
+                of cases increases, and dark gray are regions where the number of cases decreases.</div>
+            </div>
+
+            <h2 id="p1:states">State Cases</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The same process can be applied to the state data, but in this case, we have to consider that the
+                number of cases is much lower than the national data. This means that the fluctuations are more
+                pronounced and the anomalies are harder to detect. We can use the same criteria as before, but we have
+                to be careful with the tolerance factor, since it can lead to difficulties in the model application.
+                In this case, we will focus exclusively on the state data of the most populous region in Mexico.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexicoStates.png">
+            <div class="images caption">Daily infection cases for the five most populous states in Mexico.</div>
+            </div>
+
+            <h3 id="p1:github">Programs and files</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                You can consult the programs in my
+                <a href="https://github.com/armmancilla/epidemic-models" target="_blank">GitHub repository</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 2 TEMPLATE  -->
@@ -195,18 +279,433 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contents</h4>
                     <hr>
-                    <a href="#introduction">
+                    <a href="#p2:description">
                         Description
+                    </a>
+                    <a href="#p2:introduction">
+                        Introduction
+                    </a>
+                    <a class="sub" href="#p2:introduction:moments">
+                        Moments
+                    </a>
+                    <a href="#p2:individual">
+                        1. Individual
+                    </a>
+                    <a href="#p2:simple">
+                        2. Simple Random Walk
+                    </a>
+                    <a class="sub" href="#p2:simple:pos">
+                        2.1. Final Positions
+                    </a>
+                    <a class="sub" href="#p2:simple:vis">
+                        2.2. Visits
+                    </a>
+                    <a href="#p2:resetting">
+                        3. Random Walk with Resetting
+                    </a>
+                    </a>
+                    <a class="sub" href="#p2:resetting:pos">
+                        3.1. Final Positions
+                    </a>
+                    <a class="sub" href="#p2:resetting:vis">
+                        3.2. Visits
+                    </a>
+                    <a href="#p2:memory">
+                        4. Random Walk with Memory
+                    </a>
+                    </a>
+                    <a class="sub" href="#p2:memory:pos">
+                        4.1. Final Positions
+                    </a>
+                    <a class="sub" href="#p2:memory:vis">
+                        4.2. Visits
+                    </a>
+                    <a href="#p2:github">
+                        Programs and Files
                     </a>
                 </div>
             </div>
-            <h3>Statistics of the Random Walk with Resetting and Self-Memory</h3>
+            <h1>Statistics of the Random Walk with Resetting and Self-Memory</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Exploring the behavior of particles in random motion.</i></p>
-            <p>This project visualizes how particles move in a random walk pattern using Python and Matplotlib.</p>
-            <p>By analyzing different step probabilities, we can understand diffusion processes, market fluctuations, and more.</p>
+
+            <h2 id="p2:description">Description</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            <p>
+                In this project, we study the Random Walk (defined simply as a succession of random steps) in a discrete 
+                lattice, through the distribution of <b>final positions</b> (its <span class="inline-eq"><i>x</i></span>
+                position at a time <span class="inline-eq"><i>t</i></span>), or the distribution of the <b>visits</b>
+                (all the positions in its path), as well as the statistical properties of these distribution: variance,
+                skewness, kurtosis. We consider, aside from the simple random walk, two models:
+
+                <ul style="font-size: 16px;">
+                    <li>
+                        <b>Resetting:</b> Walkers can be relocated to their initial position with some probability.
+                    </li>
+                    <li>
+                        <b>Memory:</b> Walkers can be placed in one of the positions they visited previously.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                For this, I designed all the simulation for the different cases of random walks in <b>Fortran</b>, using
+                the <i>OMP Library</i>, measuring the distribution of various walker realizations and the statistical
+                properties we will later analyze. The results are then processed and displayed in a <i>Jupyter Notebook</i>.
+                Here, I plan to show the results of the simulations, as well as some of the theoretical background (a lot
+                of text!).
+            </p>
+
+            <h2 id="p2:introduction">Introduction</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The <b>Random Walk</b> is a widespread concept, pilar in many topics related to stochastic processes.
+                It consists basically of a succession of random steps, and based on it, there are multiple ways in
+                which we can create diversified dynamics.
+                <br> <br>
+                This project was thought to serve as the fundaments to understand Random Walk theory and codding, to
+                ease the later development of models based on random walkers. This Notebook assembles the results
+                provided by the Fortran codes simulations, as well as giving some analytical background.
+            </p>
+
+            <h3 id="p2:introduction:moments">Moments</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The results of this project are based mainly on Probability Density Functions (PDFs), and on the
+                analysis of the statistical moments, unique properties of each distribution. There are a few concepts
+                we need to discuss to get a better understanding of the following sections. We can define the <i>raw
+                moments</i> of any variable <span class="inline-eq"><i>z</i></span> as
+            </p>
+            <img class="equation" src="images/projects/equations/eq1.svg">
+            <p>
+                Properties such as the variance, skewness and kurtosis are statistical moments calculated from the
+                raw moments.
+            </p>
+            <img class="equation" src="images/projects/equations/eq2.svg">
+            <p>
+                And the same goes for the following moments. In combination with these two, as long as we have an
+                analytical PDF, we can try to calculate the statistical moments as well.
+                <br><br>
+                Inside the simulation, we have to consider discrete quantities, and the numerical calculation of raw
+                moments obeys the following formula:
+            </p>
+            <img class="equation" src="images/projects/equations/eq3.svg">
+            <p>
+                It is obvious to notice that this is just an average over the number of realizations
+                <span class="inline-eq">m</span>. In our simulations, <span class="inline-eq">z</span> corresponds to
+                the final positions.
+                <br><br>
+                We should discuss a little more about the meaning of the statistical moments. These are quantities that
+                showcase certain aspects of a Probability Distribution, we can even think of them as customized
+                identifiers. The first one, the mean value, <span class="inline-eq">&Mu;<sub>1</sub></span>, represents
+                a point that indicates the central tendency of the data, for symmetrical distributions, this lies on their
+                axis of symmetry. In the context of Random Walks, this is usually <span class="inline-eq">0</span>. The
+                next one is the variance, <span class="inline-eq">&Mu;<sub>2</sub></span>, indicating how far the data
+                is scattered around the mean. In this topic, it can actually give us information about the final positions
+                that walkers can reach, and what kind of dynamics their paths will follow. The third moment is pretty
+                straightforward, it is called skewness, <span class="inline-eq">&Mu;<sub>3</sub></span>, and its value
+                measures the symmetry of a distribution, if <span class="inline-eq">0</span>, the distribution is
+                symmetric, if negative, it is skewed to the left, and if positive, it is skewed to the right. Finally,
+                the fourth moment, the kurtosis, <span class="inline-eq">&Mu;<sub>4</sub></span>, refers to the form of
+                the distribution, specifically the form of its tails. The higher the kurtosis, the wider the tails, and
+                for lower values the majority of the data is concentrated around the mean, with small tails. For reference,
+                the kurtosis of the normal distribution is <span class="inline-eq">3</span>.
+            </p>
+            <img class="images" src="images/projects/project2/moments_diagram.png">
+            <div class="images caption">Illustrative diagram
+            about the effects of statistical moments on a distribution.</div>
+
+            <p>
+                There is a technical aspect that we have to consider to measure a distribution of random walker's
+                positions, this is the possible final positions. To have a better idea, let's think about a random walk
+                with <span class="inline-eq">3</span> steps starting from <span class="inline-eq">0</span>: the first step,
+                the walker can only be at <span class="inline-eq">-1</span> or <span class="inline-eq">+1</span>, zero
+                is not part of these options. In the second step, the walker can be at <span class="inline-eq">-2,0,+2
+                </span>, and we are starting to notice a pattern. In the final step, the trend is more visible, since the
+                possible final positions of the walker are <span class="inline-eq">-3,-1,+1,+3</span>. Therefore, we see
+                that the final position of the walker, in a discrete lattice, is dependent on the number of steps being
+                odd or even, and a distribution measure under these circumstances would have gaps, depending on the number
+                of steps. To counter this effect, at the final time, where we intend to measure the final positions, we
+                only update half of the walkers, so that half of the final positions are odd and half are even numbers.
+            </p>
+
+            <h2 id="p2:individual">1. Individual Random Walks</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Before diving into the theory behind random walks, I want to briefly discuss the most general details
+                about these processes. Starting from the <i>simple</i> case of the <b>random walk</b>, we can define it
+                just as a succession of random steps, and visualize it by the sum of all the steps, let us name it
+                <span class="inline-eq"><i>X</i></span>:
+            </p>
+            <img class="equation" src="images/projects/equations/eq4.svg">
+            <p>
+                And, of course, the final value for <span class="inline-eq"><i>X</i></span> depends on the number of steps
+                <span class="inline-eq"><i>n</i></span>.
+                <br><br>
+                To make it easier to understand and study, these random steps can only be either <span class="inline-eq">
+                +1</span> or <span class="inline-eq">-1</span>, both of them can be chosen with a
+                probability of <span class="inline-eq">1/2</span>. This can be thought of as a walker that can go
+                up or down.
+            </p>
+            <img class="images" style="max-width: 500px;" src="images/projects/project2/individual_simple.png">
+            <div class="images caption">Individual simple random walk.</div>
+            <p>
+                If instead of two choices (<span class="inline-eq">+1,-1</span>), we could make the walker return
+                to the start, <span class="inline-eq"><i>X<sub>0</sub></i></span>, with a probability
+                <span class="inline-eq"><i>&gamma; =</i> 1/10</span>, that is, made it reset about every
+                <span class="inline-eq">10</span> steps, then we would have what we called the random walk with
+                <b>resetting</b>. Later on, we will see how this affects the simple walk dynamics, but I can tell you
+                now that it will keep it closer to this position <span class="inline-eq"><i>X<sub>0</sub></i></span>.
+            </p>
+            <img class="images" style="max-width: 500px;" src="images/projects/project2/individual_resetting.png">
+            <div class="images caption">Individual random walk with resetting.</div>
+            <p>
+                Now, if the relocation of the walker is done not to its initial position, but instead to one of the
+                positions it has previously visited, we are allowing our walker to have <b>memory</b>. With this, the
+                places it visits the most have more chances of being chosen when it jumps. This dynamic is implemented
+                with a probability <span class="inline-eq"><i>&gamma;</i></span>.
+                <br><br>
+                To visualize this, we do a random walk simulation with memory before actually showing it, so the walker
+                we display has an existing distribution of visits beforehand.
+            </p>
+            <img class="images" style="max-width: 500px;" src="images/projects/project2/individual_memory.png">
+            <div class="images caption">Individual random walk with memory.</div>
+
+            <h2 id="p2:simple">2. Simple Random Walk</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                In both discrete time and space, such as we saw in the <a href="#p2:individual">Individual Random Walks</a>,
+                the probability of finding the walker in the position
+                <span class="inline-eq"><i>x</i></span> at a given step <span class="inline-eq"><i>n</i></span> is
+                defined by the evolution equation
+            </p>
+            <img class="equation" src="images/projects/equations/eq5.svg">
+            <p>
+                We aim to study the random walk behavior in the continuous regime, for this, we need to consider the
+                finite differences approximations to obtain a Partial Differential Equation:
+            </p>
+            <img class="equation" src="images/projects/equations/eq6.svg">
+            <p>
+                With this approximation, we change to the continuous variables <span class="inline-eq"><i>x,t</i></span>,
+                and with some algebra, the equation that describes the Probability evolution becomes
+            </p>
+            <img class="equation" src="images/projects/equations/eq7.svg">
+            <p>
+                with <span class="inline-eq"><i>D = </i>1/2</span>. This is the <i>Diffusion Equation</i>, unsurprisingly for diffusive particles as one can think random walkers to be.
+            </p>
+
+            <h3 id="p2:simple:pos">2.1. Final Positions</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The solution to the Diffusion equation is obtained by doing a variable change, using the Fourier
+                transform: <span class="inline-eq" style="text-decoration: overline;"><i>P</i></span><span class="inline-eq">
+                <i>(k,t) = &int; P(x,t)</i> exp<i>(-ikx)</i> d<i>x</i></span>. The result is a Gaussian function:
+            </p>
+            <img class="equation" src="images/projects/equations/eq8.svg">
+            <p>
+                Here, we get some early results by comparing this to the normal distribution, for instance, the mean value
+                is <span class="inline-eq">&Mu;<sub>1</sub><i> = x<sub>0</sub></i></span> (<span class="inline-eq">0</span>
+                in our case), and the variance is <span class="inline-eq">&Mu;<sub>2</sub><i> = 2Dt</i></span>. In the
+                results, this function is a distribution of <b>Final Positions</b>, that is, the position where a walker
+                can be found after a time <span class="inline-eq"><i>t</i></span>.
+            </p>
+            <img class="images" style="max-width: 300px;" src="images/projects/project2/distribution.png">
+            <div class="images caption" style="max-width: 300px;">Exemplification of how we measure the distribution of
+            final positions at a certain time t=n.</div>
+            <p>
+                The rest of the statistical properties can be calculated from this function. Not surprisingly, for a
+                symmetrical distribution, the skewness results in <span class="inline-eq">&Mu;<sub>3</sub><i> = </i>0</span>,
+                and the kurtosis is that of the Gaussian Distribution, <span class="inline-eq">&Mu;<sub>4</sub><i> = </i>3</span>.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/simple_distribution_position.png">
+            <div class="images caption">Distribution of final positions in the Simple Random Walk.</div>
+            <p>
+                All the simulation results follow a similar behavior to a Gaussian, only differing in the variance which
+                increases linearly with time. Nevertheless, the statistical moments measured at equal times are the same.
+                As we mentioned before, the kurtosis clearly indicates a distribution close to a Gaussian.
+            </p>
+
+            <h3 id="p2:simple:vis">2.2. Visits</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                There is another type of distribution that collects all the information about the walkers' path.
+                Instead of looking solely at the final positions, we can keep track of the visits the walkers pay to the
+                positions. In a mathematical sense, this is similar to stacking all the distributions of final positions
+                for different times, up to the time <span class="inline-eq"><i>t</i></span>.
+            </p>
+            <img class="equation" src="images/projects/equations/eq9.svg">
+            <p>
+                with <span class="inline-eq">&Nscr;</span> being the normalization constant. For the simple
+                random walk, the integral yields
+            </p>
+            <img class="equation" src="images/projects/equations/eq10.svg">
+            <p>
+                Here, <span class="inline-eq">erfc<i>()</i></span> is the complementary error function. In this case,
+                the values of the statistical moments are not so intuitive, but they can be calculated with the PDF.
+                For this case, the variance is just half of what we expect for the final positions,
+                <span class="inline-eq">&Mu;<sub>2</sub><i> = Dt</i></span>. The kurtosis now has a value of
+                <span class="inline-eq">&Mu;<sub>4</sub><i> = </i>4</span>, meaning more values are concentrated around
+                the mean, naturally for the measurement of visits.
+                <br><br>
+                There is a change in how we measure the statistical moments, related to the normalization. When we only
+                count the final positions of the walkers, to average the moments we just divide over the number of
+                realizations <span class="inline-eq"><i>m</i></span> 
+                (<a href="#p2:introduction">Introduction</a>). However, by taking into account all the
+                visits, we should also average over time:
+            </p>
+            <img class="equation" src="images/projects/equations/eq11.svg">
+            <p>
+                Because of this condition, in the simulations, all realizations must be done at once, instead of
+                starting the next one once the current is finished.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/simple_distribution_visits.png">
+            <div class="images caption">Distribution of visits in the Simple Random Walk.</div>
+
+            <h2 id="p2:resetting">3. Random Walk with Resetting</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                In the resetting case, a random walker not only hops to neighbor positions, but it has a probability
+                <span class="inline-eq"><i>&gamma;</i></span> of returning to its initial position
+                <span class="inline-eq"><i>x<sub>0</sub></i></span>. This limits the diffusion of the walker, that is
+                how big the range of possible final positions is.
+            </p>
+            <img class="images" src="images/projects/project2/resetting_diagram.png">
+            <div class="images caption">Random walker movement schematics undergoing resetting dynamics.</div>
+            <p>
+                We can find a partial differential equation that describes the evolution of the PDF for the resetting
+                case. Beginning from the Diffusion Equation, which defines the simple random walk dynamics, we use two
+                new terms that implement the resetting. When a walker is reset, with probability <span class="inline-eq">
+                <i>&gamma;</i></span>, the PDF loses a flux of probability in the position <span class="inline-eq"><i>x</i>
+                </span> that gets added to the initial position of the walker <span class="inline-eq"><i>x<sub>0</sub></i>
+                </span>, represented as a <span class="inline-eq"><i>&delta;</i></span> function (Evans M. & Majumdar S.,
+                2011).
+            </p>
+            <img class="equation" src="images/projects/equations/eq12.svg">
+            <p>
+                In this case, the diffusion constant <span class="inline-eq"><i>D</i></span>, is not the same as for the
+                simple random walk. Empirically, we found that <span class="inline-eq"><i>D = (1 - &gamma;)/2</i></span>.
+            </p>
+
+            <h3 id="p2:resetting:pos">3.1. Final Positions</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                This can be reduced to a stationary equation that becomes a non-homogeneous Ordinary Differential Equation.
+                After solving this new equation, we obtain a time-independent solution.
+            </p>
+            <img class="equation" src="images/projects/equations/eq13.svg">
+            <p>
+                with <span class="inline-eq"><i>&alpha;<sub>0</sub> = &radic;</i></span><span class="inline-eq" 
+                style="text-decoration: overline;"><i>2&gamma;/(1 - &gamma;)</i></span>. In the same line, using the
+                stationary solution we can obtain some results for the moments. For instance, the variance, also
+                time-independent, has a value of <span class="inline-eq">&Mu;<sub>2</sub><i> = (1 - &gamma;)/&gamma;</i>
+                </span>. The kurtosis shows a high value of <span class="inline-eq">&Mu;<sub>4</sub><i> = 6</i></span>,
+                regardless of the resetting probability, indicating larger tails for these distributions.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/resetting_distribution_position.png">
+            <div class="images caption">Distribution of final positions in the Random Walk with Resetting.</div>
+            <p>
+                The resetting is one of the most remarkable models of the random walk. The variance indicates the
+                existent difficulty to reach new positions, and we could even think walkers are caged inside a specific
+                range.
+            </p>
+
+            <h3 id="p2:resetting:vis">3.2. Visits</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                Something interesting happens when we try to find the PDF for the visits. If we use our stationary
+                solution we get the same result, as its independence of time yields <span class="inline-eq"><i>t</i></span>
+                as both the result of the integral and the normalization constant. And the simulations suggest there is not
+                a big change in the dynamics.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/resetting_distribution_visits.png">
+            <div class="images caption">Distribution of visits in the Random Walk with Resetting.</div>
+            <p>
+                By looking at the distribution and the statistical properties, we can see that this case is close to
+                time-independent. Why "close"? The small amount of data in the final positions, in comparison with the
+                visits, gives us a variance result that might not show the full picture. Here, the kurtosis and the PDF
+                are the same as before, but there is a difference in the variance produced by a better resolution of data.
+                This new perspective indicates an asymptotic behavior that tends to the value we calculated theoretically
+                using the stationary solution, but the stochastic effects on the resetting dynamics, that is, the
+                probability of resetting, allows walkers to get to new positions with enough time.
+            </p>
+            <h2 id="p2:memory">4. Random Walk with Memory</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                This case also allows walkers' relocation besides the normal step, but instead of placing the walker in a
+                defined position, this is chosen according to a probability distribution of all the visited sites up to
+                that point.
+            </p>
+            <img class="images" src="images/projects/project2/memory_diagram.png">
+            <div class="images caption">Random walker movement schematics undergoing memory dynamics.</div>
+            <p>
+                We can write a differential equation for this case, similar to resetting. In the same sense, we have a
+                negative flux of probability coming out of the <span class="inline-eq"><i>x</i></span> position, however,
+                this is added into a term that represents the visits distribution instead of a single position
+                (Boyer D. & Solis-Salas C., 2014).
+            </p>
+            <img class="equation" src="images/projects/equations/eq14.svg">
+
+            <h3 id="p2:memory:pos">4.1. Final Positions</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                We cannot get an analytical expression for the PDF, nevertheless, we can turn the last equation incognita
+                into the second moment, only time-dependent. This is done by applying the definition of the statistical
+                moments we discussed at the beginning of this document in the
+                <a href=#p2:introduction>Introduction</a> section; after which we apply a time derivative
+                to remove the integral.
+            </p>
+            <img class="equation" src="images/projects/equations/eq15.svg">
+            <p>
+                Due to the symmetrical nature of the phenomena, one can anticipate the average to be zero, thus we can
+                assume the solution to apply to the variance <span class="inline-eq">&Mu;<sub>2</sub></span>:
+            </p>
+            <img class="equation" src="images/projects/equations/eq16.svg">
+            <p>
+                Here, <span class="inline-eq">E<sub>1</sub></span> is an Exponential Integral function and
+                <span class="inline-eq"><i>&gamma;<sub>e</sub></i></span> is the Euler's constant. We can try to make an
+                approximation to the simulated PDF by using the Gaussian equation, changing the variance for the value
+                of <span class="inline-eq">&Mu;<sub>2</sub><i>(t)</i></span>.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/memory_distribution_position.png">
+            <div class="images caption">Distribution of final positions in the Random Walk with Memory.</div>
+            <p>
+                We see that, although the walkers positions are constrained around the <span class="inline-eq">0</span>,
+                the variance is not as slow as in the resetting case. Even though we could think the distribution
+                coincides with a Gaussian, the kurtosis clearly indicates something different, and the approximation
+                we proposed ends up backing this argument, as the tails grow larger.
+            </p>
+
+            <h3 id="p2:memory:vis">4.2. Visits</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                This is an extension of what we have seen about the visits distributions. However, given that we do
+                not know the PDF for the final positions of a random walk with memory, we also have no information
+                about the PDF for the visits. Unlike the relation between the PDF in the visits and in the final
+                positions, there is no connection between the variance among cases.
+            </p>
+            <img class="images" style="max-width: 600px;" src="images/projects/project2/memory_distribution_visits.png">
+            <div class="images caption">Distribution of visits in the Random Walk with Memory.</div>
+
+            <h3 id="p2:github">Programs and files</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                You can consult the programs in my
+                <a href="https://github.com/armmancilla/random-walks" target="_blank">GitHub repository</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 3 TEMPLATE  -->
@@ -215,18 +714,71 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contents</h4>
                     <hr>
-                    <a href="#introduction">
+                    <a href="#p3:description">
                         Description
+                    </a>
+                    <a href="#p3:about">
+                        About Metropolis
+                    </a>
+                    <a href="#p3:github">
+                        Programs and Files
                     </a>
                 </div>
             </div>
-            <h3>Random Walks with Resetting in Annihilation</h3>
+            <h1>Computational Simulation of Thermodynamic Systems</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Using AI techniques to predict and analyze epidemic trends.</i></p>
-            <p>We implemented a machine learning model to predict infection waves using past data and epidemiological parameters.</p>
-            <a href="https://github.com/yourprojectlink" target="_blank">View Project on GitHub</a>
+
+            <h2 id="p3:description">Description</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                This is a project I made in my Professional Practices, designed to be an illustrative simulation of a
+                gas made of Hard Spheres for Statistical Mechanics courses, under the supervision and direction of Dr.
+                Thomas Gorin. The program is inspired by the 1953 article:
+                <a style="color: #777" href="https://doi.org/10.1063/1.1699114"><i>Equation of State Calculations by Fast Computing Machines</i></a>,
+                by Metropolis N. et al.The program presented here is a demo for privacy reasons. The program is a
+                <i>User Interface console-based</i> created in <b>SciLab</b> (a free sofware alternative to MATLAB),
+                where the user can modify the parameters of the simulation.
+            </p>
+
+            <h2 id="p3:about">About Metropolis</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The Metropolis algorithm is a Monte Carlo method used to sample from a probability distribution. Unlike the
+                Monte Carlo method, the change in the state of the system allows us to have more resolution due to the
+                distribution samples. The algorithm is based on the idea of accepting or rejecting a new state based on the
+                energy difference between the current and new state. As a result, for systems with a large number of
+                particles, the Metropolis algorithm is a powerful tool for simulating thermodynamic systems with a more
+                flexible particle size.
+            </p>
+
+            <div style="text-align: center;">
+                <img class="images" style="width: 45%; max-width: 400px; display: inline-block;" src="images/projects/project3/Metropolis.gif">
+                <img class="images" style="width: 45%; max-width: 400px; display: inline-block;" src="images/projects/project3/Monte Carlo.gif">          
+            </div>
+            <div class="images caption">Illustrative comparison between sample generation in the Metropolis and Monte Carlo methods.</div>
+            
+            <p>
+                This simulation aims to calculate a variable related to the state equation of the system,
+                <span class="inline-eq"><i>PV/NkT - </i>1</span>, as a function of
+                <span class="inline-eq"><i>A/A<sub>0</sub> - </i>1</span>, a control parameter that relates the space occupied by
+                the particles and the box area. The following is a comparison between the results achieved by both methods.
+            </p>
+
+            <img class="images" style="max-width: 400px;" src="images/projects/project3/PVNkT.png">
+            <div class="images caption">Comparison between Metropolis and Monte Carlo results.</div>
+
+            <h3 id="p3:github">Programs and files</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                You can consult the programs in my
+                <a href="https://github.com/armmancilla/scilab-thermo-demo" target="_blank">GitHub repository</a>.
+            </p>
+
         </template>
 
         <!--  PROJECT 4 TEMPLATE  -->
@@ -235,18 +787,115 @@
             <div class="details-menu-container">
                 <button class="details-button">☰</button>
                 <div class="details-toggle">
-                    <h2>Contents</h2>
+                    <h4>Contents</h4>
                     <hr>
-                    <a href="#introduction">
+                    <a href="#p4:description">
                         Description
+                    </a>
+                    <a href="#p4:information">
+                        More Information
+                    </a>
+                    <a href="#p4:github">
+                        Programs and Files
                     </a>
                 </div>
             </div>
-            <h3>Random Walks with Resetting in Annihilation</h3>
+            <h1>Random Walks in Annihilation Dynamics</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <p><i>Using AI techniques to predict and analyze epidemic trends.</i></p>
-            <p>We implemented a machine learning model to predict infection waves using past data and epidemiological parameters.</p>
-            <a href="https://github.com/yourprojectlink" target="_blank">View Project on GitHub</a>
+
+            <h2 id="p4:description">Description</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                This project is still a work in progress, but some features are polished enough. The annihilation is a
+                process that occurs when two random walkers are removed from the system when they encounter each other.
+                We use a ring configuration of discrete nodes to easily measure the concentration of the walkers at any
+                time (<span class="inline-eq"><i>#walkers/#nodes</i></span>). There are two ways in which we can update
+                the position of the walkers, and they will shape the behavior of the results:
+            </p>
+            <ul style="font-size:17px;">
+                <li>
+                    <b>Asynchronous:</b> Also known as the MonteCarlo method. We randomly select one of the nodes, and
+                    if there is a walker on it, update its position; the annihilation takes place if another walker is
+                    found at the new position.
+                </li>
+                <li>
+                    <b>Synchronous:</b> All walkers' positions are updated simultaneously, and the annihilation depends
+                    on the final configuration of particles, performed only after all walkers have moved.
+                </li>
+            </ul>
+            
+            <p>
+                We study the evolution of the concentration variable, measured every MonteCarlo Step (MCS), that is,
+                after <span class="inline-eq"><i>n</i></span> iterations, with <span class="inline-eq"><i>n</i></span>
+                being the number of nodes. We can look at other variables as the distribution of the nearest neighbor
+                distance, which is defined as the number of nodes that separates two contiguous walkers.
+                <br><br>
+                The simulation is done in a 1D ring, with periodic boundary conditions. The walkers are placed randomly
+                on the nodes, and the annihilation is done when two walkers are on the same node. The simulations are
+                developed in <b>Fortran</b>, using the <i>OMP Library</i>, and the results are shown in a <i>Jupyter
+                Notebook</i>.
+            </p>
+
+            <h2 id="p4:information">More Information</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The type of update we choose to change the walkers' positions is important, as it will affect the
+                behavior of the concentration. To understand this, let's discuss the two cases separately. For starters,
+                in the Asynchronous update, we select a node randomly, and if there is a walker on it, we update its
+                position, and if there is another walker on the new position, we remove both of them. This means that the
+                annihilation only depends on one walker movement. We repeat this process a number of
+                <span class="inline-eq"><i>n</i></span> (number of nodes) times to complete one MonteCarlo Step (MCS).
+                Now, the Synchronous update is a little bit more complex, and it is worth showing a diagram to explain it:
+            </p>
+
+            <img class="images" style="max-width: 150px;" src="images/projects/project4/synchronous.svg">
+            <div class="images caption">Synchronous update possible scenarios.</div>
+
+            <p>
+                In the synchronous update, we go node by node, and if there is a walker on it, we have different situations.
+                In the first scenario, there is no walker in the new position, so we just move it. In the second case,
+                there is a walker on the new position, and we have to check the following conditions (3-5). As we have a
+                1D ring, the walkers cannot interchange positions, and if they move in opposite directions, they will be
+                annihilated. If both move in the same direction and they don't encounter a third walker, they will survive.
+                And, finally, if instead there does exist a third walker, the first one will survive, and we have to check
+                the conditions again for the last pair.
+            </p>
+
+            <p>
+                The results of the simulations for large systems, with 4,000 nodes and 2,000 walkers (50% of initial
+                occupancy), are shown below.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="images/projects/project4/Concentration.png">
+            <div class="images caption">Concentration decay for particles with Asynchronous and Synchronous updates.</div>
+
+            <p>
+                At the beginning, the concentration decay differs for both cases, probably due to the extra diffusion
+                provided by the random selection of the nodes in the Asynchronous update. We can get a better insight of
+                the behavior of the concentration by looking at the distribution of the nearest neighbor distance. This
+                is defined as the number of nodes that separates two contiguous walkers. The distribution is shown below:
+            </p>
+
+            <img class="images" style="max-width: 700px;" src="images/projects/project4/NearestNeighbor.png">
+            <div class="images caption">Nearest Neighbor distributions for Asynchronous and Synchronous updates.</div>
+
+            <p>
+                At a time like <span class="inline-eq"><i>t = </i>10 MCS</span>, we can see that the Synchronous update
+                has a higher probability of having a walker close to another one, as the distribution is shifted to the
+                left. This would indicate lower annihilation rates, in contrast to the Asynchronous update, however, after
+                a few more MCS, both distributions follow the same trend.
+            </p>
+
+            <h3 id="p4:github">Programs and files</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                You can consult the programs in my
+                <a href="https://github.com/armmancilla/annihilation" target="_blank">GitHub repository</a>.
+            </p>
+
         </template>
 
     </section>

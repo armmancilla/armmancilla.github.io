@@ -1,5 +1,5 @@
 body {
-    font-family: Calibri, sans-serif;
+    font-family: Calibri, 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -349,8 +349,8 @@ canvas {
     margin-right: 15px;
 }
 
-.project-details h3 {
-    font-family: 'Times New Roman';
+.project-details h1 {
+    font-family: 'Times New Roman', serif;
     font-size: 28px;
     color: #363636;
     margin: 0;
@@ -359,13 +359,93 @@ canvas {
     font-weight: bolder;
 }
 
+.project-details h2 {
+    padding-top: 40px;
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 26px;
+    color: #363636;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+}
+
+.project-details h2:target {
+    scroll-margin-top: 80px;
+}
+
+.project-details h3 {
+    padding-top: 20px;
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 22px;
+    color: #363636;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+}
+
+.project-details h3:target {
+    scroll-margin-top: 100px;
+}
+
+.project-details h4 {
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 18px;
+    color: #363636;
+    margin-top: 0;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+}
+
 .project-details p {
     font-size: 18px;
-    color: #555;
+    color: #444;
+}
+
+.project-details p a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f4066;
+    text-decoration: none;
+}
+
+.project-details p a:hover {
+    color: #7576a2;
+    text-decoration: underline;
 }
 
 .project-details ul {
     padding-left: 20px;
+}
+
+.project-details .inline-eq {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+
+.project-details .equation {
+    display: block;
+    margin:auto;
+    height:65px;
+}
+
+.project-details .images {
+    padding-top: 10px;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    margin: auto;
+}
+
+.project-details .caption {
+    display: block;
+    color: #666;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.8px;
+    padding-bottom: 15px;
 }
 
 .details-menu-container {
@@ -435,11 +515,6 @@ canvas {
     opacity: 1;     /* Ensure visibility */
 }
 
-.details-toggle h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
 .details-toggle hr {
     border: 0;
     margin: 0;
@@ -449,10 +524,20 @@ canvas {
 
 .details-toggle a {
     display: block;
-    margin-top: 10px;
+    margin-top: 8px;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
+    color: #333;
+}
+
+.details-toggle .sub {
+    display: block;
+    margin-top: 3px;
+    margin-left: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
     color: #333;
 }
 
