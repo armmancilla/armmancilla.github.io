@@ -357,6 +357,7 @@ canvas {
     margin-top: -34px;
     margin-left: 50px;
     font-weight: bolder;
+    scroll-margin-top: 80px;
 }
 
 .project-details h2 {
@@ -367,10 +368,7 @@ canvas {
     margin: 0;
     letter-spacing: 0.5px;
     font-weight: bolder;
-}
-
-.project-details h2:target {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 100px;
 }
 
 .project-details h3 {
@@ -381,9 +379,6 @@ canvas {
     margin: 0;
     letter-spacing: 0.5px;
     font-weight: bolder;
-}
-
-.project-details h3:target {
     scroll-margin-top: 100px;
 }
 

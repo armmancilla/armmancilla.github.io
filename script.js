@@ -193,27 +193,22 @@ function animate() {
 init();
 animate();
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault(); // Stop the default jump behavior
-      
-      const targetId = this.getAttribute('href').substring(1);
+document.addEventListener('click', function(e) {
+    if (e.target.matches('a[href^="#"]')) {
+      e.preventDefault();
+      const targetId = e.target.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
   
       if (targetSection) {
-        // Smooth scroll to the section
         targetSection.scrollIntoView({ behavior: 'smooth' });
-        
-        // Remove the hash from the URL after scrolling
-        setTimeout(() => {
-          history.replaceState(null, null, ' ');
-        }, 100); // Small delay to ensure smooth scroll completes
+        setTimeout(() => history.replaceState(null, null, ' '), 100);
       }
-    });
+    }
 });
 
 //  DETAILS TOGGLE MENU
 document.addEventListener("DOMContentLoaded", function () {
+
     const projects = document.querySelectorAll(".project");
     const detailsSection = document.getElementById("project-details");
     const portfolioSection = document.getElementById("portfolio");
@@ -226,25 +221,52 @@ document.addEventListener("DOMContentLoaded", function () {
             const template = document.getElementById(templateId);
 
             if (template) {
+
                 detailsSection.innerHTML = template.innerHTML;
                 detailsSection.style.display = "block";
 
-                // Function to close button
-                function close_button () {
-                    detailsSection.classList.remove("fade-in");  // Remove fade-in effect
-                    detailsSection.classList.add("fade-out");    // Start fade-out effect
-                
-                    // Wait for the animation to complete before hiding
+                document.addEventListener("click", function (event) {
+                    if (event.target.classList.contains('header-before')) {
+                        close_before(event.target);
+                    } else if (event.target.classList.contains('header-after')) {
+                        close_after(event.target);
+                    }
+                });
+
+                function close_before(clickedElement) {
+                    
+                    detailsSection.classList.remove("fade-in");
+                    detailsSection.classList.add("fade-out");
+                    
                     setTimeout(() => {
                         detailsSection.style.display = "none";
-                        detailsSection.classList.remove("fade-out"); // Reset for next time
-                    }, 500); // This should match the animation duration
-                
-                    const targetId = this.getAttribute('href').substring(1);
+                        detailsSection.classList.remove("fade-out");
+                        console.log("Template closed!");
+                    }, 500);
+                    
+                    const targetId = clickedElement.getAttribute('href').substring(1);
                     const targetSection = document.getElementById(targetId);
-
                     targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
+
+                function close_after(clickedElement) {
+                    
+                    detailsSection.classList.remove("fade-in");
+                    detailsSection.classList.add("fade-out");
+                    
+                    setTimeout(() => {
+                        detailsSection.style.display = "none";
+                        detailsSection.classList.remove("fade-out");
+                        console.log("Template closed!");
+                    }, 300);
+                    
+                    setTimeout(() => {
+                        const targetId = clickedElement.getAttribute('href').substring(1);
+                        const targetSection = document.getElementById(targetId);
+                        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 300);
+                }
+
 
                 // CLOSE BUTTON
                 const yOffset = -55; // Adjust this value (negative to stop higher, positive to go lower)
@@ -269,13 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
                     });
                 };
-
-                
-                document.addEventListener("click", function (event) {
-                    if (event.target.classList.contains('header-title')) {
-                        close_button();
-                    }
-                });
                 
 
                 // Add event listener to the close button inside the loaded content
