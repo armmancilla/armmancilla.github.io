@@ -10,13 +10,13 @@
 <body>
     <header>
         <nav class="nav-bar">
-            <a href="#home" class="align-left">HOME</a>
+            <a href="#home" class="align-left header-title">HOME</a>
             <button class="menu-toggle">☰ Menu</button>
             <div class="menu">
-                <a href="#portfolio" id="portfolio-click">PORTFOLIO</a>
-                <a href="#resume">RESUME</a>
-                <a href="#oddsends">CURIOUS BITS</a>
-                <a href="#contact">CONTACT</a>
+                <a href="#portfolio" class="header-title">PORTFOLIO</a>
+                <a href="#resume" class="header-title">RESUME</a>
+                <a href="#oddsends" class="header-title">CURIOUS BITS</a>
+                <a href="#contact" class="header-title">CONTACT</a>
             </div>
             <button data-href='ES/' class="language preserve-scroll-link">
             <!-- <button onclick="" class="language"> -->
@@ -1129,6 +1129,144 @@
     <!--  A SECTION LEFT FOR LATER  --> 
     <section id="oddsends" class="section-gray" style="min-height: 100vh;">
         <h1 class="section-header">CURIOUS BITS</h1>
+        <div class="projects-recipient">
+
+            <!--  PROJECT 2: RANDOM WALKS  -->
+            <div class="project" data-template="curiosities2-template">
+                <a class="project-container">
+                    <img src="images/projects/simple_walk.gif" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Statistics of the Random Walk with Resetting and Self-Memory
+                        </h3>
+                        <div class="project-image-text">
+                            Random walks involve taking random steps, where resetting can return the walker 
+                            to the origin, and self-memory allows returning to a previous position. This 
+                            study presents a statistical analysis of the effects of these dynamics.
+
+                            <h1>
+                                Resetting sends walkers home—unlike these results, which are going places
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!--  PROJECT 1: EPIDEMIC MODELS  -->
+
+            <div class="project" data-template="curiosities1-template">
+                <a class="project-container">
+                    <img src="images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Epidemic Models for Heard Immunity & Social Distancing
+                        </h3>
+                        <div class="project-image-text">
+                            We implemented epidemic models to infected waves in Mexico during the COVID-19 
+                            pandemic. We derived analytical solutions where possible and linked findings 
+                            to the Susceptible-Infected-Removed (SIR) model.
+
+                            <h1>
+                                Turns out, 'stay apart' is the only relationship advice epidemiologists agree on
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!--  PROJECT DETAILS TEMPLATE PLACEHOLDER  -->
+        <div id="project-details" class="project-details"></div>
+
+        <!--  PROJECT 1 TEMPLATE  -->
+        <template id="curiosities1-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div class="details-menu-container">
+                <button class="details-button">☰</button>
+                <div class="details-toggle">
+                    <h4>Contents</h4>
+                    <hr>
+                    <a href="#p1:description">
+                        Description
+                    </a>
+                    <a href="#p1:national">
+                        National Waves
+                    </a>
+                    <a href="#p1:states">
+                        State Cases
+                    </a>
+                    <a href="#p1:github">
+                        Programs and Files
+                    </a>
+                </div>
+            </div>
+            <h1>Epidemic Models for Heard Immunity and Social Distancing</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+            <h3 style="margin-top:-20px; font-size: 18px;"><i>COVID-19 Pandemic in Mexico (2020-2022)</i></h3>
+
+            <h2 id="p1:description">Description</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                During the COVID-19 pandemic, daily infection cases were processed and reported through public
+                databases by CONACYT. For privacy reasons, I cannot disclose all the details about the Epidemic
+                Models we implemented. However, I can provide an overview of some of the preparations required for
+                the later analysis, including the data cleaning process and infected waves identification.
+            </p>
+
+            <h2 id="p1:national">National Waves</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                We can study the COVID-19 Pandemic in Mexico from the perspective of individual infection waves.
+                The data was obtained from a CONACYT CSV database, including national and state data. This raw data
+                includes details that difficult its read and process, given that it was provided by multiple medical
+                institutions. One of the main problems we found is on weekends, where the values tend to be lower due to
+                these places working with reduced capacities. For this, I proposed a plan for the cleaning, understanding
+                the causes for the anomalies, and created a function that helps us automate this process for this
+                particular database.
+            </p>
+            <p>
+                With the cleaned data, we can start the identification of the specific waves in the pandemic. This
+                process has to be done manually but, thanks to the derivative, we can make it easier by identifying the
+                places where the derivative is zero, some of which will correspond to the peaks of the waves. And after
+                delimiting the times where we measure each wave, and displaying the defunctions, we can get a more
+                complete picture of our phenomenon.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexico.png">
+            <div class="images caption">Mexico COVID-19 Pandemic (2020-2022). Light gray are regions where the number
+                of cases increases, and dark gray are regions where the number of cases decreases.</div>
+            </div>
+
+            <h2 id="p1:states">State Cases</h2>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+
+            <p>
+                The same method can be applied to the state data, but by doing so, we have to consider that the
+                number of cases is much lower than the national data. This means that the fluctuations are more
+                pronounced and the anomalies are harder to detect. We can use the same criteria as before, but we have
+                to be careful with the tolerance factor, since it can lead to difficulties in the model application.
+                In this case, we will focus exclusively on the state data of the most populous regions in Mexico.
+            </p>
+
+            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexicoStates.png">
+            <div class="images caption">Daily infection cases for the five most populous states in Mexico.</div>
+            </div>
+
+            <h3 id="p1:github">Programs and files</h3>
+            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            
+            <p>
+                You can consult the programs in my
+                <a href="https://github.com/armmancilla/epidemic-models" target="_blank">GitHub repository</a>.
+            </p>
+
+        </template>
+
+
     </section>
 
     <!--  CONTACT  --> 
