@@ -15,7 +15,7 @@
             <div class="menu">
                 <a href="#portfolio" class="header-before">PORTFOLIO</a>
                 <a href="#resume" class="header-after">RESUME</a>
-                <a href="#oddsends" class="header-after">CURIOUS BITS</a>
+                <a href="#curiosities" class="header-after">CURIOUS BITS</a>
                 <a href="#contact" class="header-after">CONTACT</a>
             </div>
             <button data-href='ES/' class="language preserve-scroll-link">
@@ -1127,25 +1127,45 @@
     </section>
 
     <!--  A SECTION LEFT FOR LATER  --> 
-    <section id="oddsends" class="section-gray" style="min-height: 100vh;">
+    <section id="curiosities" class="section-gray" style="min-height: 100vh;">
         <h1 class="section-header">CURIOUS BITS</h1>
         <div class="projects-recipient">
 
-            <!--  PROJECT 2: RANDOM WALKS  -->
-            <div class="project" data-template="curiosities2-template">
+
+            <!--  CURIOSITY 3: HOUSE MD  -->
+            <div class="curiosity" data-template="curiosities3-template">
                 <a class="project-container">
-                    <img src="images/projects/simple_walk.gif" alt="Project 2" class="project-image">
+                    <img src="images/projects/DrHouse.svg" alt="Project 3" class="project-image">
                     <div class="overlay">
                         <h3>
-                            Statistics of the Random Walk with Resetting and Self-Memory
+                            House M.D.: A Statistical Diagnosis
                         </h3>
                         <div class="project-image-text">
-                            Random walks involve taking random steps, where resetting can return the walker 
-                            to the origin, and self-memory allows returning to a previous position. This 
-                            study presents a statistical analysis of the effects of these dynamics.
+                            When I rewatched the House M.D. series for the second time, I was left unsatisfied with
+                            some narrative arcs, and I started to wonder if other people felt the same.
 
                             <h1>
-                                Resetting sends walkers home—unlike these results, which are going places
+                                ‘Everybody lies’… except IMDB voters, apparently.
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--  CURIOSITY 2: POPULATION PEAK IN JALISCO  -->
+            <div class="curiosity" data-template="curiosities2-template">
+                <a class="project-container">
+                    <img src="images/projects/jaliscoDensity.png" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            A Quick Prediction of Population Peak in Jalisco
+                        </h3>
+                        <div class="project-image-text">
+                            After hearing about global trend of decreasing population, I wanted to
+                            know specifically when would this happen in the state where I currently live, Jalisco.
+
+                            <h1>
+                                INEGI data + Gaussian magic = Jalisco’s ‘sorry, no more seats at the birria table’ year
                             </h1>
                         </div>
                     </div>
@@ -1153,22 +1173,21 @@
             </div>
             
 
-            <!--  PROJECT 1: EPIDEMIC MODELS  -->
-
-            <div class="project" data-template="curiosities1-template">
+            <!--  CURIOSITY 1: LOGARITHMIC SCALE  -->
+            <div class="curiosity" data-template="curiosities1-template">
                 <a class="project-container">
-                    <img src="images/projects/epidemic_presentation.png" alt="Project 1" class="project-image">
+                    <img src="images/projects/logarithmic.svg" alt="Project 1" class="project-image"
+                    style="width:90%; margin:auto;">
                     <div class="overlay">
                         <h3>
-                            Epidemic Models for Heard Immunity & Social Distancing
+                            Functions in Logarithmic Scale
                         </h3>
                         <div class="project-image-text">
-                            We implemented epidemic models to infected waves in Mexico during the COVID-19 
-                            pandemic. We derived analytical solutions where possible and linked findings 
-                            to the Susceptible-Infected-Removed (SIR) model.
+                            Whenever we study a new phenomenon, we might be able to guess the behavior it is following
+                            with some clues provided by the logarithmic scale.
 
                             <h1>
-                                Turns out, 'stay apart' is the only relationship advice epidemiologists agree on
+                                From ‘meh, linear regression’ to ‘ah, a power law!’ in 4 plots or less
                             </h1>
                         </div>
                     </div>
@@ -1177,91 +1196,184 @@
 
         </div>
 
-        <!--  PROJECT DETAILS TEMPLATE PLACEHOLDER  -->
-        <div id="project-details" class="project-details"></div>
+        <!--  CURIOSITIES DETAILS TEMPLATE PLACEHOLDER  -->
+        <div id="curiosity-details" class="curiosity-details"></div>
 
-        <!--  PROJECT 1 TEMPLATE  -->
+        <!--  CURIOSITY 1 TEMPLATE  -->
         <template id="curiosities1-template" class="project-template">
             <button class="close-btn">✖</button>
-            <div class="details-menu-container">
-                <button class="details-button">☰</button>
-                <div class="details-toggle">
-                    <h4>Contents</h4>
-                    <hr>
-                    <a href="#p1:description">
-                        Description
-                    </a>
-                    <a href="#p1:national">
-                        National Waves
-                    </a>
-                    <a href="#p1:states">
-                        State Cases
-                    </a>
-                    <a href="#p1:github">
-                        Programs and Files
-                    </a>
-                </div>
-            </div>
-            <h1>Epidemic Models for Heard Immunity and Social Distancing</h1>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>Functions in Logarithmic Scale</h1>
             <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
-            <h3 style="margin-top:-20px; font-size: 18px;"><i>COVID-19 Pandemic in Mexico (2020-2022)</i></h3>
-
-            <h2 id="p1:description">Description</h2>
-            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
 
             <p>
-                During the COVID-19 pandemic, daily infection cases were processed and reported through public
-                databases by CONACYT. For privacy reasons, I cannot disclose all the details about the Epidemic
-                Models we implemented. However, I can provide an overview of some of the preparations required for
-                the later analysis, including the data cleaning process and infected waves identification.
+                While working on my main projects, I usually developed simulations and gathered the results to
+                analyze what was happening in company of my advisors. Sometimes, we would have a curve that I
+                would not be able to explain which pattern it was following, especially if the change in the evolution
+                was not as significant, and they would ask me to use the logarithmic scale on one of the axes or both.
+                While this directly won't tell you the specific behavior, it offers some clues about it, and they were
+                able to see them. Thus, when I arrived at my home, I plotted different functions and tried them on
+                logarithmic scale. Of course, what I present here is the most ideal case, but what matters is to be able
+                to notice the individual characteristics once the scale is applied.
             </p>
 
-            <h2 id="p1:national">National Waves</h2>
-            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
+            <img class="images" style="width: 90%; max-width: 800px;" src="images/projects/tinyproject1/log_scale.jpg">
+            <div class="images caption">Functions on logarithmic scale.</div>
 
             <p>
-                We can study the COVID-19 Pandemic in Mexico from the perspective of individual infection waves.
-                The data was obtained from a CONACYT CSV database, including national and state data. This raw data
-                includes details that difficult its read and process, given that it was provided by multiple medical
-                institutions. One of the main problems we found is on weekends, where the values tend to be lower due to
-                these places working with reduced capacities. For this, I proposed a plan for the cleaning, understanding
-                the causes for the anomalies, and created a function that helps us automate this process for this
-                particular database.
+                You could also think about this logarithmic scale as applying the function
+                <span class="inline-eq">log<i>()</i></span> to one of the variables, that being
+                <span class="inline-eq"><i>y</i></span> or <span class="inline-eq"><i>x</i></span>, but this only
+                applies on the looks. Each function has its own characteristics, and thus the axes where applying
+                the logarithmic scale could reveal its nature, but, to me, rescaling the <span class="inline-eq"><i>x</i></span>
+                axis does not offer much information, I think one of the real indicators is to find the rescaling that can
+                turn our data into a line, that would really unhide its behavior.
             </p>
             <p>
-                With the cleaned data, we can start the identification of the specific waves in the pandemic. This
-                process has to be done manually but, thanks to the derivative, we can make it easier by identifying the
-                places where the derivative is zero, some of which will correspond to the peaks of the waves. And after
-                delimiting the times where we measure each wave, and displaying the defunctions, we can get a more
-                complete picture of our phenomenon.
+                I selected these specific functions for being pretty known. But the fun was over pretty quickly as
+                three of them are actually power-laws
+                (<span class="inline-eq"><i>y &sim; a x<sup>&gamma;</sup></i></span>), which can be seen clearly when
+                both axes are log-scaled. For the root function, <span class="inline-eq"><i>&gamma; = </i>1/2</span>;
+                for the quadratic, <span class="inline-eq"><i>&gamma; = </i>2</span>; and for the rational,
+                <span class="inline-eq"><i>&gamma; = </i>-1</span>. In these cases, the data looks linear with a slope of
+                <span class="inline-eq"><i>&gamma;</i></span>.
+            </p>
+        </template>
+
+        <!--  CURIOSITY 2 TEMPLATE  -->
+        <template id="curiosities2-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>A Quick Prediction of Population Peak in Jalisco</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+
+            <p>
+                After hearing about one of the challenges our generation will face in just a couple of
+                decades, the global trend of population decay, I was curious if I could already see this tendency in
+                the current residents' data. Of course, there were already some numbers out there for whole countries,
+                and when they would reach their peak population, but I wanted something more specific. So I looked
+                up information about Jalisco, the state where I currently live, and found the INEGI data, which I took
+                for my fit. As soon as I log-scaled the y-axis, I could see a Gaussian-like behavior, so that is what
+                I'm using to get my results. I was able to find that the population peak in Jalisco is going to be
+                reached in 2045, five years ahead of this number, but for Mexico as a country. And the maximum
+                number of people will be around <span class="inline-eq">9,248,000</span>, just an extra
+                10% of the number of the habitants registered at the year 2020.
             </p>
 
-            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexico.png">
-            <div class="images caption">Mexico COVID-19 Pandemic (2020-2022). Light gray are regions where the number
-                of cases increases, and dark gray are regions where the number of cases decreases.</div>
+            <img class="images" style="width: 90%; max-width: 600px;" src="images/projects/tinyproject2/population.png">
+            <div class="images caption">Jalisco population fitting. The colored section indicates the data considered
+                for the fit.
             </div>
 
-            <h2 id="p1:states">State Cases</h2>
-            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
-
             <p>
-                The same method can be applied to the state data, but by doing so, we have to consider that the
-                number of cases is much lower than the national data. This means that the fluctuations are more
-                pronounced and the anomalies are harder to detect. We can use the same criteria as before, but we have
-                to be careful with the tolerance factor, since it can lead to difficulties in the model application.
-                In this case, we will focus exclusively on the state data of the most populous regions in Mexico.
+                Apart from the INEGI census every 10 years, the IIEG also estimates the number of people in the Jalisco
+                state every 5 years, so I'm looking forward to the 2025 estimation to see if this value falls under my
+                predictions.
             </p>
 
-            <img class="images" style="max-width: 500px;" src="images/projects/project1/PandemicMexicoStates.png">
-            <div class="images caption">Daily infection cases for the five most populous states in Mexico.</div>
+        </template>
+
+        <!--  CURIOSITY 3 TEMPLATE  -->
+        <template id="curiosities3-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>House M.D.: A Statistical Diagnosis</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+
+            <p>
+                The idea that ignited this mini project came to me when I rewatched the House M.D. series. At some
+                parts I started to feel a little disappointed about the events that were unfolding, it could be just
+                me wanting things to be different, anyhow, I could not help but wonder if I was the only one feeling
+                like that, so I went to check the IMDB ratings, which did not tell me much. So, in a last attempt to
+                get some conclusion about how the people were feeling about the last seasons, I did a statistical study
+                of the episodes' ratings.
+            </p>
+
+            <p>
+                To start somewhere, I decided it would be good to have a heat map of the ratings to visualize right away
+                where can we locate the best and worst episodes.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="images/projects/tinyproject3/HeatMapRatings.png">
+            <div class="images caption">Heat Map of the Episodes' ratings throughout the seasons.</div>
+
+            <p>
+                All good, but this is just an introduction. It could be that looking at the ratings by season with their
+                averages could tell something more about the opinion of the people. With a total average of
+                <span class="inline-eq">8.38</span>, we can deny that this series has something pretty uncommon for others
+                of similar length, and that is consistency. Pretty much all seasons have a close average to the total,
+                and even, there exists consistency at each season, with 3 seasons having less than
+                <span class="inline-eq">0.15</span> of variance. Of course, all and all, the last two seasons had a small
+                decay in their quality, and I really do not know if this was the reason for its ending. The last season
+                was something else; it has the worst episode among them all, but it also has one of the best 10 episodes,
+                and yes, it has the highest variance of all seasons, indicating less consistency. It is interesting to see
+                that peak in the middle, being a glimmer of hope in probably the worst season so far. Unfortunately,
+                after Chase's character development, the low ratings continued for a couple of episodes until the
+                construction of the final arc began. I just want to remind you that, even there, the series is pretty
+                good, and these episodes, although low in comparison with other seasons, are very entertaining, however
+                a wear can be seen at this point.
+            </p>
+
+            <p>
+                With these couple of plots, we can also see that it is likely to find the best episodes at the end of
+                the season. This happens because, despite most of the episodes being centered around a medical
+                enigma, the series presents narrative arcs that tend to be developed throughout the season, culminating in
+                its conclusion at the end.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 800px;" src="images/projects/tinyproject3/seasons.png">
+            <div class="images caption">Seasons' ratings and averages: the red straight line indicates the season's
+                average rating and the grey straight line indicates the whole series average rating.
             </div>
 
-            <h3 id="p1:github">Programs and files</h3>
-            <hr style="height:0; margin-top:5px; border: 0.15px solid #d9d9d9">
-            
             <p>
-                You can consult the programs in my
-                <a href="https://github.com/armmancilla/epidemic-models" target="_blank">GitHub repository</a>.
+                Now, if we focus on the distribution of the ratings, we obtain this weird histogram. It almost looks as
+                if it was skewed to the right, however, this is misleading, since we realize that almost half the number of
+                episodes can be found on both sides of the mean, at most, is just slightly skewed. A lot of episode are
+                clustered on the left of the mean, but there are still really good episodes that increase the average.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="images/projects/tinyproject3/distribution.png">
+            <div class="images caption">Distribution of ratings. The blue dashed line is the position of the average, the
+                red dashed lines are the average plus/minus one standard deviation, and the colored bins concentrate 65%
+                of the episodes.
+            </div>
+
+            <p>
+                The standard deviation of the whole show is <span class="inline-eq">0.5</span>, and 65% of the episodes
+                fall inside a range of one standard deviation from the mean, between <span class="inline-eq">7.90</span>
+                and <span class="inline-eq">8.86</span>, which is remarkable for a tv show of 176 episodes and 8 years
+                on air.
+            </p>
+
+            <p>
+                Finally, I was interested in the relation between the rating of an episode and its popularity, measured
+                with the number of votes. Of course, this topic could be a debate of its own. After watching a good
+                episode, even people that do not use to rate them might want to do it. It is something of a
+                chicken-and-egg situation here. IMDB has filters to prevent over rating due to popularity or other
+                reasons, but that does not remove the possibility of a connection.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="images/projects/tinyproject3/popularity.png">
+            <div class="images caption">Comparison between the rating and the number of votes per episode. The red dots were
+                left out of the correlation calculus.
+            </div>
+
+            <p>
+                Some episodes do not fall under the same conditions as the whole group, so I remove them from
+                the calculation of correlation. These are usually the best episodes of the show, but there are also some
+                random ones. The correlation is then of <span class="inline-eq">0.61</span>, indicating there exists a
+                connection, but what comes first? Ratings or popularity? A thing is certain, there is a clear decrease
+                in the popularity of the overall show as the number of seasons increased.
+            </p>
+
+            <p>
+                As a final comment, I found this was a fun way to dive deeper into a series that I really enjoyed. I did
+                not plan for it to be a formal analysis, I just wanted to explore how data can show our subjective
+                experiences. House M.D. is such a solid TV show, and going through this only makes me want to watch it again.
             </p>
 
         </template>

@@ -376,4 +376,173 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
+    // CURIOSITIES SECTION
+
+    const curiosities = document.querySelectorAll(".curiosity");
+    const notesSection = document.getElementById("curiosity-details");
+    const curiositiesSection = document.getElementById("curiosities");
+
+    curiosities.forEach(curiosity => {
+        curiosity.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            const templateId = this.getAttribute("data-template");
+            const template = document.getElementById(templateId);
+
+            if (template) {
+
+                notesSection.innerHTML = template.innerHTML;
+                notesSection.style.display = "block";
+
+                document.addEventListener("click", function (event) {
+                    if (event.target.classList.contains('header-before')) {
+                        close_before(event.target);
+                    } else if (event.target.classList.contains('header-after')) {
+                        close_after(event.target);
+                    }
+                });
+
+                function close_before(clickedElement) {
+                    
+                    notesSection.classList.remove("fade-in");
+                    notesSection.classList.add("fade-out");
+                    
+                    setTimeout(() => {
+                        notesSection.style.display = "none";
+                        notesSection.classList.remove("fade-out");
+                        console.log("Template closed!");
+                    }, 500);
+                    
+                    const targetId = clickedElement.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+
+                function close_after(clickedElement) {
+                    
+                    notesSection.classList.remove("fade-in");
+                    notesSection.classList.add("fade-out");
+                    
+                    setTimeout(() => {
+                        notesSection.style.display = "none";
+                        notesSection.classList.remove("fade-out");
+                        console.log("Template closed!");
+                    }, 300);
+                    
+                    setTimeout(() => {
+                        const targetId = clickedElement.getAttribute('href').substring(1);
+                        const targetSection = document.getElementById(targetId);
+                        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 300);
+                }
+
+
+                // CLOSE BUTTON
+                const yOffset = -55; // Adjust this value (negative to stop higher, positive to go lower)
+                const y = notesSection.getBoundingClientRect().top + window.scrollY + yOffset;
+
+                window.scrollTo({ top: y, behavior: "smooth" });
+
+                // Add event listener to the close button inside the loaded content
+                const closeButton = notesSection.querySelector(".close-btn");
+                if (closeButton) {
+                    closeButton.addEventListener("click", function () {
+                        notesSection.classList.remove("fade-in");  // Remove fade-in effect
+                        notesSection.classList.add("fade-out");    // Start fade-out effect
+
+                        // Wait for the animation to complete before hiding
+                        setTimeout(() => {
+                            notesSection.style.display = "none";
+                            notesSection.classList.remove("fade-out"); // Reset for next time
+                        }, 500); // This should match the animation duration
+
+                        curiositiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                };
+                
+
+                // Add event listener to the close button inside the loaded content
+                const detailsButton = notesSection.querySelector(".details-button");
+                const detailsToggle = notesSection.querySelector(".details-toggle");
+                if (detailsButton) {
+                    detailsButton.addEventListener("click", function () {
+
+                        if (!detailsToggle.classList.contains("show")) {
+                            // Rotate animation
+                            let rotation = 0;
+                            for (let i = 0; i < 11; i++) {
+                                setTimeout(() => {
+                                    // detailsButton.style.transform = "rotate("+ 90 - i*8.9 +"deg)";
+                                    rotation = i*9;
+                                    detailsButton.style.transform = "rotate("+ rotation +"deg)";
+                                }, i * 10); // 1000ms (1 second) delay between iterations
+                            }
+                            detailsButton.style.transform = "rotate(90deg)";
+                        } else {
+                            // Rotate animation inverse
+                            let rotation = 0;
+                            for (let i = 0; i < 11; i++) {
+                                setTimeout(() => {
+                                    // detailsButton.style.transform = "rotate("+ 90 - i*8.9 +"deg)";
+                                    rotation = 90-i*9;
+                                    detailsButton.style.transform = "rotate("+ rotation +"deg)";
+                                }, i * 10); // 1000ms (1 second) delay between iterations
+                            }
+                            detailsButton.style.transform = "rotate(0deg)";
+                        }
+
+                        detailsToggle.classList.toggle("show");
+                    });
+                }
+
+                document.addEventListener("click", function (event) {
+                    if (!detailsToggle.contains(event.target) && event.target !== detailsButton) {
+                        
+                        if (detailsToggle.classList.contains("show")) {
+                            // Rotate animation inverse
+                            let rotation = 0;
+                            for (let i = 0; i < 11; i++) {
+                                setTimeout(() => {
+                                    // detailsButton.style.transform = "rotate("+ 90 - i*8.9 +"deg)";
+                                    rotation = 90-i*9;
+                                    detailsButton.style.transform = "rotate("+ rotation +"deg)";
+                                }, i * 10); // 1000ms (1 second) delay between iterations
+                            }
+                            detailsButton.style.transform = "rotate(0deg)";
+                        }
+                        
+
+                        detailsToggle.classList.remove("show");
+                    }
+                });
+
+                window.addEventListener('scroll', function () {
+                    const scrollThreshold = notesSection.getBoundingClientRect().top + window.scrollY - 10;
+
+                    if (detailsToggle.classList.contains("show")) {
+                        // Rotate animation inverse
+                        let rotation = 0;
+                        for (let i = 0; i < 11; i++) {
+                            setTimeout(() => {
+                                // detailsButton.style.transform = "rotate("+ 90 - i*8.9 +"deg)";
+                                rotation = 90-i*9;
+                                detailsButton.style.transform = "rotate("+ rotation +"deg)";
+                            }, i * 10); // 1000ms (1 second) delay between iterations
+                        }
+                        detailsButton.style.transform = "rotate(0deg)";
+                    }
+
+                    detailsToggle.classList.remove('show'); // Close menu on scroll
+
+                    if (window.scrollY > scrollThreshold) {
+                        detailsButton.classList.add('scrolled');
+                    } else {
+                        detailsButton.classList.remove('scrolled');
+                    }
+                });
+            }
+        });
+    });
+
 });

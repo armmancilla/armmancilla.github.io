@@ -6,6 +6,16 @@ body {
     text-align: center;
     color: #363636;
 }
+
+html {
+    scroll-behavior: auto;
+}
+
+
+
+/* HEADER */
+/* ------ */
+
 header {
     background-color: white;
     color: #363636;
@@ -19,13 +29,8 @@ header {
     display: flex;
 }
 
-html {
-    scroll-behavior: auto;
-}
-
-/* Style the menu button */
 .menu-toggle {
-    display: none; /* Hidden by default on large screens */
+    display: none;
     background: none;
     color: #333;
     border: none;
@@ -35,15 +40,12 @@ html {
     cursor: pointer;
 }
 
-/* Hide the menu by default */
 .menu {
     display: flex;
     gap: 45px;
     margin-right: 40px;
 }
 
-/* Mobile styles */
-/* 768 */
 @media (max-width: 800px) {
     .menu {
         /* margin-right: 40px; */
@@ -128,6 +130,29 @@ html {
     color: #6c6c69;
 }
 
+.language {
+    background: #fff url(images/Language.png) 4px 4px no-repeat;
+    background-size: 10px 10px;
+    font-size: 10px;
+    color: #616161;
+    text-align: center;
+    margin-right: 30px;
+    padding: 2px 2px 2px 20px;
+    margin-top: 0px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.language:hover {
+    background: url(images/LanguageHover.png) 4px 4px no-repeat;
+    background-size: 10px 10px;
+    color: #9c9c9c;
+}
+
+
+
+/* SECTIONS PARAMETERS */
+
 .section-white {
     background: #fff;
     padding-top: 80px;
@@ -144,6 +169,11 @@ html {
     position: relative;
     overflow: hidden; /* Prevents canvas from overflowing */
 }
+
+
+
+/* CANVAS CUSTOMIZATION */
+/* -------------------- */
 
 .section-background {
     padding-top: 80px;
@@ -177,6 +207,11 @@ canvas {
     background-blend-mode: normal;
     z-index: -2; /* Keeps it in the background */
 }
+
+
+
+/* HOME SECTION */
+/* ------------ */
 
 .section-header {
     color: #363636;
@@ -223,6 +258,11 @@ canvas {
     display: flex;
     flex-direction: left;
 }
+
+
+
+/* PORTFOLIO SECTION */
+/* ----------------- */
 
 .projects {
     display: flex;
@@ -336,6 +376,9 @@ canvas {
         flex: 1 1 100%; /* Each project takes full width */
     }
 }
+
+/* TEMPLATES PARAMETERS */
+/* -------------------- */
 
 .project-details {
     display: none;
@@ -589,24 +632,8 @@ canvas {
     }
 }
 
-.language {
-    background: #fff url(images/Language.png) 4px 4px no-repeat;
-    background-size: 10px 10px;
-    font-size: 10px;
-    color: #616161;
-    text-align: center;
-    margin-right: 30px;
-    padding: 2px 2px 2px 20px;
-    margin-top: 0px;
-    border: 2px solid #fff;
-    cursor: pointer;
-}
-
-.language:hover {
-    background: url(images/LanguageHover.png) 4px 4px no-repeat;
-    background-size: 10px 10px;
-    color: #9c9c9c;
-}
+/* RESUME SECTION */
+/* -------------- */
 
 .column {
     float: left;
@@ -1024,6 +1051,151 @@ canvas {
     }
 
 }
+
+/* CURIOSITIES SECTION */
+/* ------------------- */
+
+.curiosity {
+    flex: 1 1 calc(30% - 20px);
+    max-width: 380px; /* Prevents overly large items */
+    height: auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.curiosity:hover {
+    transform: scale(1.05); /* Adds a slight zoom effect on hover */
+}
+
+@media (max-width: 900px) {
+    .curiosity {
+        flex: 1 1 calc(45% - 20px); /* Each project takes 50% of the row */
+    }
+}
+
+@media (max-width: 500px) {
+    .curiosity {
+        flex: 1 1 90%; /* Each project takes full width */
+    }
+}
+
+.curiosity-details {
+    display: none;
+    text-align: left;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #ebebeb;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.curiosity-details h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 28px;
+    color: #363636;
+    margin: 0;
+    margin-top: -34px;
+    margin-left: 0px;
+    font-weight: bolder;
+    scroll-margin-top: 80px;
+}
+
+.curiosity-details h2 {
+    padding-top: 40px;
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 26px;
+    color: #363636;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    scroll-margin-top: 100px;
+}
+
+.curiosity-details h3 {
+    padding-top: 20px;
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 22px;
+    color: #363636;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    scroll-margin-top: 100px;
+}
+
+.curiosity-details h4 {
+    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-size: 18px;
+    color: #363636;
+    margin-top: 0;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+}
+
+.curiosity-details p {
+    font-size: 18px;
+    color: #444;
+}
+
+.curiosity-details p a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f4066;
+    text-decoration: none;
+}
+
+.curiosity-details p a:hover {
+    color: #7576a2;
+    text-decoration: underline;
+}
+
+.curiosity-details ul {
+    padding-left: 20px;
+}
+
+.curiosity-details .inline-eq {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+
+.curiosity-details .equation {
+    display: block;
+    margin:auto;
+    height:65px;
+}
+
+.curiosity-details .images {
+    padding-top: 10px;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    margin: auto;
+}
+
+.curiosity-details .caption {
+    display: block;
+    color: #666;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.8px;
+    padding-bottom: 15px;
+}
+
+
+
+
+/* CONTACT SECTION */
+/* ---------------- */
 
 .contact-text {
     display: inline-block;

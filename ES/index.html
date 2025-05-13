@@ -15,7 +15,7 @@
             <div class="menu">
                 <a href="#portfolio" class="header-before">PORTAFOLIO</a>
                 <a href="#resume" class="header-after">CURRÍCULUM</a>
-                <a href="#oddsends" class="header-after">CURIOSIDADES</a>
+                <a href="#curiosities" class="header-after">CURIOSIDADES</a>
                 <a href="#contact" class="header-after">CONTACTO</a>
             </div>
             <button data-href='/' class="language preserve-scroll-link">
@@ -1174,8 +1174,263 @@
     </section>
 
     <!--  A SECTION LEFT FOR LATER  --> 
-    <section id="oddsends" class="section-gray" style="min-height: 100vh;">
+    <section id="curiosities" class="section-gray" style="min-height: 100vh;">
         <h1 class="section-header">CURIOSIDADES</h1>
+        <div class="projects-recipient">
+
+
+            <!--  CURIOSITY 3: HOUSE MD  -->
+            <div class="curiosity" data-template="curiosities3-template">
+                <a class="project-container">
+                    <img src="../images/projects/DrHouse.svg" alt="Project 3" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Dr. House: Un Diagnóstico Estadístico
+                        </h3>
+                        <div class="project-image-text">
+                            Cuando vi la serie de Dr. House por segunda vez, quedé insatisfecho con algunos arcos
+                            narrativos y me pregunté si otras personas se sentían igual.
+
+                            <h1>
+                                ‘Todos mienten’… excepto los votantes de IMDB, aparentemente.
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--  CURIOSITY 2: POPULATION PEAK IN JALISCO  -->
+            <div class="curiosity" data-template="curiosities2-template">
+                <a class="project-container">
+                    <img src="../images/projects/jaliscoDensity.png" alt="Project 2" class="project-image">
+                    <div class="overlay">
+                        <h3>
+                            Una Predicción Rápida del Pico de Población en Jalisco
+                        </h3>
+                        <div class="project-image-text">
+                            Tras escuchar sobre la tendencia global del decrecimiento de la población, quise conocer
+                            cuándo ocurriría esto específicamente en el estado en el que vivo actualmente, Jalisco.
+
+                            <h1>
+                                Datos del INEGI + Magia Gaussiana = El año ‘perdón, no hay más sillas en la birriería’ de Jalisco
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!--  CURIOSITY 1: LOGARITHMIC SCALE  -->
+            <div class="curiosity" data-template="curiosities1-template">
+                <a class="project-container">
+                    <img src="../images/projects/logarithmic.svg" alt="Project 1" class="project-image"
+                    style="width:90%; margin:auto;">
+                    <div class="overlay">
+                        <h3>
+                            Funciones en Escala Logarítmica
+                        </h3>
+                        <div class="project-image-text">
+                            Siempre que estudiamos un nuevo fenómeno, podemos intentar adivinar el comportamiento que
+                            sigue con algunas pistas proporcionadas por la escala logarítmica.
+
+                            <h1>
+                                De ‘meh, regresión linear’ a ‘ah, ¡ley de potencias!’ en 4 gráficos o menos
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!--  CURIOSITIES DETAILS TEMPLATE PLACEHOLDER  -->
+        <div id="curiosity-details" class="curiosity-details"></div>
+
+        <!--  CURIOSITY 1 TEMPLATE  -->
+        <template id="curiosities1-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>Funciones en Escala Logarítmica</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+
+            <p>
+                Mientras trabajaba en mis proyectos principales, usualmente desarrollaba simulaciones y analizaba
+                lo que pasaba en los resultados en compañía de mis asesores. A veces nos encontrábamos con curvas donde
+                no podía explicar qué patrón seguían, particularmente, si los cambios en la evolución no eran
+                significativos, y mis asesores sugerían usar una escala logarítmica en uno o ambos ejes.
+                Aunque esto no revela directamente el comportamiento específico, proporciona pistas útiles, que ellos
+                eran capaces de ver. Entonces, cuando volví a mi casa, grafiqué distintas funciones y probé la escala
+                logarítmica en ellas. Claro, aquí presento el caso más ideal, pero lo que importa es ser capaz de notar
+                las características individuales una vez que la escala se aplica.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 800px;" src="../images/projects/tinyproject1/log_scale.jpg">
+            <div class="images caption">Funciones en escala logarítmica.</div>
+
+            <p>
+                También podríamos pensar en esta escala logarítmica como aplicar la función
+                <span class="inline-eq">log<i>()</i></span> a alguna de las variables, sea
+                <span class="inline-eq"><i>y</i></span> o <span class="inline-eq"><i>x</i></span>, pero esto solo cambiando
+                la forma en que se ve. Cada función tiene sus propias características, y por lo tanto los ejes a los que
+                escalamos pueden revelar su naturaleza. Para mí, rescalar el eje <span class="inline-eq"><i>x</i></span>
+                no ofrece mucha información, creo que un mejor indicador es encontrar una escala que convierta nuestros
+                datos en una línea, eso mostraría su comportamiento.
+            </p>
+            <p>
+                Seleccioné estas funciones en específico por ser tan conocidas. Pero el entretenimiento terminó muy pronto,
+                ya que tres de ellas son leyes de potencias
+                (<span class="inline-eq"><i>y &sim; a x<sup>&gamma;</sup></i></span>), que se pueden apreciar claramente
+                al escalar logarítmicamente ambos ejes. Para la función raíz, <span class="inline-eq"><i>&gamma; = </i>1/2</span>;
+                para la cuadrática, <span class="inline-eq"><i>&gamma; = </i>2</span>; y para la racional,
+                <span class="inline-eq"><i>&gamma; = </i>-1</span>. En estos casos, los datos lucen como una recta con
+                pendiente <span class="inline-eq"><i>&gamma;</i></span>.
+            </p>
+        </template>
+
+        <!--  CURIOSITY 2 TEMPLATE  -->
+        <template id="curiosities2-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>Una Predicción Rápida del Pico de Población en Jalisco</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+
+            <p>
+                Después de escuhar sobre uno de los desafíos que enfrentará nuestra generación en un par de décadas,
+                la tendencia global del decaemiento de la población, sentí curiosidad por ver si podía apreciar esta
+                tendencia con los datos de los residentes actuales. Por supuesto, ya existen algunos números allá afuera
+                sobre países y sobre cuándo alcanzarán el pico de población, pero quería algo más específico. Así que
+                busqué información sobre Jalisco, el estado donde vivo actualmente, y encontré los datos del INEGI, que
+                tomé para hacer mi ajuste. En cuanto apliqué la escala logarítmica al eje y, pude ver un comportamiento
+                parecido a una Gaussiana, así que esto es lo que utilizo para obtener mis resultados. Pude encontrar que
+                el pico de población en Jalisco sucederá en 2045, 5 años por delante que este mismo número pero para
+                México como país. El máximo de personas será de <span class="inline-eq">9,248,000</span> solo 10% extra
+                del número de habitantes registrado hasta el año 2020.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="../images/projects/tinyproject2/population.png">
+            <div class="images caption">Ajuste de la población de Jalisco. La sección coloreada indica los datos considerados
+                para el ajuste.
+            </div>
+
+            <p>
+                Además de los censos del INEGI cada 10 años, el IIEG también estima el número de personas que hay en
+                Jalisco cada 5 años. Así que estoy esperando la estimación de este 2025 para ver si este valor se encuentra
+                dentro de mis predicciones.
+            </p>
+
+        </template>
+
+        <!--  CURIOSITY 3 TEMPLATE  -->
+        <template id="curiosities3-template" class="project-template">
+            <button class="close-btn">✖</button>
+            <div style="padding-top: 60px;"></div>
+
+            <h1>Dr. House: Diagnóstico Estadístico</h1>
+            <hr style="height:0; margin-top:15px; border: 0.2px solid #999">
+
+            <p>
+                La idea que inició este mini proyecto vino a mí cuando volví a ver la serie de Dr. House. En algunas
+                partes me empecé a sentir un poco decepcionado de los eventos que ocurrían, puede que fuera solo yo
+                queriendo que las cosas fueran diferentes, de cualquier forma, no podía evitar preguntarme si era el
+                único sientiéndose así, así que fui a inspeccionar las calificaciones de IMDB, que no me dijeron mucho.
+                Entonces, en un último intento de llegar a algunas conclusiones sobre cómo la gente se sintió con las
+                últimas temporadas, hicé un estudio estadístico de las calificaciones de los episodios.
+            </p>
+
+            <p>
+                Para empezar en algún lado, decidí que estaría bien tener un mapa de las calificaciones para visualizar
+                directamente dónde se encuntran los mejores y peores episodios.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="../images/projects/tinyproject3/HeatMapRatings.png">
+            <div class="images caption">Mapa de las calificaciones de los episodios a través de las temporadas.</div>
+
+            <p>
+                Todo bien, pero esto es solo una introducción. Podría ser que al mirar las calificaciones por temporadas
+                con sus promedios nos diga algo sobre la opinión de la gente. Con un promedio total de
+                <span class="inline-eq">8.38</span>, no podemos negar que la serie tiene algo poco común para otras de una
+                duración similar, y eso es la consistencia. Casi todas las temporadas tienen un promedio similar al total,
+                e incluso, existe consistencia en cada temporada, con 3 temporadas teniendo menos de
+                <span class="inline-eq">0.15</span> de varianza. Por supuesto, con todo y todo, las últimas dos temporadas
+                tuvieron una pequeña caída de calidad, y realmente no estoy seguro de si esta fue la razón de su final.
+                La última tempora es algo diferente; tiene el peor episodio entre todos, pero también tiene uno de los
+                10 mejores episodios, y sí, la mayor varianza de todas las temporadas, indicando menos consistencia.
+                Es interesante ver ese pico en el medio, siendo como un rayo de esperanza en, posiblemente, la peor
+                temporada de todas. Desafortunadamente, después del desarrollo de personaje de Chase, las bajas
+                calificaciones siguieron por un par de episodios hasta que comenzó la construcción del arco final.
+                Solo quiero recordar que la serie aún así es bastante buena, y estos episodios, aunque bajos respecto
+                a otras temporadas, son muy entretenidos, pero ya comenzaba a notarse un desgaste.
+            </p>
+
+            <p>
+                Con este par de gráficos, también podemos ver que es más probable encontrar los mejores episodios al
+                final de las temporadas. Esto pasa porque, a pesar de que la mayoría de los episodios se centran en
+                enigmas médicos, la serie presenta arcos narrativos que tienden a desarrollarse a través de la temporada,
+                culminando en su conclusión al final.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 800px;" src="../images/projects/tinyproject3/seasons.png">
+            <div class="images caption">
+                Calificaciones de las temporadas y sus promedios: la recta roja indica el promedio de la temporada y
+                la recta gris indica el promedio de toda la serie.
+            </div>
+
+            <p>
+                Ahora bien, si nos enfocamos en la distribución de las calificaciones, obtenemos este
+                histograma raro. Casi pareciera como si estuviera sesgado a la derecha, sin embargo, esto puede ser
+                engañoso, ya que casi la mitad del número de episodios se puede encontrar en ambos lados del promedio,
+                a lo mucho, está ligeramente sesgado. Muchos episodios están amontonados justo a la izquierda del promedio,
+                pero existen muy buenos episodio que incrementan su valor.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="../images/projects/tinyproject3/distribution.png">
+            <div class="images caption">
+                Distribución de las calificaciones. La línea punteda azul es la posición del promedio, las líneas
+                punteadas rojas son el promedio más/menos una desviación estándar, y los bins coloreados concentran el 65%
+                de los episodios.
+            </div>
+
+            <p>
+                La desviación estándar de todo el show es <span class="inline-eq">0.5</span>, y el 65% de los episodios
+                caen dentro del rango de una desviación estándar del promedio, entre <span class="inline-eq">7.90</span>
+                y <span class="inline-eq">8.86</span>, lo que es remarcable para una serie de 176 episodios y 8 años en
+                emisión.
+            </p>
+
+            <p>
+                Finalmente, me interesé en la relación entre las calificación de un episodio y su popularidad, medida
+                como el número de votos. Claro que este tema podría ser un debate en sí mismo. Después de ver un buen
+                episodio, incluso las personas que no suelen calificarlos podrían querer hacerlo. Es un poco una
+                situación del huevo y la gallina. IMDB tiene filtros para prevenir la sobrepuntuación debida a la
+                popularidad u otras razones, pero eso no elimina la posibilidad de que haya una conexión.
+            </p>
+
+            <img class="images" style="width: 90%; max-width: 600px;" src="../images/projects/tinyproject3/popularity.png">
+            <div class="images caption">
+                Comparación entre la puntuación y el número de votos por episodio. Los puntos rojos fueron dejados fuera
+                del cálculo de la correlación.
+            </div>
+
+            <p>
+                Algunos episodios no siguen las mismas condiciones que todo el grupo, así que los removí del cálculo de
+                la correlación. Estos son comúnmente los mejores episodios de la serie, pero algunos aleatorios. La
+                correlación es, entonces, de <span class="inline-eq">0.61</span>, indicando que existe una conexión,
+                ¿pero qué viene primero? ¿La calificación o la popularidad? Una cosa es segura, hay una clara caída
+                en la popularidad de todo el show a medida que el número de temporadas incrementó.
+            </p>
+
+            <p>
+                Como comentario final, me pareció una forma divertida de ahondar en una serie que realmente disfruté.
+                No planeaba volver esto un análisis formal, solo quería explorar cómo los datos pueden mostrar nuestras
+                experiencias subjetivas. Dr. House es una serie de televisión muy sólida, y pasar por esto solo me hace
+                querer verla de nuevo.
+            </p>
+
+        </template>
+
+
     </section>
 
     <!--  CONTACT  --> 
