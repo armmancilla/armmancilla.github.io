@@ -1,5 +1,5 @@
 body {
-    font-family: Calibri, 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -214,13 +214,15 @@ canvas {
 /* ------------ */
 
 .section-header {
+    font-family: 'Montserrat', sans-serif;
     color: #363636;
-    font-size: 32px;
-    font-weight: lighter;
-    letter-spacing: 3px;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .home-elements {
+    font-family: 'Montserrat',sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -337,13 +339,13 @@ canvas {
 .project-image-text {
     margin-right: 10px;
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
     margin-bottom: 10px;
 }
 
 .project-container h3 {
-    font-size: 21px;
+    font-size: 20px;
     margin-left: 10px;
     margin-right:10px;
 }
@@ -393,11 +395,11 @@ canvas {
 }
 
 .project-details h1 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Baskervville', serif;
     font-size: 28px;
     color: #363636;
     margin: 0;
-    margin-top: -34px;
+    margin-top: -37px;
     margin-left: 50px;
     font-weight: bolder;
     scroll-margin-top: 80px;
@@ -405,8 +407,8 @@ canvas {
 
 .project-details h2 {
     padding-top: 40px;
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
-    font-size: 26px;
+    font-family: 'Carlito', sans-serif;
+    font-size: 22px;
     color: #363636;
     margin: 0;
     letter-spacing: 0.5px;
@@ -416,8 +418,8 @@ canvas {
 
 .project-details h3 {
     padding-top: 20px;
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
-    font-size: 22px;
+    font-family: 'Carlito', sans-serif;
+    font-size: 18px;
     color: #363636;
     margin: 0;
     letter-spacing: 0.5px;
@@ -426,8 +428,8 @@ canvas {
 }
 
 .project-details h4 {
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
-    font-size: 18px;
+    font-family: 'Carlito', sans-serif;
+    font-size: 16px;
     color: #363636;
     margin-top: 0;
     margin-bottom: 5px;
@@ -436,12 +438,15 @@ canvas {
 }
 
 .project-details p {
-    font-size: 18px;
-    color: #444;
+    font-family: 'Carlito', sans-serif;
+    word-spacing: 1.5px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #222;
 }
 
 .project-details p a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #3f4066;
     text-decoration: none;
@@ -452,13 +457,25 @@ canvas {
     text-decoration: underline;
 }
 
+.project-details ol {
+    font-family: 'Carlito', sans-serif;
+    word-spacing: 1.5px;
+    line-height: 1.5;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
 .project-details ul {
+    word-spacing: 1.5px;
+    line-height: 1.5;
+    font-family: 'Carlito', sans-serif;
+    font-size: 16px;
     padding-left: 20px;
 }
 
 .project-details .inline-eq {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 17px;
+    font-family: 'Gelasio', 'Tinos', Times, serif;
+    font-size: 15px;
 }
 
 .project-details .equation {
@@ -497,7 +514,7 @@ canvas {
     display: flex;
     background: #fff;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-weight: bold;
     color: #333;
     text-align: left;
@@ -544,7 +561,7 @@ canvas {
     border-radius: 1px;
     border: 1px solid #f4f6f6;
     box-shadow: 2px 2px 6px #f4f6f6;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     z-index: 101;
 }
 
@@ -665,7 +682,7 @@ canvas {
     display: none;
     background: #f4f6f6;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     flex-direction: row;
     text-align: left;
@@ -771,7 +788,7 @@ canvas {
     background: #f4f6f6 url(images/location.png) 4px 1px no-repeat;
     background-size: 12px 18px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -787,7 +804,7 @@ canvas {
     background: #f4f6f6 url(images/mail.png) 4px 4px no-repeat;
     background-size: 16px 12px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -810,7 +827,7 @@ canvas {
     background: #f4f6f6 url(images/LinkedIn.png) 3px 2px no-repeat;
     background-size: 18px 18px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -833,7 +850,7 @@ canvas {
     background: #f4f6f6 url(images/GitHub.png) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -856,7 +873,7 @@ canvas {
     background: #f4f6f6 url(images/icon.ico) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -879,7 +896,7 @@ canvas {
     background: #f4f6f6 url(images/download.png) 4.5px 2px no-repeat;
     background-size: 16px 16px;
     font-size: 12px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;;
+    font-family: 'Carlito', sans-serif;
     color: #333;
     display: flex;
     flex-direction: row;
@@ -1098,11 +1115,11 @@ canvas {
 }
 
 .curiosity-details h1 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Baskervville', serif;
     font-size: 28px;
     color: #363636;
     margin: 0;
-    margin-top: -34px;
+    margin-top: -37px;
     margin-left: 0px;
     font-weight: bolder;
     scroll-margin-top: 80px;
@@ -1110,7 +1127,7 @@ canvas {
 
 .curiosity-details h2 {
     padding-top: 40px;
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-size: 26px;
     color: #363636;
     margin: 0;
@@ -1121,7 +1138,7 @@ canvas {
 
 .curiosity-details h3 {
     padding-top: 20px;
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-size: 22px;
     color: #363636;
     margin: 0;
@@ -1131,7 +1148,7 @@ canvas {
 }
 
 .curiosity-details h4 {
-    font-family: 'Calibri','Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-size: 18px;
     color: #363636;
     margin-top: 0;
@@ -1141,12 +1158,15 @@ canvas {
 }
 
 .curiosity-details p {
-    font-size: 18px;
-    color: #444;
+    font-family: 'Carlito', sans-serif;
+    word-spacing: 1.5px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #222;
 }
 
 .curiosity-details p a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #3f4066;
     text-decoration: none;
@@ -1157,13 +1177,21 @@ canvas {
     text-decoration: underline;
 }
 
+.curiosity-details ol {
+    font-family: 'Carlito', sans-serif;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
 .curiosity-details ul {
+    font-family: 'Carlito', sans-serif;
+    font-size: 16px;
     padding-left: 20px;
 }
 
 .curiosity-details .inline-eq {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 17px;
+    font-family: 'Gelasio', 'Tinos', Times, serif;
+    font-size: 15px;
 }
 
 .curiosity-details .equation {
@@ -1213,7 +1241,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;
@@ -1241,7 +1269,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;
@@ -1269,7 +1297,7 @@ canvas {
     margin: auto;
     font-size: 20px;
     letter-spacing: 0.2px;
-    font-family: 'Calibri', 'Helvetica Neue', sans-serif;
+    font-family: 'Carlito', sans-serif;
     font-weight: bold;
     color: #333;
     display: block;
